@@ -7,8 +7,10 @@ An Full-Stack Web Developer who also interested in IOS & Android & Node.js
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself. 
+This is my first blog. From now on, I will post at least one blog every week. So more blogs is on my way...
+
+I'm new in IOS development, so the blogs will be focus on IOS more. 
 
 ### Contact me
 
-[email@domain.com](mailto:duanhong@live.com)
+[duan112358@.gmailcom](mailto:duan112358@gmail.com)
