@@ -11,7 +11,6 @@ I don't want to deplicate the answer more, just copy some code here:
 
 
 ```html
-
  <form target="remote" action="http://example.com/your_target_url?callback=YOUR_CALLBACK" method="POST">
      <input name="key1" value="val1" type="hidden"/>
      <input name="key2" value="val2" type="text"/>
@@ -26,7 +25,6 @@ I don't want to deplicate the answer more, just copy some code here:
          //process cross domain post result here    
      };
  </script>
-
 ```
 
 The code works well in website with HTTP protocol, but no HTTPS.
