@@ -19,18 +19,18 @@ avatar: https://avatars3.githubusercontent.com/u/1957818?v=2&s=80
 footer-links:
   dribbble: 
   email: duanhong@live.com
-  facebook: 
+  facebook: duan112358
   flickr: 
   github: Duan112358
-  instagram: 
+  instagram: duan112358
   linkedin: 
   pinterest: 
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
+  rss: dhong's blogs# just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: jekyllrb
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
-disqus: 
+disqus: duanhong
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 
@@ -43,7 +43,7 @@ url: http://dhong.co
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+baseurl: 
 
 #
 # !! You don't need to change any of the configuration flags below !!
