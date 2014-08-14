@@ -7,8 +7,9 @@ The post is about how to process Cross Domain POST.
 As may know, JSONP is design to fixed cross domain GET, so what about POST ? After a GOOGLE or BAIDU, you may get your answer. What I want to say is just as it describe.
 I don't want to deplicate the answer more, just copy some code here:
 
+
 ```html
-    <from target="remote" action="http://example.com/your_target_url?callback=YOUR_CALLBACK" method="POST">
+    <form target="remote" action="http://example.com/your_target_url?callback=YOUR_CALLBACK" method="POST">
         <input name="key1" value="val1" type="hidden"/>
         <input name="key2" value="val2" type="text"/>
         ...
