@@ -13,11 +13,11 @@ I don't want to deplicate the answer more, just copy some code here:
 
 And don't forget set the domain
 
-'''javascript
+```javascript
 
 document.domain = example.com;
 
-'''
+```
 
 The code works well in website with HTTP protocol, but no HTTPS.
 
