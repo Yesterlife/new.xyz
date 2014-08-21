@@ -11,12 +11,6 @@ I don't want to deplicate the answer more, just copy some code here:
 
 ![cross site post code snippt](/images/2014_08/cross_site_post_code.png)
 
-And don't forget set the domain
-
-```
-document.domain = example.com;
-```
-
 The code works well in website with HTTP protocol, but no HTTPS.
 
 Accessing an resource from HTTP site outside of an HTTPS site is not allowed.
