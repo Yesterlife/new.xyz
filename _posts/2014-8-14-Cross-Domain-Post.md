@@ -9,23 +9,7 @@ As may know, JSONP is design to fixed cross domain GET, so what about POST ? Aft
 What I want to say is just as it describe.
 I don't want to deplicate the answer more, just copy some code here:
 
-
-```html
- <form target="remote" action="http://example.com/your_target_url?callback=YOUR_CALLBACK" method="POST">
-     <input name="key1" value="val1" type="hidden"/>
-     <input name="key2" value="val2" type="text"/>
- </form>
- <iframe name="remote" height="0" width="0" border="0"></iframe>
- <script>
-     //set the domain
-     window.domain = example.com;
-
-     //bind the callback
-     window.YOUR_CALLBACK=function(result){
-         //process cross domain post result here    
-     };
- </script>
-```
+![cross site post code snippt](/images/2014_08/cross_site_post_code.png)
 
 The code works well in website with HTTP protocol, but no HTTPS.
 
