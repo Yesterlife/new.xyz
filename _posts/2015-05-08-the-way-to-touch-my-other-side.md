@@ -1,3 +1,8 @@
+---
+layout: post
+title: 试着去触摸你的内心
+---
+
 ### 心态
     如果没有一个良好的心态作为支撑和前提，做任何事情都会事倍功半。反之，心态好，自信心足，就会有强大的抗作者承受力，甚至是遇强则强，越挫越勇。
     [保持乐观的心态](http://mmbiz.qpic.cn/mmbiz/toib5xYicoea5IT9DCaRU0wbhoswHhHrP0oXlLOq6woBZWOM3vLEh6UmZ80ia4iczqVMPnw4CgoF9tV2RnOkaJxxibw/0?tp=webp&wxfrom=5)
