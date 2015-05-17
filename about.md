@@ -13,4 +13,4 @@ I'm new in IOS development, so the blogs will be focus on IOS more.
 
 ### Contact me
 
-[duan112358@.gmail.com](mailto:duan112358@gmail.com)
+[duan112358@gmail.com](mailto:duan112358@gmail.com)
