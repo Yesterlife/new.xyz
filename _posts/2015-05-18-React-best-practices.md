@@ -1,3 +1,8 @@
+---
+layout: post
+title: React best practise.
+---
+
 I've spent a good deal of past year working with React. I've written, refactored, and re-written many components in that time, and I've seen some best pratices and anti-patterns emerge.
 
 I'm not going to get into what React is or why you should use it - there are plenty of articles about React floating around the internet. I'm also going to assume you know the basics of working with React and have written a component or two yourself.
