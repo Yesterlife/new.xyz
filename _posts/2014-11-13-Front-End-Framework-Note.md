@@ -27,16 +27,16 @@ title: 前端框架学习笔记.
 
 ### 工具库
 
-**  alert
+####  alert
 
 *  [sweatalert](https://github.com/t4t5/sweetalert)
 *  [alertify](https://github.com/fabien-d/alertify.js)
 
-** date picker
+#### date picker
 
 *  [pickadate.js](https://github.com/amsul/pickadate.js)
 
-** image-slider
+#### image-slider
 
 *  [ideal-image-slider](https://github.com/gilbitron/Ideal-Image-Slider)
 *  [slick](https://github.com/kenwheeler/slick)
