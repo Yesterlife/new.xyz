@@ -4,7 +4,7 @@ layout: post
 title: Docker Introduction.
 ---
 
-### Introduction
+**Introduction**
 
 Docker is a tool for packaging and shipping apps. Based on the idea of a shipping container, it provides a standardized way for developers or system administrators to create
 lightweight images, or collections of images, for each element of an application, and then easily and quickly deploy the image. Since the image is standardized, it can be 
