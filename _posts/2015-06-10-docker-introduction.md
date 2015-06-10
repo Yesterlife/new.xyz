@@ -16,10 +16,13 @@ First, a quick overview of a few things Docker is:
 *  A company behind the project, as well as a site called the "Docker Hub" for sharing containers.
 
 And a few things Docker isn't:
+
 *  A virtual machine. Unlike a true VM, a docker container does not also require a host OS, meaning it's much slimmer that a real VM
 *  An infrastructure automation tool, like Pupper or Chef. Like those other tools, Docker is a major player in the DevOps space, but its focus is around running apps in a container environment, as opposed to representing a machine state.
 
+
 Some key ideas in Docker you should know:
+
 *  an image is a specific state of a filesystem
 *  an image is a composed of layers representing changes in the filesystem at varioud points in time; layers are a bit like the commit history of a git repository.
 *  a container is a running process that is started based on an image.
@@ -27,6 +30,7 @@ Some key ideas in Docker you should know:
 *  changes in memory / state are not commited - only changes on the filesystem.
 
 Docker uses the git-style command format:
+
 > `$ docker [OPTIONS] COMMAND [arg...]`
 
 **commands table**
