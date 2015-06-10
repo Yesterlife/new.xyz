@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: Docker Introduction.
+title: Docker Introduction
 ---
 
 ### Introduction
