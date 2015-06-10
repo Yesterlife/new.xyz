@@ -10,6 +10,7 @@ lightweight images, or collections of images, for each element of an application
 uniformly deployed on development or production, leading to a much simpler workflow, faster development time for the dev team, and lower management overhead for ops team.
 
 First, a quick overview of a few things Docker is:
+
 *  An open source tool that places a layer on top of Linux container (cgroups and namespaces) to make it simple to package and ship complex apps.
 *  A tool for creating a layered filesystem; each layer is versioned and can be shared across running instances, making for much more lightweight deployments.
 *  A company behind the project, as well as a site called the "Docker Hub" for sharing containers.
