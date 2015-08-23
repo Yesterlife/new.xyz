@@ -1,6 +1,8 @@
 ---
 layout: post
+category: blog
 title: React Primer Draft.
+description: some key points about react notion
 ---
 
 ### React Component

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 马云语录
+category: blog
+description: 马云语录
 ---
 
 *  做人，一定要有良心！千万不能忘记帮助过你的人！否则，你一定朋友越来越少，路越走越窄的！

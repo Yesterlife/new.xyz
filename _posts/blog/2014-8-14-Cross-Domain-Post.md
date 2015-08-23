@@ -1,6 +1,8 @@
 ---
 layout: post
+category: blog
 title: Cross domain post.
+category: front end cross domain 
 ---
 The post is about how to process Cross Domain POST.
 

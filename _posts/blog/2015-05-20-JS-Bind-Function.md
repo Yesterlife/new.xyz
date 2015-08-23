@@ -1,6 +1,8 @@
 ---
 layout: post
+category: blog
 title: Javascript Bind Function.
+description: some idea about JS bind function
 ---
 
 ### JavaScript's Bind Method

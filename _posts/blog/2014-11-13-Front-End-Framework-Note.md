@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 前端框架学习笔记.
+category: blog
+description: 学习笔记
 ---
 
 这段时间一直在寻找好的前端框架，结合自动化工具简化工作

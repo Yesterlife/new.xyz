@@ -1,6 +1,8 @@
 ---
 layout: post
+category: blog
 title: Programmer Struggle.
+description: life is a struggle.
 ---
 The life of a programmer is mostly a never-ending struggle. 
 

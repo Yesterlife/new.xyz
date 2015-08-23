@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 试着去触摸你的内心
+category: blog
+description: 认识下自
 ---
 
 ### 心态

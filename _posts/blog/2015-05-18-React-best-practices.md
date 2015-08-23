@@ -1,6 +1,8 @@
 ---
 layout: post
+category: blog
 title: React best practise.
+description: a road to React.JS start up.
 ---
 
 I've spent a good deal of past year working with React. I've written, refactored, and re-written many components in that time, and I've seen some best pratices and anti-patterns emerge.
