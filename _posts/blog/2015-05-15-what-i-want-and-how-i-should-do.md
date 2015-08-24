@@ -1,6 +1,8 @@
 ---
 layout: post
 title: 留给困惑时的自己
+category: blog
+description: 有的青春不迷茫
 ---
 
 排除我们不想要的不一定能得到想要的。

@@ -1,6 +1,6 @@
 ---
 layout: post
-cateogry: blog
+category: blog
 title: Docker Introduction
 description: docker learning startup now
 ---
