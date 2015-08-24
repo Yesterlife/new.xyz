@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: 真正的朋友
