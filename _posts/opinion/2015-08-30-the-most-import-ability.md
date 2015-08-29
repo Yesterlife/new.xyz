@@ -2,8 +2,7 @@
 layout: post
 title: 人最重要的能力是什么？
 category: opinion
-description:
-[文：万方中丨方独（ID：wansfang),微博：@万方中](http://mp.weixin.qq.com/s?__biz=MzA5OTEzMTIzMA==&mid=212009721&idx=1&sn=3cc94a7ec5be5ea3149855a5020823c9&scene=1&srcid=8D8kAB3IRJe36Z7ryFPZ&key=dffc561732c22651c055710239885a3cb1af46629de6eda5968627a6a9e2b0edb73230db79347a183a565d146b6481bc&ascene=0&uin=MjgxMTg3ODQ2MQ%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.10.5+build(14F27)&version=11020201&pass_ticket=La9n%2BwbnFupgKvwlJz0RTnD4xR51VOVO3CmfcJC9uhyaaVvB3yhW4BUVnCa%2Bnn4y)
+description: 文：万方中丨方独（ID：wansfang),微博：@万方中
 ---
 
 ## 人最重要的能力是什么？
