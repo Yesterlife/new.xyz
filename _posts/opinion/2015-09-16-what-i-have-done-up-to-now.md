@@ -1,7 +1,7 @@
 ---
-layout:     opinion
+layout:     post
 title:      最近所做的一些
-category: blog
+category: opinion
 description: 写博客这个这么古老的行为，还有必要拿出来说吗，我看有。
 ---
 
