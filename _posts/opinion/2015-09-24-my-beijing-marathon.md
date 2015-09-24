@@ -48,5 +48,3 @@ description: 马拉松不只是马拉松
 一个目标的完成是为了另一个目标的继续。明年厦门再见。
 
 晚安～
-
-[Duan Hong]:    http://dhong.co  "Duan Hong"
