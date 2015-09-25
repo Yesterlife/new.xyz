@@ -193,6 +193,25 @@ $(document).ready(function(){
         prettyPrint();
     });
 
+    var images = $('.entry img');
+    if(images.length) {
+        images.slice().forEach(function(img){
+            var $img = $(img);
+            $img.data('layzr', $img.attr('src'));
+        });
+
+        var layzr = new Layzr({
+            container: '.entry',
+            selector: 'img',
+            attr: 'data-layzr',
+            hiddenAttr: 'img-hide',
+            threshold: 50,
+            callback: function(){
+                $(this).show();
+            }
+        });
+    }
+
     if(/\#comment/.test(location.hash)){
         $('#disqus_container .comment').trigger('click');
     }
