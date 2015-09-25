@@ -5,7 +5,7 @@ category: opinion
 description: 马拉松不只是马拉松
 ---
 
-![running /images/2015_09/marathon/005.jpg)
+![running](/images/2015_09/marathon/005.jpg)
 
 跑完马拉松已经过去快一周了，朋友圈里陆续看到小伙伴发出自己的马后感言，这不，我也按耐不住了，就出来冒个泡吧
 
