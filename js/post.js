@@ -195,7 +195,7 @@ $(document).ready(function(){
 
     var images = $('.entry img');
     if(images.length) {
-        images.slice().forEach(function(img){
+        [].slice(images).forEach(function(img){
             var $img = $(img);
             $img.data('layzr', $img.attr('src'));
         });
