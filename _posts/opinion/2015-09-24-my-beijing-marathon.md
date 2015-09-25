@@ -5,7 +5,7 @@ category: opinion
 description: 马拉松不只是马拉松
 ---
 
-![running](/images/2015_09/marathon/005.jpg)
+![running /images/2015_09/marathon/005.jpg)
 
 跑完马拉松已经过去快一周了，朋友圈里陆续看到小伙伴发出自己的马后感言，这不，我也按耐不住了，就出来冒个泡吧
 
@@ -17,11 +17,12 @@ description: 马拉松不只是马拉松
 我的跑步是从2015/06/08开始，到9月20号的北京马拉松，Nike＋上记录的总里程是802KM，从头开始看过来也挺长的，是吧？
 
 这是现在的跑步成果
-![running](/images/2015_09/marathon/002.jpg)
+
+<p><img alt="running" data-layzr="/images/2015_09/marathon/002.jpg"/></p>
 
 曾记得，13年5月份毕业回校答辩，我和一好哥们驴行回校，从北京到烟台，一路下来，780多公里，用了6天，当时的感觉也和现在差不多。很简单，就是想突破和挑战下自己。年轻不就应该拼一下嘛。人的一生，平平稳稳的度过是挺好，但不是我想要的。
 
-![rading](/images/2015_09/marathon/006.jpg)
+<p><img alt="rading" data-layzr="/images/2015_09/marathon/006.jpg"/></p>
 
 所以，趁着年轻，挑战下自己嘛。
 
@@ -29,7 +30,7 @@ description: 马拉松不只是马拉松
 
 那个时候，才想着报名马拉松，现在想想，能拿到一个名额也是挺不容易的，这里谢谢趁早跑团的朋友，谢谢KK。
 
-![beijing marathon](/images/2015_09/marathon/004.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/004.jpg"/></p>
 
 圈子之外的世界也很精彩。之前的认知都集中在互联网方面，跑步带我认识了许多圈子外的朋友，各行各业。马拉松的赛场更是汇集了全球的跑者，同一个世界，同一个梦想。每个人都有自己跑步的故事，背后都有着一颗热情澎湃的心。
 
@@ -37,24 +38,24 @@ description: 马拉松不只是马拉松
 
 对于跑步的装备，我只想呵呵，自己不是个装备控。就目前来说，一双好点的跑鞋，一身散热性好的运动衣服就够了。好点的鞋是为了好好待自己的脚和腿，散热性就不必说了。还有一个，纠正跑姿，为了省力，也可以避免受伤。
 
-![beijing marathon](/images/2015_09/marathon/009.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/009.jpg"/></p>
 
 剩下的，就是找个好地方，开始跑步吧。对我来说，最最痛苦的跑步是在操场里绕圈，这太过无聊，也容易烦躁。路边的风景和野花才是是跑步的动力。跑步是大脑放松的一种方式，如果问我跑步的时候在想什么：跑了几公里？还要跑多久啊？1->2->------>8.5->9.8->10.00，终于跑完了。就是这么个过程，一味机械式的数数和坚持，直到最后的大汗淋漓。这个过程中，所有的烦恼都会烟消云散，所以，你懂的。。。
 
-![beijing marathon](/images/2015_09/marathon/010.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/010.jpg"/></p>
 
 “独行者步疾，结伴者行远”。独自跑的话，就训练下速度，找找感觉。大部分时间其实我都是自己一个人在跑。对于结伴，找几个和自己配速相近的最好，这样大家一起才更舒服。这句话总结的真好。
 
 马拉松只是马拉松。10KM看起来有点长也有点难，但只是看起来。一个跑者，10KM这个坎儿，坚持一个小时，就过去了，10KM只是10KM。战胜它，是一个跑者的进步，20KM，30KM，马拉松。不要被事情的表面所吓到，JUST DO IT。
 
-![beijing marathon](/images/2015_09/marathon/007.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/007.jpg"/></p>
 
 附一张我的马拉松轨迹图
 
-![beijing marathon](/images/2015_09/marathon/003.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/003.jpg"/></p>
 
 一个目标的完成是为了另一个目标的继续。明年厦门再见。
 
-![beijing marathon](/images/2015_09/marathon/008.jpg)
+<p><img alt="beijing marathon" data-layzr="/images/2015_09/marathon/008.jpg"/></p>
 
 晚安～
