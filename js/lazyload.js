@@ -141,7 +141,6 @@ Layzr.prototype._reveal = function(node) {
   node.removeAttribute(this._optionsAttrRetina);
   node.removeAttribute(this._optionsAttrBg);
   node.removeAttribute(this._optionsAttrHidden);
-  node.style.display = 'block';
 };
 
 Layzr.prototype.updateSelector = function() {
