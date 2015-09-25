@@ -197,14 +197,12 @@ $(document).ready(function(){
     if(images.length) {
         [].slice(images).forEach(function(img){
             var $img = $(img);
-            $img.data('layzr', $img.attr('src')).attr('img-hide', true).removeAttr('src');
+            $img.data('layzr', $img.attr('src'));
         });
 
         var layzr = new Layzr({
             container: '.entry',
-            selector: 'img',
-            attr: 'data-layzr',
-            hiddenAttr: 'img-hide',
+            selector: '.entry img',
             threshold: 50
         });
     }
