@@ -193,19 +193,11 @@ $(document).ready(function(){
         prettyPrint();
     });
 
-    var images = $('.entry img');
-    if(images.length) {
-        [].slice(images).forEach(function(img){
-            var $img = $(img);
-            $img.data('layzr', $img.attr('src'));
-        });
-
-        var layzr = new Layzr({
-            container: '.entry',
-            selector: '.entry img',
-            threshold: 50
-        });
-    }
+    var layzr = new Layzr({
+        container: '.entry',
+        selector: '.entry img',
+        threshold: 50
+    });
 
     if(/\#comment/.test(location.hash)){
         $('#disqus_container .comment').trigger('click');
