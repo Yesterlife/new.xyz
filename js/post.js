@@ -197,7 +197,7 @@ $(document).ready(function(){
     if(images.length) {
         [].slice(images).forEach(function(img){
             var $img = $(img);
-            $img.data('layzr', $img.attr('src'));
+            $img.data('layzr', $img.attr('src')).attr('img-hide', true).removeAttr('src');
         });
 
         var layzr = new Layzr({
@@ -205,10 +205,7 @@ $(document).ready(function(){
             selector: 'img',
             attr: 'data-layzr',
             hiddenAttr: 'img-hide',
-            threshold: 50,
-            callback: function(){
-                $(this).show();
-            }
+            threshold: 50
         });
     }
 
