@@ -193,11 +193,7 @@ $(document).ready(function(){
         prettyPrint();
     });
 
-    var layzr = new Layzr({
-        container: '.entry',
-        selector: '.entry img',
-        threshold: 50
-    });
+    var layzr = new Layzr();
 
     if(/\#comment/.test(location.hash)){
         $('#disqus_container .comment').trigger('click');
