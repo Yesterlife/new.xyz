@@ -2,7 +2,7 @@
 layout:     post
 title:      论一个顽固的人的觉悟
 category: opinion
-description: 写博客这个这么古老的行为，还有必要拿出来说吗，我看有。
+description: 一个程序员的自白，西瓜会有的，女票也会有的。
 ---
 <img data-layzr="/images/2015_10/aweseness.pic.jpg" alt="a stuborrn man's aweseness"/>
 
