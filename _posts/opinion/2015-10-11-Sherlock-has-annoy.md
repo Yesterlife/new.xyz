@@ -6,7 +6,7 @@ description: 夏洛特烦恼？要是烦恼都在梦里就好了
 ---
 ![annoy Sherlock](/images/2015_10/annoy-xialuo.jpg)
 
-<iframe frameborder="0" class="ifram-qqvideo" src="http://v.qq.com/iframe/player.html?vid=z00185howry&tiny=0&auto=0" allowfullscreen></iframe>
+<iframe frameborder="0" class="iframe-qqvideo" src="http://v.qq.com/iframe/player.html?vid=z00185howry&tiny=0&auto=0" allowfullscreen></iframe>
 
 昨天趁着点儿空闲看了下这部电影，打开头起，它的笑场就此起彼伏，的确，这部喜剧拍的很不错。
 
