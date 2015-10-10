@@ -6,7 +6,7 @@ description: 夏洛特烦恼？要是烦恼都在梦里就好了
 ---
 ![annoy Sherlock](/images/2015_10/annoy-xialuo.jpg)
 
-<div id="mod_player" style="width: 670px; height: 502px;"><div id="mod_tenvideo_flash_player_1444516182236"><embed wmode="direct" flashvars="vid=z00185howry&amp;tpid=0&amp;showend=1&amp;showcfg=1&amp;searchbar=1&amp;pic=http://shp.qpic.cn/qqvideo_ori/0/z00185howry_496_280/0&amp;skin=http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf&amp;shownext=1&amp;list=2&amp;autoplay=0" src="http://imgcache.qq.com/tencentvideo_v1/player/TPout.swf?max_age=86400&amp;v=20140714" quality="high" name="tenvideo_flash_player_1444516182236" id="tenvideo_flash_player_1444516182236" bgcolor="#000000" width="670px" height="502px" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/cn/flashplayer/"></div></div>
+<iframe frameborder="0" width="100%" height="502" style="max-width:670px;max-height:502px;" src="http://v.qq.com/iframe/player.html?vid=z00185howry&tiny=0&auto=0" allowfullscreen></iframe>
 
 昨天趁着点儿空闲看了下这部电影，打开头起，它的笑场就此起彼伏，的确，这部喜剧拍的很不错。
 
