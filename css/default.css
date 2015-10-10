@@ -183,3 +183,18 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 @media (max-width: 1300px){
     .home-menu { position:absolute; }
 }
+
+.iframe-qqvideo {
+    max-height: 502px;
+    max-width: 670px;
+    height: 502px;
+    width: 670px;
+}
+
+@media (max-width: 640px) {
+    .iframe-qqvideo {
+        width: 335px;
+        height: 251px;
+    }
+}
+
