@@ -6,7 +6,7 @@ description: 夏洛特烦恼？要是烦恼都在梦里就好了
 ---
 ![annoy Sherlock](/images/2015_10/annoy-xialuo.jpg)
 
-<iframe frameborder="0" width="100%" height="100%" src="http://v.qq.com/iframe/player.html?vid=z00185howry&tiny=0&auto=0" allowfullscreen></iframe>
+<div id="mod_player" style="width: 670px; height: 502px;"><div id="mod_tenvideo_flash_player_1444516182236"><embed wmode="direct" flashvars="vid=z00185howry&amp;tpid=0&amp;showend=1&amp;showcfg=1&amp;searchbar=1&amp;pic=http://shp.qpic.cn/qqvideo_ori/0/z00185howry_496_280/0&amp;skin=http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf&amp;shownext=1&amp;list=2&amp;autoplay=0" src="http://imgcache.qq.com/tencentvideo_v1/player/TPout.swf?max_age=86400&amp;v=20140714" quality="high" name="tenvideo_flash_player_1444516182236" id="tenvideo_flash_player_1444516182236" bgcolor="#000000" width="670px" height="502px" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://get.adobe.com/cn/flashplayer/"></div></div>
 
 昨天趁着点儿空闲看了下这部电影，打开头起，它的笑场就此起彼伏，的确，这部喜剧拍的很不错。
 
@@ -26,7 +26,6 @@ description: 夏洛特烦恼？要是烦恼都在梦里就好了
 
 梦想还是要有的，万一实现了呢？
 
-<qqmusic class="res_iframe qqmusic_iframe js_editor_qqmusic" musicid="100378" mid="004ZX0AQ49Bc8Y" albumurl="/F/K/003DMiXN1Tc7FK.jpg" audiourl="http://ws.stream.qqmusic.qq.com/100378.m4a?fromtag=46" music_name="隐形的翅膀" commentid="2051296291" singer="张韶涵 - 潘朵拉" play_length="224000" src="/cgi-bin/readtemplate?t=tmpl/qqmusic_tmpl&amp;singer=%E5%BC%A0%E9%9F%B6%E6%B6%B5%20-%20%E6%BD%98%E6%9C%B5%E6%8B%89&amp;music_name=%E9%9A%90%E5%BD%A2%E7%9A%84%E7%BF%85%E8%86%80"></qqmusic>
 
 今天的睡眠不太好，中途醒了两次，都是梦的缘故（不是梦靥）。之前的睡眠一直挺好，估计是《夏洛特烦恼》导致的，所以今天4:30就爬了起来，写下了这篇，算是解梦吧（梦的内容就不说了，与爱情无关）。
 
