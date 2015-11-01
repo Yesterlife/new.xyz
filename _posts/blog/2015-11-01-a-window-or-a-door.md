@@ -44,7 +44,7 @@ React给前端带来了什么？
     -  [ES6-style](https://github.com/gf-rd/es6-coding-style)
     -  [JSX-style](https://github.com/petehunt/jsxstyle)
 
-webpackyou带来了什么？  
+webpack又带来了什么呢？  
 
 * 包管理
     依赖管理一直是前端的痛，痛就要治，所以我们有了[Seajs](http://seajs.org/)，[Requirejs](http://requirejs.org)，[browserify](http://browserify.org)，至于什么[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)，[CMD](https://github.com/seajs/seajs/issues/242)，[CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1.1)，可以先看看，我是比较喜欢commonjs，熟悉node的话都应该懂吧。webpack支持AMD和requirejs，国外的东西，就不要指望支持seajs了，😢。
