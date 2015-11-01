@@ -29,7 +29,7 @@ Android 5.0的发布，更新为Web UI注入了一股新的血液，[Matreial De
 
 React给前端带来了什么？  
 
-* 组件化  
+* 组件化   
     组件化的思想很早就有，也吵了很久，Angular和[Polymer](https://www.polymer-project.org/1.0/)里都有相关体现，个人觉得还是Polymer的比较彻底，没有相关底层类库层的依赖，但这些为什么没有热起来，却被React抢了风头，这其中原理，我也答不上一二，感兴趣的可以去知乎搜罗搜罗。组件化的目的，说白了就是提高复用性，就像搞原生应用开发那样，自定义控件。但是，由于浏览器端的局限，只接受HTML和JS，CSS，其他高级语法它根本不鸟你，所以，web端的自定义控件要在浏览器那一层之上。为此，React推出了自己的Virtual Dom，它负责自定义控件到浏览器端的转换，而且还有一套高性能的差异化对比算法，来高效地更新。
     
     上面说的其实Angular也里都有，但Angular使用起来可就没那么简单了。深入下去的话，会遇到各种Service，Filter，Controller，Directive，Provider等等，光这些区别就让我们很头疼了，更不用说自定义组件里还有很多Scope的坑等着你呢？另外一点，Angular的自动绑定很不错，就是性能不是太好，当然，Angular还是不错的，哈哈。现在的[Angular2](http://www.angular2.com/)，做出了很多的改进，性能也提升不少，还是值得一试的
@@ -38,7 +38,7 @@ React给前端带来了什么？
     
     更多资源，参见[awesome react](https://github.com/enaqx/awesome-react)
     
-* 编码规范
+* 编码规范  
     如果用React的话，JSX结合ES6，写起来还是很爽的，兼容和编译的问题，交给webpack就好了。如果非要写CSS的话，SCSS，LESS，拿来就是，但我更推崇[react-style](https://github.com/js-next/react-style)，这俩个也不错[radium](https://github.com/FormidableLabs/radium)，[reactcss](http://reactcss.com/)，它们的好处嘛，来再看看[Pete Hunt大神怎么说](https://www.youtube.com/watch?v=VkTCL6Nqm6Y&feature=youtu.be)[对不住兄弟，这个也要翻墙]
     
     -  [ES6-style](https://github.com/gf-rd/es6-coding-style)
@@ -46,9 +46,9 @@ React给前端带来了什么？
 
 webpack又带来了什么呢？  
 
-* 包管理
+* 包管理  
     依赖管理一直是前端的痛，痛就要治，所以我们有了[Seajs](http://seajs.org/)，[Requirejs](http://requirejs.org)，[browserify](http://browserify.org)，至于什么[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)，[CMD](https://github.com/seajs/seajs/issues/242)，[CommonJS](http://wiki.commonjs.org/wiki/Modules/1.1.1)，可以先看看，我是比较喜欢commonjs，熟悉node的话都应该懂吧。webpack支持AMD和requirejs，国外的东西，就不要指望支持seajs了，😢。
-* 预处理
+* 预处理  
     预处理的工作是由一堆loader实现的，这点和grunt或者gulp的插件差不多，不同的是，时机和顺序。webpack要求必须又一个入口文件，然后按照入口文件里的引用去分析各个引入的文件，然后按照文件名后缀分配任务给各个loader。更高一层上，webpack也有插件，这些插件的生命周期贯穿整个webpack的运行时，所以才有了下面的优化。
 * 优化  
     对于优化，前端工程化例听到最多的是图片合并压缩，CSS，html压缩，JS合并合并等等，和Grunt,Gulp一样，webpack也能做，但webpack做的更好。依赖关系上的优化，是webpack亮点，这里也是压缩合并之外的难点所在，怎样更好的去除重复，以及合理合并公用资源，什么情况下要拆分，等等
