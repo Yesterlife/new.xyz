@@ -20,8 +20,7 @@ layout: home
                 <h2>A Front-End Engineer</h2>
                 <p>
                     Life is a struggle.
-                </p>
-                <p>
+                    <br/>
                     Go out for a walk, to enjoy the nature.
                 </p>
                 <div class="friends">
