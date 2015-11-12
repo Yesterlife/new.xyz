@@ -15,17 +15,17 @@ layout: home
         <ul class="artical-list">
             <li>
                 <div class="avatar">
-                    <img src="/images/me.jpg"/>
+                    <span></span>
                 </div>
                 <h2>A Front-End Engineer</h2>
-                <div class="title-desc">
+                <p>
                     Life is a struggle.
-                </div>
-                <div class="title-desc">
+                </p>
+                <p>
                     Go out for a walk, to enjoy the nature.
-                </div>
+                </p>
                 <div class="friends">
-                    <h3>Friends</h3>
+                    <h2>Friends</h2>
                     <div>
                         <a href="http://huangxuan.me/" class="friend-link">Hux Blog</a>
                     </div>
