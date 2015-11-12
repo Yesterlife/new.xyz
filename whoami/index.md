@@ -30,7 +30,7 @@ layout: home
                     <h3 class="text-center">Friends</h3>
                     <div class="text-center">
                         <a href="http://huangxuan.me/" class="friend-link">Hux Blog</a>
-                        <a href="http://ingf.github.io/" class="friend-link">IngF Blog</a>
+                        <a href="http://ingf.github.io/" class="friend-link">尹锋以为</a>
                     </div>
                 </div>
             </li>
