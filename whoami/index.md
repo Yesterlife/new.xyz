@@ -17,15 +17,18 @@ layout: home
                 <div class="avatar">
                     <span></span>
                 </div>
-                <h2>A Front-End Engineer</h2>
-                <p>
+                <h3 class="text-center">An front-end engineer in BeiJing</h3>
+                <p class="text-center">
                     Life is a struggle.
                     <br/>
                     Go out for a walk, to enjoy the nature.
+                    <br/>
+                    Wanna go fast, go alone. Wanna go far, go together
+                    <br/>
                 </p>
                 <div class="friends">
-                    <h2>Friends</h2>
-                    <div>
+                    <h3 class="text-center">Friends</h3>
+                    <div class="text-center">
                         <a href="http://huangxuan.me/" class="friend-link">Hux Blog</a>
                     </div>
                 </div>
