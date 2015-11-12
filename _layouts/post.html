@@ -12,6 +12,20 @@ layout: default
         body { background:#fff; }
     }
 
+    .avatar {
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+    }
+
+    .avatar img {
+        border-radius: 50%;
+        border: none;
+        margin: 0 auto;
+        width: 80px;
+        padding: 10px;
+    }
+
 </style>
 
 <div id="content">
@@ -40,11 +54,26 @@ layout: default
         {% endfor %}
         </ul>
 
-        <h2>Project</h2>
+        <h2>WhoAmI</h2>
         <ul class="artical-list">
-        {% for post in site.categories.project%}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
+            <li>
+                <div class="avatar">
+                    <img src="/images/me.jpg"/>
+                </div>
+                <h2>A Front-End Engineer</h2>
+                <div class="title-desc">
+                    Life is a struggle.
+                </div>
+                <div class="title-desc">
+                    Go out for a walk, to enjoy the nature.
+                </div>
+                <div class="friends">
+                    <h3>Friends</h3>
+                    <div>
+                        <a href="http://huangxuan.me/" class="friend-link">Hux Blog</a>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </div>
