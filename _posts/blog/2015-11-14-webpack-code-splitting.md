@@ -4,6 +4,7 @@ title: webpack code splitting
 category: blog
 description: async router and coding splitting
 ---
+![](/images/2015_11/cold.jpg)
 
 之前博客有提到过`React`和 `Webpack`，这哥俩是真哥俩
 
