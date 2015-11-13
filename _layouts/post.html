@@ -26,6 +26,12 @@ layout: default
         <h1 class="entry-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
         <p class="entry-date">{{ page.date|date:"%Y-%m-%d" }}</p>
         {{ content }}
+        <!-- disqus comment area -->
+        {% if site.disqus_username %}
+        <div class="comment">
+            <div id="disqus_thread"></div>
+        </div>
+        {% endif %}
     </div>
 
     <div class="sidenav">
@@ -52,9 +58,7 @@ layout: default
 
 {% if site.disqus_username %}
 
-<div class="comment">
-    <div id="disqus_thread"></div>
-</div>
+<!-- disqus comment script start -->
 <script>
     var disqus_config = function () {
         this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
@@ -71,4 +75,5 @@ layout: default
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
+<!-- disqus comment script end -->
 {% endif %}
