@@ -14,7 +14,9 @@ layout: default
 
     .link {
         border-bottom: 2px solid #efefef;
-        margin-right: 0 5px;
+        display: inline-block !important;
+        line-height: 20px;
+        margin-right: 5px;
         padding: 5px;
     }
 </style>
@@ -44,8 +46,9 @@ layout: default
         <h2>Friends</h2>
         <ul class="artical-list">
             <li>
-                <a href="http://huangxuan.me/" class="link">Hux Blog</a>
-                <a href="http://ingf.github.io" class="link">尹锋以为</a>
+                {% for friend in site.fiends %}
+                <a href="{{ friend.link }}" class="link">{{ friend.name }}</a>
+                {% endfor %}
             </li>
         </ul>
     </div>
@@ -61,8 +64,9 @@ layout: default
 </div>
 <script>
     var disqus_config = function () {
+        this.page.category = "{{ page.category }}";
         this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
-        this.page.identifier = {{ page.id }}; //  page's unique identifier variable
+        this.page.identifier = "{{ page.id }} - {{ page.title }}"; //  page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

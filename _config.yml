@@ -20,9 +20,9 @@ disqus_username: dhong-co
 
 # friends settings
 friends: [{
-    title: 'Hux Blog',
+    name: 'Hux Blog',
     link: 'http://huangxuan.me'
 },{
-    title: '尹锋以为',
+    name: '尹锋以为',
     link: 'http://ingf.github.io'
 }]

@@ -29,8 +29,9 @@ layout: home
                 <div class="friends">
                     <h3 class="text-center">Friends</h3>
                     <div class="text-center">
-                        <a href="http://huangxuan.me/" class="friend-link">Hux Blog</a>
-                        <a href="http://ingf.github.io/" class="friend-link">尹锋以为</a>
+                        {% for friend in site.friends %}
+                        <a href="{{ friend.link }}" class="friend-link">{{ friend.name }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </li>
