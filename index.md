@@ -25,13 +25,15 @@ layout: home
             <div class="avatar">
                 <span></span>
             </div>
-            <h3 class="text-center">An front-end engineer in BeiJing</h3>
+            <h3 class="text-center">An Front-End</h3>
             <p class="text-center">
                 Life is a struggle.
                 <br/>
-                Go out for a walk, to enjoy the nature.
+                Wanna go fast, go alone.
                 <br/>
-                Wanna go fast, go alone. Wanna go far, go together
+                Wanna go far, go together.
+                <br/>
+                Go out for a walk, to enjoy the nature.
                 <br/>
             </p>
             <div class="friends">
