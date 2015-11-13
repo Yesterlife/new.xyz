@@ -17,16 +17,13 @@ layout: home
                 <div class="avatar">
                     <span></span>
                 </div>
-                <h3 class="text-center">AN FE_GITHUBBER @BEI_JING</h3>
-                <p class="text-center">
-                    The life of a programmer is mostly a never-ending struggle.<br/>
-
-                    Solving problems in an always-changing technical landscape means that programmers are always learning new things.<br/>
-
-                    In this case, “learning new things” is a euphemism for “battling against our own ignorance.”<br/>
-
-                    Even if a programmer is just fixing a bug in code that uses a familiar technology, sometimes the software we create is so complex that simply understanding what is going on can take an entire day. If you write code, you will struggle.<br/>
+                <h3 class="text-center">FE@BEI_JING</h3>
+                <blockquote>
+                <p>
+Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it.
                 </p>
+                <p style="text-align:right">-- Steve Jobs</p>
+                </blockquote>
                 <div class="friends">
                     <h3 class="text-center">Friends</h3>
                     <div class="text-center">
