@@ -5,11 +5,11 @@ category: blog
 description: async router and coding splitting
 ---
 
-之前博客有提到过`React`和 `Webpack`，这哥俩是真哥俩
+之前博客有提到过*React*和 *Webpack*，这哥俩是真哥俩
 
 废话少说，今天咱们聊聊 [Webpack Code Splitting](https://webpack.github.io/docs/code-splitting.html)
 
-如果你对`Webpack`和`React`还不熟悉的话，赶紧去看～
+如果你对*Webpack*和*React*还不熟悉的话，赶紧去看～
 
 熟悉上述的人都知道，对于React之类的SPA应用来说，如果只是简单的将资源进行打包的话，你会得到一个230k（压缩后）左右的文件，即使只是简单的写了个DEMO而已。这样，肯定是不行的，那如何进行拆分呢？
 
@@ -17,12 +17,12 @@ description: async router and coding splitting
 
 对于前端，带宽是个网站性能的瓶颈，在有限带宽的情况下，怎么优化网页的性能，说白了，就是页面加载的速度。单从资源大小上来讲，是不是越小越快呢？那，在资源大小限定的情况下，又改如何缩短资源加载时间呢？
 
-对于基于`React`的SPA应用来说，资源大体可分为两种： 
+对于基于*React*的SPA应用来说，资源大体可分为两种： 
  
 *  *基础类库*  
-   `react`、`react-dom`、`react-router-component`、`redux`等等。这些是所有页面公用的基础资源，它们不会经常变动，可以做永久缓存
+   *react*、*react-dom*、*react-router-component*、*redux*等等。这些是所有页面公用的基础资源，它们不会经常变动，可以做永久缓存
 *  *公用组件*  
-   `iscroll`、`Slider`、`Pagination`、`Modal`、`Toast`等等。这些是可选资源，供不同页面使用
+   *iscroll*、*Slider*、*Pagination*、*Modal*、*Toast*等等。这些是可选资源，供不同页面使用
 *  *业务相关*  
    这些和公司业务绑定的比较紧密，没法做到公用，页面间差异较大。
    
@@ -62,11 +62,11 @@ description: async router and coding splitting
     });
     ```
     
-    如果使用最新版的 [react-router](https://github.com/rackt/react-router) 的话，要将页面按照路由拆分成按需加载的就简单多了，按照官方文档一步步来就好了哈。这次我是用的是 [react-router-component](https://github.com/STRML/react-router-component)，`react-router`每次升级变动忒大，😂😂。那又怎么改造react-router-component为异步Router呢？
+    如果使用最新版的 [react-router](https://github.com/rackt/react-router) 的话，要将页面按照路由拆分成按需加载的就简单多了，按照官方文档一步步来就好了哈。这次我是用的是 [react-router-component](https://github.com/STRML/react-router-component)，*react-router*每次升级变动忒大，😂😂。那又怎么改造react-router-component为异步Router呢？
 
     造轮子的事，还是少做为好。于是，我就找啊找，找啊找，终于找到了好朋友 😂😂  
     
-    [看这里，看这里](https://github.com/QianmiOpen/react-async-router)，这里虽然用的是`react-router`，但把这个方案移步至`react-router-component`也是可以的。  
+    [看这里，看这里](https://github.com/QianmiOpen/react-async-router)，这里虽然用的是*react-router*，但把这个方案移步至*react-router-component*也是可以的。  
     
     ```   
     import React from 'react'
@@ -103,7 +103,7 @@ description: async router and coding splitting
 
     ```  
     
-    这里的 [bundle-loader](https://github.com/webpack/bundle-loader) 用的就是上面所说的`require.ensure`，但对于UI组件，还需要稍微做下设置，没错，就是那个 `AsyncLoader`  
+    这里的 [bundle-loader](https://github.com/webpack/bundle-loader) 用的就是上面所说的*require.ensure*，但对于UI组件，还需要稍微做下设置，没错，就是那个 *AsyncLoader*  
     
     ```
     import React from 'react'
@@ -138,7 +138,7 @@ description: async router and coding splitting
     ```
     这样设置后，运行webpack的话，就会发现，这里每个页面都会被单独打包成一个bundle了。
     
-    那，如果不想写这个 `AsyncLoader` ，还有更便捷的：   
+    那，如果不想写这个 *AsyncLoader* ，还有更便捷的：   
     
     ```
     import Home from './home'
@@ -180,18 +180,17 @@ description: async router and coding splitting
         minChunks: 3 //extract a common modules shared within 3 or more pages
     }),
     ```
-    `children`指代从所有异步bundle里提取共用资源。  
-    `minSize`指代只有提取的共用资源大于30k，再生成filename指定的文件  
-    `minChunks`指代只有该资源在 >=3 个页面间被引用的话，才会被打包到commons文件中。
+    *children*指代从所有异步bundle里提取共用资源。  
+    *minSize*指代只有提取的共用资源大于30k，再生成filename指定的文件  
+    *minChunks*指代只有该资源在 >=3 个页面间被引用的话，才会被打包到commons文件中。
     
     不提取各页面的公用组件时：
-    ![](/images/2015_11/before_common.jpg)  
+    ![](/images/2015_11/before-common.jpg)  
     提取各页面的共用组件后：
-    ![](/images/2015_11/after_common.jpg) 
+    ![](/images/2015_11/after-common.jpg) 
     
 
 [DEMO SOURCE](https://github.com/Duan112358/pepper)  
-    
 
 哦，还有一篇在路上: [关于 CSS Modules](https://github.com/css-modules/css-modules)
 
@@ -199,3 +198,5 @@ description: async router and coding splitting
 没睡的晚安！  
   
 帅醒的早～   
+
+*post@$Sat Nov 14 03:13:40 CST 2015*
