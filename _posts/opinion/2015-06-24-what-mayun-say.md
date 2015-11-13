@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 马云语录
-category: blog
+category: opinion
 description: 马云语录
 ---
 

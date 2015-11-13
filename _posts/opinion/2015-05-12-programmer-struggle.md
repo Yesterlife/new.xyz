@@ -1,6 +1,6 @@
 ---
 layout: post
-category: blog
+category: opinion
 title: Programmer Struggle.
 description: life is a struggle.
 ---

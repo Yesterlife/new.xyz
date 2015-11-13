@@ -1,6 +1,6 @@
 ---
 layout: post
-category: blog
+category: opinion
 title: 一起读《怪诞行为学》
 description: 没事读读书也挺好
 ---

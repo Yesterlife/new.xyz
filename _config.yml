@@ -10,3 +10,19 @@ title: dhong.co
 url: http://dhong.co
 feed: /atom.xml
 author_info: <a href="http://dhong.co/">Duan Hong</a>
+
+# tags settings
+featured-tags: true # wheather or not using feature-tags
+featured-condition-size: 1 # A tag will be used if the size of it is more than this condition value
+
+# Disqus settings
+disqus_username: dhong-co
+
+# friends settings
+friends: [{
+    title: 'Hux Blog',
+    link: 'http://huangxuan.me'
+},{
+    title: '尹锋以为',
+    link: 'http://ingf.github.io'
+}]

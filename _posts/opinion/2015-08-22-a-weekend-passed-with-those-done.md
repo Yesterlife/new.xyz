@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 这周末宅了
-category: blog
+category: opinion
 description: 好久没宅在家里写代码了...
 ---
 

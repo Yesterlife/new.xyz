@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 试着去触摸你的内心
-category: blog
+category: opinion
 description: 认识下自己
 ---
 

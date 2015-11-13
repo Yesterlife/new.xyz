@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 留给困惑时的自己
-category: blog
+category: opinion
 description: 谁的青春不迷茫
 ---
 
