@@ -19,13 +19,13 @@ layout: home
                 </div>
                 <h3 class="text-center">AN FE_GITHUBBER @BEI_JING</h3>
                 <p class="text-center">
-                    The life of a programmer is mostly a never-ending struggle.
+                    The life of a programmer is mostly a never-ending struggle.<br/>
 
-                    Solving problems in an always-changing technical landscape means that programmers are always learning new things.
+                    Solving problems in an always-changing technical landscape means that programmers are always learning new things.<br/>
 
-                    In this case, “learning new things” is a euphemism for “battling against our own ignorance.”
+                    In this case, “learning new things” is a euphemism for “battling against our own ignorance.”<br/>
 
-                    Even if a programmer is just fixing a bug in code that uses a familiar technology, sometimes the software we create is so complex that simply understanding what is going on can take an entire day. If you write code, you will struggle.
+                    Even if a programmer is just fixing a bug in code that uses a familiar technology, sometimes the software we create is so complex that simply understanding what is going on can take an entire day. If you write code, you will struggle.<br/>
                 </p>
                 <div class="friends">
                     <h3 class="text-center">Friends</h3>
