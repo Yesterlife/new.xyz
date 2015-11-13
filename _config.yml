@@ -2,7 +2,6 @@ auto: true
 
 markdown: rdiscount
 pygments: true
-google_analytics: true
 paginate: 8
 permalink: /:title
 
@@ -14,6 +13,9 @@ author_info: <a href="http://dhong.co/">Duan Hong</a>
 # tags settings
 featured-tags: true # wheather or not using feature-tags
 featured-condition-size: 1 # A tag will be used if the size of it is more than this condition value
+
+# google analytics settings
+ga_track_id: 'UA-57346517-1' # format UA-xxxxxx-xx
 
 # Disqus settings
 disqus_username: dhong-co
