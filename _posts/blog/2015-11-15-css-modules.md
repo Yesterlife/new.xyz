@@ -174,8 +174,8 @@ export default class Footer extends React.Component {
 
 上篇博文[webpack code spliting](http://dhong.co/webpack-code-splitting/)提到异步模块的问题以及解决方案。这里的allChunks就是为解决异步Chunks里的样式而设置的。我们知道，webpack不会主动分析异步Chunks里的依赖，其中的依赖也只是会打包到该Chunk中去，样式也是一样。那，如果不采用** {allChunks: true} **，结果如何呢？
 
-<p><img data-layzr="/images/2015_11/css-modules-html"/></p>
-<p><img data-layzr="/images/2015_11/css-modules-style"/></p>
+<p><img data-layzr="/images/2015_11/css-modules-html.jpg"/></p>
+<p><img data-layzr="/images/2015_11/css-modules-style.jpg"/></p>
 
 CSS的处理是正常的，但为什么没有将CSS映射到DOM中去呢？  
 
@@ -200,7 +200,7 @@ export default class ScopedSelectors extends Component {
 打印输出这里的style,发现是个空值，真是个奇怪的问题，那启用***{ allChunks: true }***为什就会有值了呢？这也忒奇怪了
 
 那CSS MODULES的实现究竟是怎么一回事呢？
-<p><img data-layzr="/images/2015_11/css-module-require"/></p>
+<p><img data-layzr="/images/2015_11/css-modules-require.jpg"/></p>
 正常情况下是导出了一个原样式和处理后样式的一个MAP映射，这也是可以想象得到的，那如果不去处理异步模块里的CSS引用，那没有任何样式MAP的输出也是理所当然的事了。
 
 可设置了{allChunks: true}之后为什么就可以了呢？这就是 [extract-text-webpack-plugin](https://github.com/webpack/extract-text-webpack-plugin) 的魔法所在吧，等我细细研究一番这和各位探讨下
