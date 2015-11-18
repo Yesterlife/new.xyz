@@ -197,7 +197,7 @@ export default class ScopedSelectors extends Component {
 };
 
 ```
-打印输出这里的style,发现是个空值，真是个奇怪的问题，那启用***{ allChunks: true }***为什就会有值了呢？这也忒奇怪了
+打印输出这里的styles,发现是个空值，真是个奇怪的问题，那启用***{ allChunks: true }***为什就会有值了呢？这也忒奇怪了
 
 那CSS MODULES的实现究竟是怎么一回事呢？
 <p><img data-layzr="/images/2015_11/css-modules-require.jpg"/></p>
