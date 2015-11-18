@@ -4,8 +4,6 @@ title: 又要跑马了
 category: opinion
 description: challenge your life
 ---
-#### 又要跑马了
-
 ![](/images/2015_11/challenge.jpg)
 
 没错，又要跑马了，这次是厦门。
