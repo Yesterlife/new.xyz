@@ -27,4 +27,7 @@ friends: [{
 },{
     name: '尹锋以为',
     link: 'http://ingf.github.io'
+},{
+    name: "Rocky's blog",
+    link: 'http://rockywu.me/'
 }]
