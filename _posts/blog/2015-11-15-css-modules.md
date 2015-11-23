@@ -209,11 +209,17 @@ export default class ScopedSelectors extends Component {
 
 所以，上次代码拆分的DEMO暂且没有采用CSS MIDODULES的方案，至少在该问题解决之前。
 
-如果你有更好的方案，欢迎留言～
+如果你有更好的方案，欢迎留言～  
 
-同样[DEMO](https://github.com/Duan112358/pepper)大餐奉上，谢谢光临
+```
+update@Mon Nov 23 09:02:10 CST 2015
+```
 
-客观慢走，不送～
+客官，你来晚了，上述**DEMO**已被移除，还请见谅。  
+
+上述问题已经找到原因，如果你已COPY过DEMO，更新`css-loader`即可。 
+
+如不介意，[慢品此作](https://github.com/Huxpro/temp_repo/tree/css-modules)   
 
 ```
 post@Sun Nov 15 01:25:19 CST 2015

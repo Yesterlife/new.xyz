@@ -191,8 +191,6 @@ description: async router and coding splitting
     ![](/images/2015_11/after-common.jpg) 
     
 
-[DEMO SOURCE](https://github.com/Duan112358/pepper)  
-
 哦，还有一篇在路上: [关于 CSS Modules](https://github.com/css-modules/css-modules)
 
 没睡的晚安！  
