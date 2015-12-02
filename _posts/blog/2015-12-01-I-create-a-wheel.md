@@ -225,7 +225,7 @@ $ pepper init test; // then to have a try in test dir
 
 15年的最后一个月，简单回顾了下这一年里自己在技术领域学到了什么：
 
-*  React, Flux, Browserify (14年12月份 ~ now)这个接触最早
+*  React, Flux, Browserify
 *  Webpack, ES6, Redux
 *  各种上述组合，前端乱炖
 
