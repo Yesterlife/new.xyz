@@ -5,8 +5,6 @@ category: opinion
 description: 这是篇译稿，嗯，就这样
 ---
 
-### “高能人士的18项成功之道”不适用于我们大众
-
 >  [Why “18 Things Mentally Strong People Do” Doesn’t Apply to Most of Us](https://medium.com/@sarahbeauchemin/why-18-things-mentally-strong-people-do-doesn-t-apply-to-most-of-us-c40694eaa6b1#.ym6d8lpl8)  
 
 ![Copyright Sarah Beauchemin](/images/2015_12/mental_1.jpg)
