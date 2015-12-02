@@ -39,8 +39,7 @@ $:  pepper
    作为一个工具，尽可能的减少外部依赖。之前的项目结构是这样的：  
    
    ```
-    .
-    ├── /dist/                              
+    .                             
     ├── /node_modules/
     ├── /src/
     │   ├── /pages/
@@ -57,8 +56,7 @@ $:  pepper
     分离后是这样的
     
     ```
-    .
-    ├── /dist/                              
+    .                            
     ├── /node_modules/
     ├── /src/
     │   ├── /pages/
@@ -103,7 +101,7 @@ $:  pepper
       }
     ```
      
-    这样依赖，项目本身的依赖就很少了： 
+    这样的话，项目本身的依赖就很少了： 
      
     ```
     // package.json
@@ -124,7 +122,8 @@ $:  pepper
     }
     ```
   2.  开发调试  
-      *  初始化一个新项目  
+  
+      *  初始化新项目  
       
           ```
         $  pepper init [project_name]
@@ -160,9 +159,9 @@ $:  pepper
      *  生成新组件  
      
         ```
-        $  pepper page [new_page_name]
+        $  pepper component [new_page_name]
        
-        // exec pepper page Header 
+        // exec pepper component Header 
        
         ├── /src/
         │   ├── /components/
@@ -199,35 +198,32 @@ $:  pepper
   
       *  流程引导，类似YO  
       
-      ```
-      $:  pepper
-        ?  选择要执行的任务: (使用方向键选择)
-        >  初始化新项目
-           生成新页面模版
-           生成新组件模版
-           开发调试
-           项目打包
-                      
-      ```
-
       *  命令行参数   
       
-      ```
-      $  pepper                          // help ?
-      $  pepper init [app_name]          // create seed proj
-      $  pepper page [page_name]         // create new page
-      $  pepper component [comp_name]    // create new component
-      $  pepper start                    // debug start
-      $  pepper test                     // test mode build
-      $  pepper pre                      // pre mode build
-      $  pepper release                  // release mode build
-      ```
+          ```
+          $  pepper                          // help ?
+          $  pepper init [app_name]          // create seed proj
+          $  pepper page [page_name]         // create new page
+          $  pepper component [comp_name]    // create new component
+          $  pepper start                    // debug start
+          $  pepper test                     // test mode build
+          $  pepper pre                      // pre mode build
+          $  pepper release                  // release mode build
+          ```
 
 这是继上个月之后的又一版优化。不知道为啥，就是没心思仔细研读[yeoman](http://yeoman.io)的文档，学习如何定义自己的Generator，索性自己动手造了个轮子。
 
+那如何使用呢？  
+
+```
+$ npm install we-pepper -g;// make sure webpack already install globally 
+ 
+$ pepper init test; // then to have a try in test dir 
+```
+
 ---
 
-15年的最后一个月，简单回顾了下这一年里自己在技术领域学到了什么，发现好少呀：
+15年的最后一个月，简单回顾了下这一年里自己在技术领域学到了什么：
 
 *  React, Flux, Browserify (14年12月份 ~ now)这个接触最早
 *  Webpack, ES6, Redux
