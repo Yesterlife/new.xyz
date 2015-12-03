@@ -210,7 +210,7 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 .post-footer {
     position: relative;
     margin: 6rem 0 0 0;
-    padding: 6rem 0 0 0;
+    padding: 4rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
 .author-image {
@@ -245,9 +245,9 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     background-image: url('/images/me.jpg');
 }
 
-.post-footer p {
-    margin: 1rem 0;
-    font-size: #3A4145;
+.post-footer .author {
+    margin-bottom: 2rem;
+    font-color: #3A4145;
     text-align: center;
 }
 
