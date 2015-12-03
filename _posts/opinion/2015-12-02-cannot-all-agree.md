@@ -57,7 +57,7 @@ description: 这是篇译稿，嗯，就这样
     
     这点我也同意
      
-11. 他们享受独自的时光，不畏孤独 
+11. 他们享受独自的时光，不畏孤独   
                              话说，我就是在孤独中成长的。我喜欢我的搭档和朋友，但我更喜欢一个人独自呆着。它有助于我成长，思考和自省。但对于很多人害怕他的人而言，理由也因人而异，有一条成为了全社会的普遍现象，促生了“社交综合征（他们整天盯着社交网络，害怕错过些什么）”。[数字原住民](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjx9dedjr3JAhWBwZQKHbSMDpAQFggcMAA&url=%68%74%74%70%73%3a%2f%2f%65%6e%2e%77%69%6b%69%70%65%64%69%61%2e%6f%72%67%2f%77%69%6b%69%2f%44%69%67%69%74%61%6c%5f%6e%61%74%69%76%65&usg=AFQjCNG9dlwlJ0yaYabIgQW3x8IJ8BfsZw)应该更能体会这点，他们就是在这样的紧密连接的世界中长大。[尝试去接受孤独](http://www.becomingminimalist.com/the-danger-of-neglecting-time-alone/)，它有助于我们的生理和心理健康。
     
 12. 他们时刻准备着通过自己的努力去获得成功。他们不认为世界亏欠自己什么
