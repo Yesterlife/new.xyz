@@ -26,6 +26,15 @@ layout: default
         <h1 class="entry-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
         <p class="entry-date">{{ page.date|date:"%Y-%m-%d" }}</p>
         {{ content }}
+        <div class="post-footer">
+            <figure class="author-image">
+                <a class="img" href="/about"><span class="hidden">Duan Hong</span></a>
+                <section class="author">
+                    <h4><a href="/">Duan Hong</a></h4>
+                    <p> Enjoy the nature. </p>
+                </section>
+            </figure>
+        </div>
         <!-- disqus comment area -->
         {% if site.disqus_username %}
         <div class="comment">
