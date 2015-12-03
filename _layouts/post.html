@@ -54,7 +54,9 @@ layout: default
 </div>
 
 <script>
-    basket.require({ url: '/js/lazyload.js' }, { url: '/js/post.js' })
+    basket.require({ url: '/js/jquery-1.7.1.min.js' }).then(function(){
+        basket.require({ url: '/js/lazyload.js' }, { url: '/js/post.js' })
+    });
 </script>
 
 {% if site.disqus_username %}

@@ -5,5 +5,7 @@ layout:           default
 {{ content }}
 
 <script type="text/javascript">
-    basket.require({url: '/js/home.js'})
+    basket.require({ url: '/js/jquery-1.7.1.min.js' }).then(function(){
+        basket.require({url: '/js/home.js'})
+    })
 </script>
