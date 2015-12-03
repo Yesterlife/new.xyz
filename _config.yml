@@ -29,5 +29,11 @@ friends: [{
     link: 'http://ingf.github.io'
 },{
     name: "Rocky's blog",
-    link: 'http://rockywu.me/'
+    link: "http://rockywu.me/"
+},{
+    name: "Alvie's Blog",
+    link: "http://alvie.net"
+},{
+    name: "Leo Shang 的 BLOG",
+    link: "http://shangliuyan.github.io"
 }]
