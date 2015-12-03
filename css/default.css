@@ -23,6 +23,7 @@ q:before,q:after {content:'';}
 sup{vertical-align:text-top;}
 sub{vertical-align:text-bottom;}
 
+.hidden { display: none; }
 .clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
 .clearfix{zoom:1;}
 body .hide{display:none;}
@@ -232,10 +233,12 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 }
 
 .author-image .img {
-    position: relative;
+    position: absolute;
+    top: 5px;
+    left: 5px;
     display: block;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background-size: cover;
     background-position: center center;
     border-radius: 100%;
@@ -244,8 +247,11 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 
 .post-footer p {
     margin: 1rem 0;
-    font-size: 1.4rem;
-    line-height: 1.75rem;
+    font-size: #3A4145;
+    text-align: center;
+}
+
+.text-center {
     text-align: center;
 }
 
