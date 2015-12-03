@@ -247,7 +247,9 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 
 .post-footer .author {
     margin-bottom: 2rem;
-    font-color: #3A4145;
+    color: #3A4145;
+    font-style: italic;
+    text-transform: uppercase;
     text-align: center;
 }
 
