@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/default.css" type="text/css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="alternate" type="application/atom+xml" title="Recent Entries" href="{{ site.feed }}" />
-    <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/js/basket.js" type="text/javascript"></script>
     <style type="text/css">
         .avatar {
             width: 100px;
@@ -63,8 +63,8 @@
 
     {{ content }}
 
-    <script type="text/javascript">
-        $(function(){
+    <script>
+        basket.require({ url: '/js/jquery-1.7.1.min.js'}).then(function(){
             $('.home-follow').click(function(e){
                 e.preventDefault();
 
@@ -75,6 +75,7 @@
                 }
             });
         })
+    </script>
     </script>
     {% if site.ga_track_id %}
     <script>
