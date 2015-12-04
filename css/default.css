@@ -163,10 +163,12 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
         float: none;
         width: initial;
         padding: initial;
+        box-shadow: none;
     }
     .sidenav a {
         color: #4A75B5;
     }
+    .sidenav h2 { text-align: center; }
     .entry {float:none;width:auto;background:transparent;padding:0;box-shadow:none;}
 
     .index-content .aside { position:relative; width:100%; height:300px; max-width:none; }
@@ -190,10 +192,12 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
         float: none;
         width: initial;
         padding: initial;
+        box-shadow: none;
     }
     .sidenav a {
         color: #4A75B5;
     }
+    .sidenav h2 { text-align: center; }
     .entry {float:none;width:auto;background:transparent;padding:0;box-shadow:none;}
     #content {width:85%;margin:100px auto 50px; }
 }
