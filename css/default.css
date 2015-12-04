@@ -264,6 +264,7 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 .show_comments span{
     border-bottom: 1px solid #4A75B5;
     padding: 5px;
+    cursor: pointer;
 }
 
 .text-center {
