@@ -253,6 +253,13 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     text-align: center;
 }
 
+.show_comments {
+    display: block;
+    margin: 2rem auto;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .text-center {
     text-align: center;
 }

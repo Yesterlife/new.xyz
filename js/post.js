@@ -36,6 +36,22 @@ $(document).ready(function(){
         }
     });
 
+    $('.show_comments').on('click', function(){
+        $(this).hide();
+        show_disqus();
+    });
+
+    function show_disqus() {
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//{{ site.disqus_username }}.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    }
+
     $.getScript('/js/prettify/prettify.js',function(){
         prettyPrint();
     });

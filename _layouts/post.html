@@ -37,6 +37,7 @@ layout: default
         <!-- disqus comment area -->
         {% if site.disqus_username %}
         <div class="comment">
+            <a class="show_comments" href="javascript:void(0)"> Wanna to say something -> </a>
             <div id="disqus_thread"></div>
         </div>
         {% endif %}
@@ -71,18 +72,10 @@ layout: default
 
 <!-- disqus comment script start -->
 <script>
-    var disqus_config = function () {
-        this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
-        this.page.identifier = "{{ page.id }} - {{ page.title }}"; //  page's unique identifier variable
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-
-    s.src = '//{{ site.disqus_username }}.disqus.com/embed.js';
-
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
+        var disqus_config = function () {
+            this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
+            this.page.identifier = "{{ page.id }} - {{ page.title }}"; //  page's unique identifier variable
+        };
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
