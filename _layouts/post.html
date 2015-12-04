@@ -123,15 +123,12 @@ layout: default
         {% endif %}
         }
 
-        $.getScript('/js/prettify/prettify.js',function(){
-            prettyPrint();
-        });
-
         var layzr = new Layzr();
     }
 
-    basket.require({ url: '/js/jquery-1.7.1.min.js' }).then(function(){
+    basket.require({ url: '/js/jquery-1.7.1.min.js' }, { url: '/js/prettify/prettify.js' }).then(function(){
         basket.require({ url: '/js/lazyload.js' })
+        prettyPrint();
         dom_ready();
     });
 </script>
