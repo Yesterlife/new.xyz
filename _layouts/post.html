@@ -141,8 +141,9 @@ layout: default
     }
 
     basket.require({ url: '/js/jquery-1.7.1.min.js' }, { url: '/js/prettify/prettify.js' }).then(function(){
-        basket.require({ url: '/js/lazyload.js' })
-        dom_ready();
+        basket.require({ url: '/js/lazyload.js' }).then(function(){
+            dom_ready();
+        })
     });
 </script>
 
