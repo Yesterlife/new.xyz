@@ -22,6 +22,9 @@ disqus_username: dhong-co
 
 # friends settings
 friends: [{
+    name: '阮一峰',
+    link: 'http://www.ruanyifeng.com/blog/'
+},{
     name: 'Hux Blog',
     link: 'http://huangxuan.me'
 },{
@@ -36,4 +39,7 @@ friends: [{
 },{
     name: "Leo Shang 的 BLOG",
     link: "http://shangliuyan.github.io"
+},{
+    name: "Young Shook",
+    link: "http://youngshook.com/"
 }]
