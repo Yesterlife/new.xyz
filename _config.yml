@@ -25,16 +25,16 @@ friends: [{
     name: '阮一峰',
     link: 'http://www.ruanyifeng.com/blog/'
 },{
-    name: 'Hux Blog',
+    name: 'Hux',
     link: 'http://huangxuan.me'
 },{
     name: '尹锋以为',
     link: 'http://ingf.github.io'
 },{
-    name: "Rocky's blog",
+    name: "Rocky",
     link: "http://rockywu.me/"
 },{
-    name: "Alvie's Blog",
+    name: "Alvie",
     link: "http://alvie.net"
 },{
     name: "Leo Shang",
@@ -42,4 +42,7 @@ friends: [{
 },{
     name: "Young Shook",
     link: "http://youngshook.com/"
+},{
+    name: "Ziyao",
+    link: "http://ziyao.co"
 }]
