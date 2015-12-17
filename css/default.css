@@ -289,8 +289,9 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
 }
 
 .wechat-pay {
+    display: none;
     width: 80%;
-    margin: 10px auto;
+    margin: 30px auto -40px;
 }
 
 .text-center {
