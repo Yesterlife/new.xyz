@@ -273,7 +273,7 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     text-align: center;
 }
 
-.show_comments {
+.show_comments, .payme {
     display: block;
     margin-top: 4rem;
     text-transform: uppercase;
@@ -281,11 +281,16 @@ h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
     color: #4A75B5;
 }
 
-.show_comments span {
+.show_comments span, .payme span {
     border: 1px solid #4A75B5;
     border-radius: 30px;
     padding: 15px;
     cursor: pointer;
+}
+
+.wechat-pay {
+    width: 80%;
+    margin: 10px auto;
 }
 
 .text-center {

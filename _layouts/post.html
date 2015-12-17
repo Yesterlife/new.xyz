@@ -33,6 +33,10 @@ layout: default
             <section class="author">
                  life is a struggle
             </section>
+            <section class="payme">
+                <span>A cup of tea</span>
+                <img src="/images/payme.jpg" class="wechat-pay hidden">
+            </section>
         </div>
         <!-- disqus comment area -->
         {% if site.disqus_username %}
@@ -109,6 +113,10 @@ layout: default
             $(this).fadeOut(200);
             show_disqus();
         });
+
+        $('.payme').on('click', function() {
+            $(this).next().fadeIn(200);    
+        })
 
         function show_disqus() {
         {% if site.disqus_username %}
