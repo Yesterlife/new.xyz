@@ -35,7 +35,6 @@ layout: default
             </section>
             <section class="payme">
                 <span>A cup of tea</span>
-                <img src="/images/payme.jpg" class="wechat-pay hidden">
             </section>
         </div>
         <!-- disqus comment area -->
@@ -115,8 +114,7 @@ layout: default
         });
 
         $('.payme').on('click', function() {
-            $(this).fadeOut(200);
-            $(this).next().fadeIn(200);    
+            $(this).parent().html('<img src="/images/payme.jpg" class="wechat-pay">').fadeIn(200);
         })
 
         function show_disqus() {
