@@ -2,7 +2,7 @@
 layout: post
 category: opinion
 title: 别让这个城市，只留下你的青春
-description: 想家了。想家了？想家了，那就回去呀
+description: 想家了，就回去吧
 ---
 
 ![](/images/2016_02/wakeup.jpg)
@@ -31,7 +31,5 @@ description: 想家了。想家了？想家了，那就回去呀
 
 哎，想家了...
 
-> 想家了... 想家了？想家了，想家了，那就回去呀
-
-静静在哪？
+> 想家了，那就回去吧
 
