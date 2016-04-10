@@ -11,7 +11,7 @@ description: 一天很长，5年很短；长日漫漫，时光匆匆
 
 图片摄于2011年4月7日，大二暑假
 
-事情得从一个[众筹观影](http://tech.ifeng.com/a/20160122/41543371_0.shtml)说起：嗯，我看了<<[我的诗篇](https://mp.weixin.qq.com/s?__biz=MzAwMTIzNzE0MQ==&mid=403796473&idx=1&sn=c2d731e7a6977e05e11bc0863fe6ca91&scene=1&srcid=0306WIPzXbTXpk4y7l6FcplS&key=710a5d99946419d974d541ae525d3e3f458a9d1b2e1dc37294f3c52e2150c685004d98b45b5e8449967acfed3d99f397&ascene=0&uin=MjgxMTg3ODQ2MQ%3D%3D&devicetype=iMac+MacBookPro10%2C2+OSX+OSX+10.11+build(15A278b)>>，电影略压抑，但，这就是生活，是底层劳动者的倾诉。
+事情得从一个[众筹观影](http://tech.ifeng.com/a/20160122/41543371_0.shtml)说起：嗯，我看了<<[我的诗篇](https://mp.weixin.qq.com/s?__biz=MzAwMTIzNzE0MQ==&mid=403796473&idx=1&sn=c2d731e7a6977e05e11bc0863fe6ca91&scene=1&srcid=0306WIPzXbTXpk4y7l6FcplS&key=710a5d99946419d974d541ae525d3e3f458a9d1b2e1dc37294f3c52e2150c685004d98b45b5e8449967acfed3d99f397&ascene=0&uin=MjgxMTg3ODQ2MQ%3D%3D)>>，电影略压抑，但，这就是生活，是底层劳动者的倾诉。
 
 我这个人，比较感性，顾而感概万千，因为我也曾有过类似的工作经历：题图的几个人，乃患难之交，特别感谢那段一起走过的日子，那是目前从事过的最难忘的工作。
 
