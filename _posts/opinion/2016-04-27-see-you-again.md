@@ -5,7 +5,7 @@ title: 在梦里遇见你
 description: 奇怪的梦里，遇见了你
 ---
 
-![](/images/2016_01/see-you.jpg)
+![](/images/2016_04/see-you.jpg)
 
 早上醒来，残留着梦的片断
 
