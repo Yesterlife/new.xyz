@@ -632,6 +632,13 @@ $border-color: #29cc6d;
 
         this.props.actions.fetchMovies() // use default actor name
     }
+    
+    // resort previous value from store
+    componentDidMount() {
+        let { sort, search } = this.props.home.filter;
+        this.refs.select.value = sort;
+        this.refs.input.value = search;
+    }
 
     onChangeSort(e) {
         console.log(e.target.value);
@@ -643,6 +650,7 @@ $border-color: #29cc6d;
         this.props.actions.filterMovies({ search: e.target.value })
     }
 
+    // filter and sort before render
     filterAndSortMovies(movies) {
         let { sort, search } = this.props.home.filter
         console.log(sort, search);
@@ -664,7 +672,9 @@ $border-color: #29cc6d;
         return (
             <div className='Movies'>
                 <div className="Movies__Header">
-                    <select onChange={this.onChangeSort.bind(this)} className="Movies__Header__Select">
+                    <select onChange={this.onChangeSort.bind(this)}
+                         ref="select"
+                         className="Movies__Header__Select">
                         <option value="default">default</option>
                         <option value="show_title">Title</option>
                         <option value="rating">Rating</option>
@@ -672,6 +682,7 @@ $border-color: #29cc6d;
                     </select>
                     <input className="Movies__Header__Input"
                         onChange={this.onChangeSearch.bind(this)}
+                        ref="input"
                         placeholder="按名称筛选"/>
                 </div>
                 <div className="Movies__List">
@@ -751,3 +762,17 @@ export default (state = initState, action) => {
 
 ![](images/2016_04/sort.gif)
 
+#### 小结
+到现在，redux 的常用功能都已经展现在了你的面前。从触发 action， reducer 按照类别处理收到的 action, 更新 state 中过时的数据，store 拿到新数据后重新映射到 关联的组件上，从而触发组件的重新渲染。看起来没什么问题了。
+但是，当我们在切换页面的时候，随着 action 的触发，所有的这些条件都要重新再来，即使什么条件都没变。
+
+![](images/2016_04/rerender.gif)
+
+这也意味着，render 之前所做的所有操作的重复，那我们有没有办法缓存已经计算过的结呢？
+这个问题，别人早已经想到了，redux 的官方文档中就有提及。
+
+> In case you are worried about mapStateToProps creating new objects too often, you might want to learn about [computing derived data](http://redux.js.org/docs/recipes/ComputingDerivedData.html) with [reselect](https://github.com/rackt/reselect).
+
+![](images/2016_04/utilities.jpg)
+
+看到这里，倍感欣慰。就 react 而言，数据流的问题，促使了 redux 的产生，同样， redux 的流行，更是催生了周边生态的蓬勃发展。对于某些问题，前人铺垫，后人乘凉，正如程序员一族，离不开 Google 的原因也在于此。
