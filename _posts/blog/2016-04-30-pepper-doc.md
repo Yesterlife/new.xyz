@@ -166,24 +166,6 @@ description: 都说太复杂了，难道真是这个样子吗
   template.favicon     | 模版 `favicon`, 默认为空                                                                                   
   template.path:       | 设定自定义模版的的路径，会替换默认模版,可选。设置后会忽略上面五项模版设置. 有语法要求, 参考                
 
-**API Mock && API Proxy**  
-   
-   修改`mock.js`，配置如下  
-
-
-   ```  
-    var config =  [{
-        path: '/path_to_proxy', // only string, no regex
-        proxy: 'http://example.com',         // http://example.com
-    }];
-
-    // export your mock config
-    module.exports = config;
-
-   ```
-
-   `Pepper`会读取该文件，将上述配置加入启动的express服务中，更多数据格式参见[mockjs](http://mockjs.com)
-
 ### Directory
 
 ```
