@@ -45,4 +45,4 @@ description: 简历
 ##### 标签  
 `Node.JS` `React` `马拉松`
 
-[下载简历](//profile/myprofile.pdf)
+[下载简历](http://dhong.co/profile/myprofile.pdf)
