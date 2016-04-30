@@ -234,7 +234,8 @@ description: 都说太复杂了，难道真是这个样子吗
 
 ##### template.html
 
- ```
+ <pre>
+ <code>
    <!DOCTYPE html>
    <html>
      <head>
@@ -263,7 +264,8 @@ description: 都说太复杂了，难道真是这个样子吗
        {% } %}
      </body>
    </html>
-  ```
+  </code>
+  </pre>
 
 **API Mock && API Proxy**  
    
