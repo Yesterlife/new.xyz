@@ -8,8 +8,6 @@ description: 都说太复杂了，难道真是这个样子吗
 [![NPM Version](http://img.shields.io/npm/v/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
 [![NPM Downloads](https://img.shields.io/npm/dm/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
 
-### Start
-
 *  环境依赖
 `nodejs` , `npm`
 
@@ -23,10 +21,8 @@ description: 都说太复杂了，难道真是这个样子吗
 
     ```
     pepper init [project_name] # create a starter project
-    ```
-    执行该命令会创建一个 `project_name` 项目，结构如下
-    
-    ```
+
+    # 执行该命令会创建一个 `project_name` 项目，结构如下
     .
     ├── /dist/                              # 代码打包目录
     ├── /node_modules/                      # node依赖包
@@ -74,7 +70,7 @@ description: 都说太复杂了，难道真是这个样子吗
    ```
    然后选择你要执行的任务就可以了
 
-### Configuration  
+##### 详细配置  
 
 ```
 {
@@ -130,15 +126,6 @@ description: 都说太复杂了，难道真是这个样子吗
 ```
 **注意**：路径的配置建议使用 `//`开头，省去协议名字 `http:`，这主要是为了向 https 迁移，因为`//`资源，会使用和当前网页相同的协议加载资源。
 
-程序有四种模式:
-*  start                开发调试, 静态资源内存缓存, 启express服务，可自定义端口和host，hot reload
-*  test                 测试模式，不启服务，不压缩 
-*  pre                  预发布，不启服务，压缩
-*  release              发布模式, 不启服务，压缩
-
-
-
-
   key                  | 说明                                                                                                       
   ----                 |----------
   host                 | 调试IP, 默认0.0.0.0                                                                                        
@@ -164,7 +151,7 @@ description: 都说太复杂了，难道真是这个样子吗
   template.description | 模版 `meta description`, 默认为空                                                                          
   template.viewport    | 模版 `meta viewport`, 默认`width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no`         
   template.favicon     | 模版 `favicon`, 默认为空                                                                                   
-  template.path:       | 设定自定义模版的的路径，会替换默认模版,可选。设置后会忽略上面五项模版设置. 有语法要求, 参考                
+  template.path:       | 设定自定义模版的的路径，会替换默认模版,可选。设置后会忽略上面五项模版设置. 有语法要求, 参考index.template.html 
 
 ### Directory
 
@@ -195,5 +182,13 @@ description: 都说太复杂了，难道真是这个样子吗
          ...
      })
      ```
-g.js`中指定了'template.path'选项, `pepper`将采用指定的HTML模版，注意要满足上文的格式要求  
 
+    - 程序有四种模式:
+    
+构建模式            |  说明
+----                |----
+start               |开发调试, 静态资源内存缓存, 启express服务，可自定义端口和host，hot reload
+test                |测试模式，不启服务，不压缩 
+pre                 |预发布，不启服务，压缩
+release             |发布模式, 不启服务，压缩
+    
