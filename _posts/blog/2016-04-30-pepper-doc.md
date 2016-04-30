@@ -232,41 +232,6 @@ description: 都说太复杂了，难道真是这个样子吗
   template.favicon     | 模版 `favicon`, 默认为空                                                                                   
   template.path:       | 设定自定义模版的的路径，会替换默认模版,可选。设置后会忽略上面五项模版设置. 有语法要求, 参考                
 
-##### template.html
-
- <pre>
- <code>
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="utf-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-       <meta name="keywords" content="webpack, react, es6, build tools"/>
-       <meta name="description" content="webpack auto build tools intergated with one command"/>
-       <meta name="apple-mobile-web-app-capable" content="yes"/>
-       <meta name="format-detection" content="telephone=no"/>
-       {% if (o.htmlWebpackPlugin.files.favicon) { %}
-       <link rel="shortcut icon" href="{%=o.htmlWebpackPlugin.files.favicon%}">
-       {% } %}
-       {% for (var css in o.htmlWebpackPlugin.files.css) { %}
-       <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
-       {% } %}
-       {% if(o.chunkManifest) { %}
-       <script>{%#o.chunkManifest%};</script>
-       {% } %}
-       <title>frontend-build-tools</title>
-     </head>
-     <body>
-         <div id="app">
-         </div>
-       {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-       <script type="text/javascript" src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry%}"></script>
-       {% } %}
-     </body>
-   </html>
-  </code>
-  </pre>
-
 **API Mock && API Proxy**  
    
    修改`mock.js`，配置如下  
@@ -295,13 +260,8 @@ description: 都说太复杂了，难道真是这个样子吗
             }
         }
     }, {  // example proxy config
-        path: '/path_to_proxy',
+        path: '/path_to_proxy', // only string, no regex
         proxy: 'http://example.com',         // http://example.com
-        changeOrigin: true,              // default true
-        pathRewrite: {                   // omit it if not change  
-            '^/old/path': '/new/path'
-        },
-        ws: true // switch for websocket // default true
     }];
 
     // export your mock config
