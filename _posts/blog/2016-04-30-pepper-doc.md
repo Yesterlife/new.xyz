@@ -162,16 +162,15 @@ template.path:       | 设定自定义模版的的路径，会替换默认模版
 
   -  全局变量  
 
- `pepper.config.js`中配置的`globals`中的配置将在代码中将以全局变量'UPPER_CASE'的形式导出 ，例如API和STATIC
+ `pepper.config.js`中配置的`globals`中的配置将在代码中将以全局变量'UPPER_CASE'的形式导出 ，例如API和STATIC  
 
-
- ```
- console.log(API) // pepper.config.js中的api[MODE]设置,注意使用环境
- Reqwest({
-     url: API + '/your_sub_url',
-     ...
- })
- ```
+```
+console.log(API) // pepper.config.js中的api[MODE]设置,注意使用环境
+Reqwest({
+ url: API + '/your_sub_url',
+ ...
+})
+```
   -  程序有四种模式  
 
 构建模式            |  说明
