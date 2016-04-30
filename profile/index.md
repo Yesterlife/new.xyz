@@ -4,8 +4,7 @@ title: 段宏的简历
 description: 简历
 ---
 
-> 男/ 本科 / 三年工作经验 / duan112358@gmail.com   
-
+> 男 / 本科 / 三年工作经验 / duan112358@gmail.com   
 > 工作岗位：Javascript ／ 前端 工程师
 
 ### 教育经历
@@ -45,3 +44,5 @@ description: 简历
  
 ##### 标签  
 `Node.JS` `React` `马拉松`
+
+[下载简历](//profile/myprofile.pdf)
