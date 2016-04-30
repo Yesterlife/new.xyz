@@ -510,3 +510,244 @@ export default class Movies extends React.Component {
 
 ![](images/2016_04/load-movie.gif)
 
+进行到这里，一切看起来没什么问题。你肯定有个疑问：一路下来，为了展示个电影信息，搞了这么多配置。如果直接使用 react 的 setState 岂不更简单？
+
+你说的没错。按你你说的情况，我也不愿意这么折腾去配置什么 redux , 搞这么复杂干嘛呀。但对于一个用react 实现过复杂应用的开发者来说，痛点也正是在这个 setState 上面。可谓，成也萧何，败也萧何。redux 解决了 setState 的痛点，简化了 FB 家 Flux 的实现和使用，完美的贯彻了单项数据流的理念。
+
+好了，不拍马屁了。今天想说的主角还没出现呢？现在呢，我为 movies 页增加一些实际的需求：电影列表支持按名称筛选，按时间、评分、时长排序。
+
+在这之前，我们先对取到的数据进行下缓存。`app/actions/index.js`修改如下
+
+```
+➜  src vi app/actions/index.js
+➜  src more app/actions/index.js
+import { FETCH_MOVIES, MOVIES_URL } from 'app/constants'
+
+const session = sessionStorage
+
+// fetch movies contains specified actor, such as Jason Statham
+export function fetchMovies(name = 'Jason Statham') {
+    let url = `${MOVIES_URL}?actor=${name}`
+
+    return (dispatch, getState) => {
+        const cache = session.getItem(url)
+        // check cache policy, targeted rescource will be reture directly
+        if(cache) {
+            dispatch(receiveMovies(JSON.parse(cache)))
+        } else {
+            fetch(url).
+                then(resp => resp.json()).
+                then(movies => {
+                    dispatch(receiveMovies(movies))
+                    // cache movies by fetched url into sessionStorage
+                    session.setItem(url, JSON.stringify(movies))
+                })
+        }
+    }
+}
+
+// return fetched movies as redux action
+function receiveMovies(movies) {
+    return {
+        type: FETCH_MOVIES,
+        movies
+    }
+}
+➜  src
+```
+下一次电影的获取就可以直接走缓存了，效果如下
+
+![](images/2016_04/cached.jpg)
+
+* 电影列表的排序和搜索
+首先，美化下UI，将必要的数据展示出来
+
+```
+➜  src more pages/movies/movies.scss
+$border-color: #29cc6d;
+
+* {
+    box-sizing: border-box;
+}
+
+.Movies {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    &__Header {
+        display: flex;
+        padding: 0 10px;
+
+        &__Select, &__Input {
+            border: 1px solid $border-color;
+            line-height: 2em;
+            flex: 1;
+        }
+
+        &__Input {
+        }
+    }
+
+    &__List {
+        flex: 1;
+        padding: 0 10px;
+        overflow-y: auto;
+    }
+
+    &__Item {
+        border-bottom: 1px solid #efefef;
+        padding: 10px 0;
+        display: flex;
+
+        &__Poster {
+            height: 100px;
+        }
+
+        &__Details {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            padding-left: 10px;
+            flex-direction: column;
+            font-size: 14px;
+        }
+
+        &__Name {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+        }
+    }
+}
+➜  src
+```
+同样的 ，render部分也要改动  
+
+```
+    componentWillMount() {
+        console.log('home reducer: ', this.props.home)
+        console.log('all actions: ', this.props.actions)
+
+        this.props.actions.fetchMovies() // use default actor name
+    }
+
+    onChangeSort(e) {
+        console.log(e.target.value);
+        this.props.actions.filterMovies({ sort: e.target.value })
+    }
+
+    onChangeSearch(e) {
+        console.log(e.target.value)
+        this.props.actions.filterMovies({ search: e.target.value })
+    }
+
+    filterAndSortMovies(movies) {
+        let { sort, search } = this.props.home.filter
+        console.log(sort, search);
+        let _movies = search.length ?
+            movies.filter(m => m.show_title.toLowerCase().indexOf(search.toLowerCase()) !== -1) :
+            movies
+        if(sort === 'default') {
+            return _movies
+        } else {
+            return _movies.sort((m1, m2) => m1[sort] < m2[sort])
+        }
+    }
+
+    render() {
+        let { loading, movies } = this.props.home
+
+        movies = this.filterAndSortMovies(movies)
+
+        return (
+            <div className='Movies'>
+                <div className="Movies__Header">
+                    <select onChange={this.onChangeSort.bind(this)} className="Movies__Header__Select">
+                        <option value="default">default</option>
+                        <option value="show_title">Title</option>
+                        <option value="rating">Rating</option>
+                        <option value="release_year">Release year</option>
+                    </select>
+                    <input className="Movies__Header__Input"
+                        onChange={this.onChangeSearch.bind(this)}
+                        placeholder="按名称筛选"/>
+                </div>
+                <div className="Movies__List">
+                {
+                    loading ? 'Loading...' :
+                    movies.map(movie => (
+                        <div key={movie.show_id} className="Movies__Item">
+                            <img className="Movies__Item__Poster" src={movie.poster}/>
+                            <div className="Movies__Item__Details">
+                                <span className="Movies__Item__Name">
+                                { movie.show_title }
+                                </span>
+                                <span className="Movies__Item__Rating">
+                                { movie.rating } 分
+                                </span>
+                                <span className="Movies__Item__Year">
+                                上映年份： { movie.release_year } 年
+                                </span>
+                            </div>
+                        </div>
+                    ))
+                }
+                </div>
+            </div>
+        )
+    }
+```
+为了避免 setState 操作，这里将筛选条件的改动也以 action 的形式触发。
+关于 action 的修改，就很简单了
+
+首先，在 `app/constants/index.js` 中增加一条记录
+
+```
+export const FILTER_MOVIES = 'FILTER_MOVIES'
+```
+然后，`app/actions/index.js` 中新增 
+
+```
+import { FETCH_MOVIES, FILTER_MOVIES, MOVIES_URL } from 'app/constants'
+
+export function filterMovies(filter) {
+    return (dispatch, getState) => {
+        dispatch({
+            type: FILTER_MOVIES,
+            filter
+        })
+    }
+}
+```
+在 `app/reducers/home.js` 中处理对应的 action
+
+```
+import { FETCH_MOVIES, FILTER_MOVIES } from 'app/constants'
+
+...
+
+export default (state = initState, action) => {
+    switch(action.type) {
+        case FETCH_MOVIES:
+            // when receive movies from action
+            const { movies } = action;
+
+            return Object.assign({}, state, {
+                movies,
+                loading: false
+            })
+        case FILTER_MOVIES:
+            return Object.assign({}, state, {
+                filter: { ...state.filter, ...action.filter }
+            })
+        default:
+            return state
+    }
+}
+```
+上述完成后，排序和按名称搜索的功能就实现了
+
+![](images/2016_04/sort.gif)
+
