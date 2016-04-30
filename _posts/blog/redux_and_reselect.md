@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Redux & Reselect
-description: Redux 的半年和 Reselect 的一周
 category: blog
+description: Redux 的半年和 Reselect 的一周
 ---
 
 来微票儿的半年里，从第一天就开始使用 [Redux](http://redux.js.org/) 了。
