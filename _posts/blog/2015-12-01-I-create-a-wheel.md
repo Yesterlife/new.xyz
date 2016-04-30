@@ -35,181 +35,156 @@ $:  pepper
 
 好，目标有了，接下来该如何做呢？  
 
-1. 依赖分离   
-   作为一个工具，尽可能的减少外部依赖。之前的项目结构是这样的：  
+1. 依赖分离   作为一个工具，尽可能的减少外部依赖。之前的项目结构是这样的：  
    
-   ```
-    .                             
-    ├── /node_modules/
-    ├── /src/
-    │   ├── /pages/
-    │   ├── /components/
-    │   ├── /assets/
-    │   ├── /scss/
-    │   └── /utils/
-    ├── webpack.config.js 
-    ├── webpack.config.prod.js 
-    ├── index.template.html 
-    └── package.json
+```
+.                             
+├── /node_modules/
+├── /src/
+│   ├── /pages/
+│   ├── /components/
+│   ├── /assets/
+│   ├── /scss/
+│   └── /utils/
+├── webpack.config.js 
+├── webpack.config.prod.js 
+├── index.template.html 
+└── package.json
 
-    ```
-    分离后是这样的
+```
+分离后是这样的
     
-    ```
-    .                            
-    ├── /node_modules/
-    ├── /src/
-    │   ├── /pages/
-    │   ├── /components/
-    │   ├── /assets/
-    │   ├── /scss/
-    │   └── /utils/
-    ├── pepper.json
-    └── package.json
+```
+.                            
+├── /node_modules/
+├── /src/
+│   ├── /pages/
+│   ├── /components/
+│   ├── /assets/
+│   ├── /scss/
+│   └── /utils/
+├── pepper.json
+└── package.json
 
-    ```
-    这里只保留`package.json`中的`dependencies`，移除了下面所有的`devDenpendencies`
+```
+这里只保留`package.json`中的`dependencies`，移除了下面所有的`devDenpendencies`
       
-    ```
-    "devDependencies": {
-        "autoprefixer-loader": "^3.1.0",
-        "babel-eslint": "^4.1.3",
-        "babel-loader": "^5.3.2",
-        "babel-plugin-react-transform": "^1.1.1",
-        "css-loader": "^0.21.0",
-        "eslint-loader": "^1.1.1",
-        "exports-loader": "^0.6.2",
-        "extract-text-webpack-plugin": "^0.8.2",
-        "file-loader": "^0.8.1",
-        "html-webpack-plugin": "^1.6.2",
-        "imports-loader": "^0.6.5",
-        "json-loader": "^0.5.2",
-        "less": "^2.5.3",
-        "less-loader": "^2.2.2",
-        "node-sass": "^3.4.2",
-        "react-proxy-loader": "^0.3.4",
-        "react-transform-catch-errors": "^1.0.0",
-        "react-transform-hmr": "^1.0.1",
-        "redbox-react": "^1.2.0",
-        "rimraf": "^2.4.3",
-        "sass-loader": "^3.1.1",
-        "style-loader": "^0.13.0",
-        "url-loader": "^0.5.5",
-        "webpack": "^1.12.9",
-        "webpack-dev-middleware": "^1.4.0",
-        "webpack-hot-middleware": "^2.5.0"
-      }
-    ```
-     
-    这样的话，项目本身的依赖就很少了： 
-     
-    ```
-    // package.json
-    {
-      "name": "demo2",
-      "version": "0.1.0",
-      "description": "front end solution powered by pepper",
-      "author": "pepper",
-      "license": "ISC",
-      "dependencies": {
-        "classnames": "^1.2.0",
-        "react": "^0.14.1",
-        "react-dom": "^0.14.1",
-        "react-router-component": "^0.27.2",
-        "react-slick": "^0.9.2",
-        "reqwest": "^2.0.5"
-      }
-    }
-    ```
-  2.  开发调试  
-  
-      *  初始化新项目  
-      
-          ```
-        $  pepper init [project_name]
-          ```
-          将生成如下项目模版：  
-         
-          ```
-        .
-        ├── /node_modules/
-        ├── /src/
-        │   ├── /pages/
-        │   ├── /components/
-        │   ├── /assets/
-        │   ├── /scss/
-        │   └── /utils/
-        ├── pepper.json
-        └── package.json
-           ```
-           
-     *  生成新页面
-     
-        ```
-        $  pepper page [new_page_name]
-       
-        // exec pepper page page1 
-       
-        ├── /src/
-        │   ├── /pages/
-            │   ├── /page1/
-                │   ├── index.jsx
-                │   ├── style.scss
-         ```
-     *  生成新组件  
-     
-        ```
-        $  pepper component [new_page_name]
-       
-        // exec pepper component Header 
-       
-        ├── /src/
-        │   ├── /components/
-            │   ├── /Header/
-                │   ├── index.jsx
-                │   ├── style.scss
-         ```
-    *  实时预览
-    
-       ```
-       $  pepper start
-       ```
-  3.  配置文件  
-       [我知道你想说什么，因为他们都在配置文件里](https://www.npmjs.com/package/we-pepper)
+```
+"devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-react-transform": "^1.1.1",
+    "css-loader": "^0.21.0",
+    "eslint-loader": "^1.1.1",
+    "exports-loader": "^0.6.2",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.1",
+    "html-webpack-plugin": "^1.6.2",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.2",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "node-sass": "^3.4.2",
+    "react-proxy-loader": "^0.3.4",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "redbox-react": "^1.2.0",
+    "rimraf": "^2.4.3",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.5.0"
+  }
+```
+这样的话，项目本身的依赖就很少了： 
+ 
+```
+// package.json
+{
+  "name": "demo2",
+  "version": "0.1.0",
+  "description": "front end solution powered by pepper",
+  "author": "pepper",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^1.2.0",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "react-router-component": "^0.27.2",
+    "react-slick": "^0.9.2",
+    "reqwest": "^2.0.5"
+  }
+}
+```
 
-  4.  打包构建
-      *  测试环境  
-      
-      ```
-      $  pepper test
-      ```
-      
-      *  预上线环境   
-       
-      ```
-      $  pepper pre
-      ```
-      *  正式环境  
-      
-      ```
-      pepper release
-      ```
-  5.  自身完善  
+2.  开发调试  
   
-      *  流程引导，类似YO  
-      
-      *  命令行参数   
-      
-          ```
-          $  pepper                          // help ?
-          $  pepper init [app_name]          // create seed proj
-          $  pepper page [page_name]         // create new page
-          $  pepper component [comp_name]    // create new component
-          $  pepper start                    // debug start
-          $  pepper test                     // test mode build
-          $  pepper pre                      // pre mode build
-          $  pepper release                  // release mode build
-          ```
+*  初始化新项目  
+
+```
+$  pepper init [project_name]
+```
+将生成如下项目模版：  
+
+```
+.
+├── /node_modules/
+├── /src/
+│   ├── /pages/
+│   ├── /components/
+│   ├── /assets/
+│   ├── /scss/
+│   └── /utils/
+├── pepper.json
+└── package.json
+```
+*  生成新页面
+
+```
+$  pepper page [new_page_name]
+
+// exec pepper page page1 
+
+├── /src/
+│   ├── /pages/
+    │   ├── /page1/
+        │   ├── index.jsx
+        │   ├── style.scss
+```
+*  生成新组件    
+ 
+```
+$  pepper component [new_page_name]
+
+// exec pepper component Header 
+
+├── /src/
+│   ├── /components/
+    │   ├── /Header/
+        │   ├── index.jsx
+        │   ├── style.scss
+```
+*  实时预览  
+```
+$  pepper start
+```
+3.  配置文件  
+[我知道你想说什么，因为他们都在配置文件里](https://www.npmjs.com/package/we-pepper)
+4.  打包构建  
+
+命令参数                        | 说明
+----                            |-------
+pepper                          | help ?
+pepper init [app_name]          | create seed proj
+pepper page [page_name]         | create new page
+pepper component [comp_name]    | create new component
+pepper start                    | debug start
+pepper test                     | test mode build
+pepper pre                      | pre mode build
+pepper release                  | release mode build
 
 这是继上个月之后的又一版优化。不知道为啥，就是没心思仔细研读[yeoman](http://yeoman.io)的文档，学习如何定义自己的Generator，索性自己动手造了个轮子。
 
@@ -240,6 +215,4 @@ $ pepper init test; // then to have a try in test dir
 ```
 post@Tue Dec  1 21:21:22 CST 2015
 ```
-
-
 
