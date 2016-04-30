@@ -44,6 +44,7 @@ pepper start -p PORT
 该命令会启动一个 `express` 服务，负责托管所有的静态资源，支持 Code Hot Load，支持 Mock 服务，支持路由和数据格式的配置。
   
    **注意**：该模式下，静态资源都缓存在内存中，配置的`build`目录里是看不到静态资源的  
+
 *  流程引导  命令行下直接输入 `pepper` 
  
 ```
@@ -58,7 +59,7 @@ pepper start -p PORT
 升级pepper
 
 ```
-##### 详细配置  
+#### 配置清单  
 
 ```
 {
