@@ -141,23 +141,6 @@ template.viewport    | 模版 `meta viewport`, 默认`width=device-width, initia
 template.favicon     | 模版 `favicon`, 默认为空                                                                                   
 template.path:       | 设定自定义模版的的路径，会替换默认模版,可选。设置后会忽略上面五项模版设置. 有语法要求, 参考index.template.html 
 
-### 目录结构
-
-```
-.
-├── /dist/                              # The folder for compiled output
-├── /node_modules/                      # 3rd-party libraries and utilities
-├── /src/                               # The source code of the application
-│   ├── /pages/                         # Pages entry
-│   ├── /components/                    # React components
-│   ├── /assets/                        # Static files which are copied into the /dist/assets folder
-│   ├── /scss/                          # Shared scss files, will compile into /dist/css/share.css
-│   └── /utils/                         # Utility classes and functions
-├── pepper.config.js                    # project config setting
-├── index.template.html                 # Index page template, 可选
-└── package.json                        # The list of 3rd party libraries and utilities
-```
-
 ### 补充说明
 
   -  全局变量  
