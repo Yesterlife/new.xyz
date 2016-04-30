@@ -472,7 +472,7 @@ export default class Movies extends React.Component {
 ``` 
 刷新页面，你将看到 
 
-![](images/2016_04/reducert-log.jpg)
+![](images/2016_04/reducer-log.jpg)
 
 * 调用 action 获取 Movies 信息
 
@@ -508,5 +508,5 @@ export default class Movies extends React.Component {
 ```
 下面将是见证奇迹的时刻，刷新页面，如下图所示
 
-![](images/2016_04/load-movies.gif)
+![](images/2016_04/load-movie.gif)
 
