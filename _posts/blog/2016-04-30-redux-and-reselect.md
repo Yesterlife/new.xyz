@@ -13,7 +13,7 @@ description: Redux 的半年和 Reselect 的一周
 > 
 > sudo npm install we-pepper -g
 
-##### 使用 pepper
+**使用 pepper**
 
 ```
 ➜  pepper
@@ -27,7 +27,8 @@ description: Redux 的半年和 Reselect 的一周
   创建新组件
   升级pepper
 ```
-##### 初始化项目( react, react-router )
+
+**初始化项目( react, react-router )**
 
 ```
 ? 选择要执行的任务:  初始化新项目 (es6 & react & react-router)
@@ -58,16 +59,16 @@ redux_and_reselect_toturial
 10 directories, 9 files
 ➜  
 ```
-
 关于项目结构参考 [pepper 使用文档](http://dhong.co/pepper-doc) 和 [pepper-talks](http://dhong.co/pepper-talks)
 
-**安装 redux 相关依赖, 启动调试 **
+**安装 redux 相关依赖, 启动调试**
 
 ```
 npm install redux react-redux react-router-redux redux-thunk redux-logger --save;
 npm install;
 pepper start;
 ```
+
 **输出结果**
 
 ```
@@ -106,3 +107,84 @@ webpack: bundle is now VALID.
 
 打开浏览器，输入 http://0.0.0.0:9527, 将看到如下效果  
 ![](images/2016_04/demo1.jpg)
+
+**配置 redux & react **
+
+* 创建 redux 相关目录结构
+ 
+```
+➜  redux_and_reselect_toturial cd src
+➜  src mkdir -p app/{actions,reduces,constants,selectors,store}
+➜  src tree app -L 2
+app
+├── actions
+├── constants
+├── reduces
+├── selectors
+└── store
+```
+* 创建 action 
+
+```
+➜  src vi app/actions/index.js
+➜  src more app/actions/index.js
+import { FETCH_MOVIES, MOVIES_URL } from 'app/constants'
+
+// fetch movies contains specified actor, such as Jason Statham
+export default fetchMovies(name = 'Jason Statham') {
+    return (dispatch, getState) => {
+        fetch(`${MOVIES_URL}?actor=${name}`).
+            then(resp => resp.json()).
+            then(movies => dispatch(receiveMovies(movies)))
+    }
+}
+
+// return fetched movies as redux action
+function receiveMovies(movies) {
+    return {
+        type: FETCH_MOVIES,
+        movies
+    }
+}
+
+```
+*  创建 `app/constants/index.js`
+
+```
+➜  src vi app/constants/index.js
+➜  src more app/constants/index.js
+// action type
+export const FETCH_MOVIES = 'FETCH_MOVIES'
+
+export const MOVIES_URL = 'http://netflixroulette.net/api/api.php'
+
+```
+*  创建 reduce 处理API返回的 movies 
+
+```
+➜  src vi app/reduces/home.js
+➜  src more app/reduces/home.js
+import { FETCH_MOVIES } from 'app/constants'
+
+const initState = {
+    movies: [],
+    loading: true
+}
+
+export default (state = initState, action) => {
+    switch(action.type) {
+        case FETCH_MOVIES:
+            // when receive movies from action
+            const { movies } = action;
+
+            return Object.assign({}, state, {
+                movies,
+                loading: false
+            })
+        default:
+            return state
+    }
+}
+➜  src
+```
+* 有了 ation 和 reduce ，接下来就是配置 redux 和 react 的关联
