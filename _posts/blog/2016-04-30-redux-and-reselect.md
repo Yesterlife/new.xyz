@@ -1,6 +1,6 @@
 ---
 layout: post
-title: reselect for redux state
+title: reselect for redux state (1)
 category: blog
 description: Redux 的半年和 Reselect 的一周
 ---
@@ -8,6 +8,8 @@ description: Redux 的半年和 Reselect 的一周
 来微票儿的半年里，从第一天就开始使用 [Redux](http://redux.js.org/) 了。
 
 关于 Redux，没有比官方文档更介绍更详细的了， 当然你也可以看看[我同事怎么说](https://github.com/ingf/ingf.github.io/issues/4)。
+
+[Source Code](https://github.com/Duan112358/redux_reselct_toturial)
 
 下面先从 redux 的使用开始，一步步配置 redux 和 react 
 
@@ -776,3 +778,7 @@ export default (state = initState, action) => {
 ![](images/2016_04/utilities.jpg)
 
 看到这里，倍感欣慰。就 react 而言，数据流的问题，促使了 redux 的产生，同样， redux 的流行，更是催生了周边生态的蓬勃发展。对于某些问题，前人铺垫，后人乘凉，正如程序员一族，离不开 Google 的原因也在于此。
+
+这片文章写点太长，关于 reselect 的部分，将在下一篇里介绍。
+
+[Source Code](https://github.com/Duan112358/redux_reselct_toturial)
