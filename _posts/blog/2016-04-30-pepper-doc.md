@@ -8,15 +8,6 @@ description: 都说太复杂了，难道真是这个样子吗
 [![NPM Version](http://img.shields.io/npm/v/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
 [![NPM Downloads](https://img.shields.io/npm/dm/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
 
--  [使用说明](#starter)
--  [工程配置](#configuration)
--  [目录结构](#directory)
--  [注意事项](#notices)
--  [使用文档](#documention)
--  [更新历史](#versions)
--  [TODOS](#todos)
--  [问题列表](#issues)
-
 ### Start
 
 *  环境依赖
@@ -64,63 +55,6 @@ description: 都说太复杂了，难道真是这个样子吗
   
    **注意**：该模式下，静态资源都缓存在内存中，配置的`build`目录里是看不到静态资源的
 
-*  创建页面  
-
-    ```
-    pepper page page1 # for example
-    
-    ├── /src/  
-    │   ├── /components/
-        ├── /pages/
-        │   ├── /page1/    
-        │       ├── index.jsx 
-                ├── style.scss    
-    ```
-    
-*  创建组件  
-
-    ```
-    pepper component Header # create Component Header
-    ```
-    
-    ```
-    . 
-    ├── src
-        ├── assets
-        │   └── images
-        │       └── favicon.ico
-        ├── components
-        │   ├── Header
-        │       ├── header.scss
-        │       ├── index.jsx
-        │       └── style.scss
-        ├── pages
-    ```
-    命令完成后，还需要手动编辑下`components/index.js`，将新创建的组件导出。
-     
-    ```
-    ...
-    import Header from './Header'
-    
-    export default {
-        ...
-        Header,
-    }
-    ```
-
-*  资源打包  
-    
-    ```
-    pepper test; // build in test mode, not enable JS&CSS Minify
-    
-    pepper pre;  // build in pre mode, enable JS&CSS Minify
-    
-    pepper release;// build in release mode, enable JS&CSS Minify
-    
-    ```
-    需要注意的是，上述模式都会在配置的`build`目录生成静态资源，但都不启动静态资源的托管服务。
-        
-    `test`模式不启用代码压缩混淆，`pre`和`release`都会进行压缩和混淆，两者的区别在于`pepper.config.js`中的配置的URL。
     
 *  流程引导  
    
@@ -289,8 +223,8 @@ description: 都说太复杂了，难道真是这个样子吗
 
 ### Notices
 
-  -  API  
-     `pepper.config.js`中配置的`api`在代码中将以全局变量'API'的形式导出  
+  -  全局变量  
+     `pepper.config.js`中配置的`globals`中的配置将在代码中将以全局变量'UPPER_CASE'的形式导出 ，例如API和STATIC
      
      ```
      console.log(API) // pepper.config.js中的api[MODE]设置,注意使用环境
@@ -299,53 +233,5 @@ description: 都说太复杂了，难道真是这个样子吗
          ...
      })
      ```
-  -  template
-     html模版可选，如果不提供，请在`pepper.config.js`的`template`中指定以下选项 
-      
-     ```
-     title: '',
-     keywords: '',
-     description: '',
-     viewport: '',//可选
-     favicon: ''
-     ```
-     如果在`pepper.config.js`中指定了'template.path'选项, `pepper`将采用指定的HTML模版，注意要满足上文的格式要求  
-     另外，`pepper`支持`jade`语法
+g.js`中指定了'template.path'选项, `pepper`将采用指定的HTML模版，注意要满足上文的格式要求  
 
-  -  **chunkhash**
-    [ Vendor chunkhash changes when app code changes ](https://github.com/webpack/webpack/issues/1315) remain
-    
-    ```
-    # test toturial
-    pepper init demo;
-    cd demo;
-    pepper pre;
-    #  remove about page entry in pages/index.jsx
-    pepper pre;
-    ```
-    ```
-    ➜  demo  pepper pre
-    Hash: bfbf7a48f33bf6a9e709
-    Version: webpack 1.12.11
-    Time: 9253ms
-                     Asset       Size  Chunks             Chunk Names
-     js/shared-e9219f0d.js      35 kB    0, 3  [emitted]  shared
-       js/home-646aa985.js    9.05 kB    1, 3  [emitted]  home
-     js/vendor-5a9e0e26.js     131 kB    2, 3  [emitted]  vendor
-                index.html  648 bytes          [emitted]
-       [0] multi vendor 40 bytes {2} [built]
-        + 199 hidden modules
-    ➜  demo  vim src/pages/index.jsx
-    ➜  demo  pepper pre
-    Hash: d72ff25390f520660578
-    Version: webpack 1.12.11
-    Time: 8205ms
-                    Asset       Size  Chunks             Chunk Names
-    js/shared-9f5500d8.js    34.7 kB    0, 3  [emitted]  shared
-      js/home-1fb4ec5e.js    6.85 kB    1, 3  [emitted]  home
-    js/vendor-5a9e0e26.js     131 kB    2, 3  [emitted]  vendor
-               index.html  647 bytes          [emitted]
-       [0] multi vendor 40 bytes {2} [built]
-        + 194 hidden modules
-    ➜  demo
-    ```
