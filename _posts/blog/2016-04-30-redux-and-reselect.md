@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Redux & Reselect
+title: reselect for redux state
 category: blog
 description: Redux 的半年和 Reselect 的一周
 ---
@@ -8,6 +8,8 @@ description: Redux 的半年和 Reselect 的一周
 来微票儿的半年里，从第一天就开始使用 [Redux](http://redux.js.org/) 了。
 
 关于 Redux，没有比官方文档更介绍更详细的了， 当然你也可以看看[我同事怎么说](https://github.com/ingf/ingf.github.io/issues/4)。
+
+下面先从 redux 的使用开始，一步步配置 redux 和 react 
 
 > 环境依赖 ：`node.js` `npm`
 > 
@@ -60,6 +62,9 @@ redux_and_reselect_toturial
 ➜  
 ```
 关于项目结构参考 [pepper 使用文档](http://dhong.co/pepper-doc) 和 [pepper-talks](http://dhong.co/pepper-talks)
+
+> about `tree` command, install it with brew: 
+> `brew install tree`
 
 **安装 redux 相关依赖, 启动调试**
 
@@ -114,12 +119,12 @@ webpack: bundle is now VALID.
  
 ```
 ➜  redux_and_reselect_toturial cd src
-➜  src mkdir -p app/{actions,reduces,constants,selectors,store}
+➜  src mkdir -p app/{actions,reducers,constants,selectors,store}
 ➜  src tree app -L 2
 app
 ├── actions
 ├── constants
-├── reduces
+├── reducers
 ├── selectors
 └── store
 ```
@@ -131,7 +136,7 @@ app
 import { FETCH_MOVIES, MOVIES_URL } from 'app/constants'
 
 // fetch movies contains specified actor, such as Jason Statham
-export default fetchMovies(name = 'Jason Statham') {
+export function fetchMovies(name = 'Jason Statham') {
     return (dispatch, getState) => {
         fetch(`${MOVIES_URL}?actor=${name}`).
             then(resp => resp.json()).
@@ -162,8 +167,8 @@ export const MOVIES_URL = 'http://netflixroulette.net/api/api.php'
 *  创建 reduce 处理API返回的 movies 
 
 ```
-➜  src vi app/reduces/home.js
-➜  src more app/reduces/home.js
+➜  src vi app/reducers/home.js
+➜  src more app/reducers/home.js
 import { FETCH_MOVIES } from 'app/constants'
 
 const initState = {
@@ -187,4 +192,321 @@ export default (state = initState, action) => {
 }
 ➜  src
 ```
-* 有了 ation 和 reduce ，接下来就是配置 redux 和 react 的关联
+* 有了 ation 和 reducer ，接下来就是配置 redux 和 react 的关联
+首先配置 store 和 reducer 的关联
+
+```
+➜  src vi app/store/index.js
+➜  src more app/store/index.js
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import reducer from 'app/reducers'
+import { routerReducer, routerMiddleware } from 'react-router-redux'
+
+let middlewares = [thunk]
+
+// exported by pepper
+const MODE = process.env.MODE
+
+if( MODE !== 'release') {
+    // only add logger middleware except release mode
+    let createLogger = require('redux-logger')
+
+    // log redux action operation using console.log
+    const logger = createLogger({
+        level: 'info',
+        logger: console,
+        collapsed: true
+    })
+
+    middlewares = [...middlewares, logger]
+}
+
+export default (history, initialState) => {
+    // add react-router history middleware in
+    middlewares = [...middlewares, routerMiddleware(history)]
+    // apply middlewares within store
+    const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore)
+    // bind reducer and initState
+    return createStoreWithMiddleware(reducer, initialState)
+}
+➜  src
+```
+导出 `app/reducers` 目录下的 reducers, 现在只有 home
+
+```
+➜  src vi app/reducers/index.js
+➜  src more app/reducers/index.js
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
+import home from './home'
+
+/*
+* combine all reducers into one root reducers, which store all app state
+* redux only has one sotre, so only one state tree is necessary
+*/
+const rootReducer = combineReducers({
+    home,
+    // react-router require this config
+    routing: routerReducer,
+})
+
+export default rootReducer
+➜  src
+```
+接下来，要配置 react 和 redux store 的关联, 改动如下
+
+```
+➜  src vi pages/index.js
+➜  src more pages/index.js
+import ReactDom from 'react-dom'
+import { Router, Route, Link, IndexRoute, useRouterHistory } from 'react-router'
+
+import { connect, Provider } from 'react-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
+// use this script to create an redux store, which combine reducers
+import configureStore from 'app/store'
+
+import { createHashHistory } from 'history'
+import objectAssign from 'object-assign'
+import Home from 'react-proxy?name=home!./home'
+import About from 'react-proxy?name=about!./about'
+
+Object.assign = objectAssign
+
+// use hash router at current, for html5 history api require backend support
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
+// added in history middleware
+const store = configureStore(appHistory)
+// the final history with redux store merged in
+const history = syncHistoryWithStore(appHistory, store)
+
+let routes = history => (
+    <Router history={history}>
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+    </Router>
+)
+
+ReactDom.render(
+    <Provider store={store}>
+    { routes(history) }
+    </Provider>
+, document.getElementById('app'))
+```
+另外，需在改动下 `pepper.config.js`, 在`alias`里将 `app` 加进去
+
+```
+// dir alias, could use globally, despite of CWD
+"alias": {
+    "scss"          :   "scss",
+    "wepiao"        :   "components",
+    "utils"         :   "utils",
+    "app"           :   "app"
+},
+```
+这样，pepper 就知道到 `app` 目录下去找 `app` 下的文件了，默认 `index.js`
+当修改了 `pepper.config.js` 文件时，要重新启动下 pepper。现在就可以从 console 里看到 redux action 的相关日志了
+
+![](images/2016_04/actionlog.jpg)
+
+为了便于使用 pepper ,我们稍微修改下 `package.json` ,这样就可以在项目的任意目录执行 pepper 相关指令了，改动如下：
+
+```
+➜  src more ../package.json
+{
+  "name": "pepper",
+  "version": "0.0.1",
+  "description": "wepiao front end solution",
+  "main": "app.js",
+  "author": "FEI@wepiao.com",
+  "license": "ISC",
+  "scripts": {
+     "start": "pepper start",
+     "pepper": "pepper"
+  },
+  "dependencies": {
+    "classnames": "^1.2.0",
+    "history": "^2.0.1",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.1",
+    "react-dom": "^0.14.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.0.0",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1"
+  }
+}
+➜  src
+```
+* 关于API请求，这里将使用 ES6 中的 `fetch` API , 由于兼容性的问题，最好安装下相关的 polyfill 
+
+```
+npm install whatwg-fetch --save
+```  
+然后在 `pages/index.js` 里导入
+
+```
+import { Router, Route, Link, IndexRoute, useRouterHistory } from 'react-router'
+import 'whatwg-fetch' // here it is
+import { connect, Provider } from 'react-redux'
+```
+**注：`pages/index.js` 是整个项目的入口，先于所有文件执行，因而是添加各种 polyfill 的最佳位置**
+
+* 使用 pepper 创建一个新的页面
+
+```
+➜  npm run pepper page movies
+
+➜  src tree pages -L 2
+pages
+├── about
+│   ├── index.js
+│   └── style.scss
+├── home
+│   ├── index.js
+│   └── style.scss
+├── index.js
+└── movies
+    ├── index.js
+    └── movies.scss
+
+3 directories, 7 files
+
+```
+可以看到，movies 页面创建成功。接下来，按照 `movies/index.js` 文件底部的注释，添加该页面的路由配置
+
+```
+// first import new created movies page
+import Movies from 'react-proxy?name=movies!./movies'
+
+// then add an /movies router for the page
+<Route path="/about" component={About} />
+<Route path="/movies" component={Movies} />
+```
+刷新页面，访问 `http://0.0.0.0:9527/#/movies`, 效果如下
+
+![](images/2016_04/movies-log.jpg)
+
+* actions 去哪了  
+
+搞了这么多配置，似乎忽略了 actions 的存在，接下来就该它登场了。然而，这个也是要配置的，是不是要疯掉了，:(
+
+![](images/2016_04/redux-demo.jpg)
+
+redux 官方 demo 里是这么处理的，但我觉得还有更好的方式。结合 ES6 `decorator` 特性，可以将上述操作封装成一个方法，更加方便的调用
+
+```
+➜  src vi utils/connect.js
+➜  src more utils/connect.js
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from 'app/actions'
+
+function mapStateToProps(props, state) {
+    if(!props) return state
+
+    // filter state by specified string key
+    if(typeof props === 'string') return { [props]: state[props] }
+
+    // filter state by specified props
+    if(Array.isArray(props)) {
+        return props.reduce((prev, curr) => prev[curr] = state[curr], {})
+    }
+
+    return state
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    }
+}
+
+export default props => {
+
+    // filter state to props map, or use your own map
+    let stateToPropsMap = typeof props === 'function' ? props : mapStateToProps.bind(null, props)
+
+    return target => connect(stateToPropsMap, mapDispatchToProps)(target)
+}
+➜  src
+```
+这样一来，stateToProps  和 actions 的 处理将变得异常优雅和精练
+
+* 将 actions 和 movies state 和 Movies 页面进行关联
+
+```
+➜  src more pages/movies/index.js
+import styles from './movies';
+// import { component_name } from 'wepiao'
+import connect from 'utils/connect'
+
+@connect()
+export default class Movies extends React.Component {
+
+    static propTypes = {
+
+    }
+
+    static defaultProps = {
+
+    }
+
+    componentWillMount() {
+        console.log('home reducer: ', this.props.home)
+        console.log('all actions: ', this.props.actions)
+    }
+    render() {
+
+        return (
+            <div className='Movies'>
+                some content ...
+            </div>
+        )
+    }
+}
+➜  src
+``` 
+刷新页面，你将看到 
+
+![](images/2016_04/reducert-log.jpg)
+
+* 调用 action 获取 Movies 信息
+
+拿到 action 和 home reducer 的默认数据后，我们就可以调用 API ，去获取真实的数据了。
+修改 `pages/movies/index.js` 如下
+
+```
+    componentWillMount() {
+        console.log('home reducer: ', this.props.home)
+        console.log('all actions: ', this.props.actions)
+
+        this.props.actions.fetchMovies() // use default actor name
+    }
+
+    render() {
+        let { loading, movies } = this.props.home
+
+        return (
+            <div className='Movies'>
+            {
+                loading ? 'Loading...' :
+                movies.map(movie => (
+                    <div key={movie.show_id}>
+                    {
+                        movie.show_title
+                    }
+                    </div>
+                ))
+            }
+            </div>
+        )
+    }
+```
+下面将是见证奇迹的时刻，刷新页面，如下图所示
+
+![](images/2016_04/load-movies.gif)
+
