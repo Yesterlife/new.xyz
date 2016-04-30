@@ -170,7 +170,8 @@ description: 都说太复杂了，难道真是这个样子吗
    
    修改`mock.js`，配置如下  
 
-   ```
+
+   ```  
     var config =  [{
         path: '/path_to_proxy', // only string, no regex
         proxy: 'http://example.com',         // http://example.com
