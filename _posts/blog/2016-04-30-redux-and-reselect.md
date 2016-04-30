@@ -61,13 +61,16 @@ redux_and_reselect_toturial
 
 关于项目结构参考 [pepper 使用文档](http://dhong.co/pepper-doc) 和 [pepper-talks](http://dhong.co/pepper-talks)
 
-##### 安装 redux 相关依赖, 启动调试
+##### 安装 redux 相关依赖, 启动调试 
+
 ```
 npm install redux react-redux react-router-redux redux-thunk redux-logger --save;
 npm install;
 pepper start;
 ```
+
 ##### 输出结果
+
 ```
 ➜  redux_and_reselect_toturial pepper start
 [HPM] Proxy created: /proxy  ->  http://example.proxy.com
@@ -101,5 +104,6 @@ chunk    {3} js/vendor.bundle.js, js/vendor.bundle.js.map (vendor) 641 kB [rende
      + 157 hidden modules
 webpack: bundle is now VALID.
 ```
+
 打开浏览器，输入 http://0.0.0.0:9527, 将看到如下效果  
 ![](images/2016_04/demo.jpg)
