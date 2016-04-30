@@ -172,28 +172,6 @@ description: 都说太复杂了，难道真是这个样子吗
 
    ```
     var config =  [{
-        path: /\/list/,   // request url
-        method: 'get',    // request method
-        data: [{          // response data
-            id: 1,
-            first: '@FIRST',
-        }, {
-            id: 2,
-            first: '@FIRST',
-        }, {
-            id: 3,
-            first: '@FIRST',
-        }, ]
-    }, {
-        path: /\/item/,
-        method: 'get',
-        data: function() {
-            return {
-                id: 1,
-                name: 'inf'
-            }
-        }
-    }, {  // example proxy config
         path: '/path_to_proxy', // only string, no regex
         proxy: 'http://example.com',         // http://example.com
     }];
@@ -202,6 +180,7 @@ description: 都说太复杂了，难道真是这个样子吗
     module.exports = config;
 
    ```
+
    `Pepper`会读取该文件，将上述配置加入启动的express服务中，更多数据格式参见[mockjs](http://mockjs.com)
 
 ### Directory
