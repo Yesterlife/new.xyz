@@ -288,6 +288,7 @@ description: 都说太复杂了，难道真是这个样子吗
 ```
 
 ### Notices
+
   -  API  
      `pepper.config.js`中配置的`api`在代码中将以全局变量'API'的形式导出  
      
