@@ -8,10 +8,10 @@ category: blog
 接上篇 [reselect fo redux state](http://dhong.co/redux-and-reselect)。
 
 先回顾下上篇中的知识点和遗留的问题：
-> 知识点  
-1. redux 单项数据流的实现，action -> reducer -> store -> component  
-2. setState 与 action 协作方式的不同，后者可以缓存当前组件的信息。另，对 state 进行统一管理
-
+> 知识点   
+> 1. redux 单项数据流的实现，action -> reducer -> store -> component  
+> 2. setState 与 action 协作方式的不同，后者可以缓存当前组件的信息。另，对 state 进行统一管理
+>
 > 问题  
 > 1. 切换页面时，render 中数据的重复计算  
 > 2. 如何更好的缓存数据
