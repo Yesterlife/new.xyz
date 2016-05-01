@@ -115,7 +115,7 @@ webpack: bundle is now VALID.
 打开浏览器，输入 http://0.0.0.0:9527, 将看到如下效果  
 ![](images/2016_04/demo1.jpg)
 
-**配置 redux & react **
+**配置 redux 和 react**
 
 * 创建 redux 相关目录结构
  
@@ -256,7 +256,7 @@ const rootReducer = combineReducers({
 export default rootReducer
 ➜  src
 ```
-接下来，要配置 react 和 redux store 的关联, 改动如下
+接下来，要配置 react 和 redux store 的关：
 
 ```
 ➜  src vi pages/index.js
@@ -307,12 +307,13 @@ ReactDom.render(
     "app"           :   "app"
 },
 ```
-这样，pepper 就知道到 `app` 目录下去找 `app` 下的文件了，默认 `index.js`
+这样，pepper 就知道到 `app` 目录下去找 `app` 下的文件了，默认 `index.js`。
+
 当修改了 `pepper.config.js` 文件时，要重新启动下 pepper。现在就可以从 console 里看到 redux action 的相关日志了
 
 ![](images/2016_04/actionlog.jpg)
 
-为了便于使用 pepper ,我们稍微修改下 `package.json` ,这样就可以在项目的任意目录执行 pepper 相关指令了，改动如下：
+为了便于使用 pepper ,我们稍微修改下 `package.json`, 在项目的任意目录执行 pepper 相关指令：
 
 ```
 ➜  src more ../package.json
@@ -533,7 +534,7 @@ export function fetchMovies(name = 'Jason Statham') {
 
     return (dispatch, getState) => {
         const cache = session.getItem(url)
-        // check cache policy, targeted rescource will be reture directly
+        // check cache policy, targeted rescource will be returned directly
         if(cache) {
             dispatch(receiveMovies(JSON.parse(cache)))
         } else {
@@ -765,7 +766,7 @@ export default (state = initState, action) => {
 ![](images/2016_04/sort.gif)
 
 #### 小结
-到现在，redux 的常用功能都已经展现在了你的面前。从触发 action， reducer 按照类别处理收到的 action, 更新 state 中过时的数据，store 拿到新数据后重新映射到 关联的组件上，从而触发组件的重新渲染。看起来没什么问题了。
+到现在，redux 的常用功能都已经展现在了你的面前。从触发 action， reducer 按照类别处理收到的 action, 更新 state 中过时的数据，store 拿到新数据后重新映射到关联的组件上，从而触发组件的重新渲染。看起来没什么问题了。
 但是，当我们在切换页面的时候，随着 action 的触发，所有的这些条件都要重新再来，即使什么条件都没变。
 
 ![](images/2016_04/rerender.gif)
@@ -779,6 +780,8 @@ export default (state = initState, action) => {
 
 看到这里，倍感欣慰。就 react 而言，数据流的问题，促使了 redux 的产生，同样， redux 的流行，更是催生了周边生态的蓬勃发展。对于某些问题，前人铺垫，后人乘凉，正如程序员一族，离不开 Google 的原因也在于此。
 
-这片文章写点太长，关于 reselect 的部分，将在下一篇里介绍。
+[关于 reselect 的部分，将在下一篇里介绍。](http://dhong.co/reselect-for-redux)
+
+窗外，黎明前的曙光正席卷而来，早安～
 
 [Source Code](https://github.com/Duan112358/redux_reselct_toturial)
