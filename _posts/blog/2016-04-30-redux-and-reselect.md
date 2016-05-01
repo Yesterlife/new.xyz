@@ -5,7 +5,7 @@ category: blog
 description: Redux 的半年和 Reselect 的一周
 ---
 
-来微票儿的半年里，从第一天就开始使用 [Redux](http://redux.js.org/) 了。
+来[微票儿](http://m.wepiao.com)的半年，也是使用 [Redux](http://redux.js.org/) 的半年。
 
 关于 Redux，没有比官方文档更介绍更详细的了， 当然你也可以看看[我同事怎么说](https://github.com/ingf/ingf.github.io/issues/4)。
 

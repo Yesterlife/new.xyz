@@ -7,6 +7,8 @@ category: blog
 
 接上篇 [reselect fo redux state](http://dhong.co/redux-and-reselect)。
 
+[Source Code](https://github.com/Duan112358/redux_reselct_toturial)
+
 先回顾下上篇中的知识点和遗留的问题：
 
 > 知识点  
@@ -160,6 +162,8 @@ componentWillMount() {
 然而，这确实缓存利用的关键所在，它决定了原始数据能否重新利用。从根源处判断，才是解决缓存问题的关键所在。
 
 之前，也一直纠结在这块逻辑上，如何利用意境计算出来的数据（已经缓存在 store 中了嘛）。请求层面的缓存，只是解决了 HTTP 时延的问题，但前端的渲染前的计算缓存，同样重要，试想，整个 app 都用 stateless components 搭建，性能岂不爆表，这才是将缓存发挥到极致。API 层数据缓存（session），UI 层业务模型缓存(reselect)，react 层 DOM 缓存（virtual DOM）, 哈哈，这么多层，性能上不去才怪呢!
+
+[Source Code](https://github.com/Duan112358/redux_reselct_toturial)
 
 ---
 
