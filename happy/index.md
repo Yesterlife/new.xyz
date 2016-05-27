@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="index-content project">
+<div class="index-content project none">
     <div class="section">
         <ul class="artical-list">
             <li>
@@ -33,3 +33,8 @@ layout: home
         </ul>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+    $('.home-menu, .github-corner').hide();
+})
+</script>
