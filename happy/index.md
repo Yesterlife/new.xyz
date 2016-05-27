@@ -34,7 +34,9 @@ layout: home
     </div>
 </div>
 <script>
-$(document).ready(function(){
-    $('.home-menu, .github-corner').hide();
+var $ = document.querySelector;
+document.addEventListener('DOMContentLoaded', function(){
+    $('.home-menu').style.display = 'none';
+    $('.github-corner').style.display = 'none';
 })
 </script>
