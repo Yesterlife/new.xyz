@@ -370,4 +370,25 @@ hr {
 }
 
 
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-height {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.text {
+    color: #666;
+    line-hright: 1.5em;
+}
+
 /** avatar and friend style  end  **/
