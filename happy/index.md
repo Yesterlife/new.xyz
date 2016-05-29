@@ -1,5 +1,7 @@
 ---
 layout: post
+title: 我来自千里之外
+desc: 有些想你了
 ---
 
 ![](/images/2016_05/away.jpg)
@@ -75,7 +77,10 @@ Hey，长岛
 
 卧室的窗户边，停留了一只麻雀，现在已经离去。
 
-下次回来，不喝酒了，跑个 10K 吧～
+> 下次回来，不喝酒了，跑个 10K 吧～
 
----
-我来自千里之外。
+<style>
+    .sidenav, .comment, .post-footer {
+        display: none;
+    }
+</style>
