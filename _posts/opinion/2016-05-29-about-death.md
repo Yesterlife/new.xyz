@@ -1,7 +1,8 @@
 ---
 layout: post
+category: opinion
 title: 五月签
-desc: 有些想你了
+description: 有些想你了
 ---
 
 ![](/images/2016_05/away.jpg)
