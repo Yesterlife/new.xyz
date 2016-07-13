@@ -253,6 +253,7 @@ export default createSelector(
 ```
 上面的示例中，将 detail 和 home 页面的数据进行了组合，拼接后一同返回到 schedule 页面。
 在 selector 的使用上，利用了 es6 的 `decorator` 语法，将 [react-redux](https://github.com/reactjs/react-redux) 中的 `connect` 抽离成 @connect 语法糖
+
 ```
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -293,13 +294,15 @@ export default class Schedule extends React.Component {
 
 ### Flex & PostCss & BEM
 
-flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效解决样式的兼容问题  
+flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效解决样式的兼容问题 
+
 ```
 .flex {
     display: flex;
 }
 ```
-经由 postcss 处理后，可自动补全浏览器前缀，以及兼容性的样式（注：需合理配置 browsers 属性）  
+经由 postcss 处理后，可自动补全浏览器前缀，以及兼容性的样式（注：需合理配置 browsers 属性） 
+
 ```
 .flex {
     display: -webkit-box;
@@ -309,15 +312,16 @@ flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效�
 }
 ```
 对于 [BEM](https://en.bem.info/methodology/key-concepts/)，是一个良好编码习惯的开始。这些特性在提高 CSS 的性能的同时，在输出格式上也利于阅读和理解。
-![bem](/images/2016_07/bem.png)
+![bem](/images/2016_07/bem.jpg)
 充分利用 SCSS 中的变量定义和 Mixins 的特性，可以很快捷的切换不同皮肤。这点，在 vision-ui 的主题定制上得到了良好体现。
-![theme](/images/2016_07/theme.png)
+![theme](/images/2016_07/theme.jpg)
 
 ### 性能优化
 性能优化的环节，我们主要在两部分上进行了处理：
 
 #### 资源加载
-常规环节的压缩合并，资源按需加载，这些都是在 pepper 里做的处理.  
+常规环节的压缩合并，资源按需加载，这些都是在 pepper 里做的处理. 
+
 ```
 ➜  wechat git:(dev) pepper release
 Hash: 55515d1782ce3c2a646d
