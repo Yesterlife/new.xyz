@@ -351,6 +351,7 @@ js/orderdetail-92212bf3.js        28.8 kB   4, 14  [emitted]  orderdetail
 
 #### 缓存优化  
 API请求缓存按需配置。
+
 ```
 // params = { item_id }
 export function fetchConcertDetail(params, showLoading = true) {
