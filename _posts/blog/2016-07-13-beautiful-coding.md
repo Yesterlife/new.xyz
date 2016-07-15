@@ -14,6 +14,7 @@ category: blog
 React 的发布，带来了前端的春天，一经推出，便引领了模块化、组件化的浪潮，前端终于走上正轨。
 两个月前，我们对[微信演出票](http://wechat.show.wepiao.com)的微信端，用 React 进行了重构。
 构造 App 的过程，与构造一座建筑并无区别。
+
 ### Pepper
 pepper 是团队开发的一款用于基础构建的工具，我们用它来生成，构建，和打包项目文件
 
@@ -104,6 +105,7 @@ module.exports = {
   },
 ```
 以上，pepper 为我们搭好了的项目的根基。
+
 ### React
 接下来的一层层，交由 react 构建。
 [react-router](https://github.com/reactjs/react-router) 是 React 生态的前端路由实现，这里把每条 Router 指向的页面，比做建筑的每一层。
@@ -144,6 +146,7 @@ render() {
 效果如下
 ![images](/images/2016_07/preview.png)
 页面被拆分成若干个组件，类似的，每个组件又可以拆分成若干个子组件，按照分治策略的思想，最终回归到 vision-ui 与 DOM 元素的组合。  
+
 > `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 vision-ui 。它包含了很多常用的组件，如Button，Label，LazyImage，Loading，Message，Modal，Stepper，Text，Tabs等，也有一些预置的样式定义，便于后续的复写和继承。
 
 这种观念，在 react 的 component 实现中，得到了完美体现。createElement 和 createClass 的区别就在于此，后者的无限细分，就是前者的组合调用，createElement 生成的是实际的 DOM 元素。 
@@ -185,7 +188,7 @@ components
 
 8 directories, 1 file
 ```
-`components` 目录用于存放页面之间共享的组件，如果没有被复用，就放置到当前页面好了。  
+`components` 目录用于存放页面之间共享的组件，如果没有被复用，且放置到当前目录。  
 接下来，是怎么处理数据流的问题。  
 
 ```
@@ -199,9 +202,10 @@ pages/home
 
 0 directories, 5 files
 ```
-React 中的 JSX 写法，将模版语言和 JS 进行了融合，这点在构造组件上很是方便。
+React 中的 JSX 写法，将模版语言和 JS 进行了融合，在构造组件上很是方便。
+
 #### redux
-[redux](https://github.com/reactjs/redux) 是小而美的 [Flux](http://facebook.github.io/flux/) 开源社区实现。将业务代码按照官方教程进行组织，提高可读性，降低复杂度，便于维护和管理。
+[redux](https://github.com/reactjs/redux) 是小而美的 [Flux](http://facebook.github.io/flux/) 开源社区实现。将业务代码按照官方教程进行组织，提高可读性，降低复杂度，利于维护和管理。
 
 ```
 ➜  src git:(dev) ✗ tree app -L 1
@@ -214,7 +218,7 @@ app
 
 5 directories, 0 files
 ```
-以上目录，按照 redux 的功能组件进行组织，actions 和 reducers 与 pages 里的页面一一对应，指代对应页面的数据获取和数据结构。selectors 是 [reselect](https://github.com/reactjs/reselect) 的实现（稍后介绍）。  
+以上目录，按照 redux 的功能组件进行组织，actions、reducers 目录与 pages 下的的页面一一对应，前者对应数据的获取，后者对应数据的存储结构。selectors 是 [reselect](https://github.com/reactjs/reselect) 的实现（稍后介绍）。  
 
 关于 redux 中保存的页面状态，这点需要特别注意，特别针对 SPA （单页应用)。由于页面的切换并不会有页面的刷新，这点有助利用历史页面的数据缓存，但同时也意味脏数据，记得离开页面时及时清理。
 
@@ -292,6 +296,7 @@ export default class Schedule extends React.Component {
 }
 ```
 以上是组件内容的构建，接下来处理样式的问题
+
 ### Flex & PostCss & BEM
 flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效解决样式的兼容问题 
 
@@ -314,8 +319,10 @@ flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效�
 ![bem](/images/2016_07/bem.jpg)
 充分利用 SCSS 中的变量定义和 Mixins 的特性，可以很快捷的切换不同皮肤。这点，在 vision-ui 的主题定制上得到了良好体现。
 ![theme](/images/2016_07/theme.jpg)
+
 ### 性能优化
 性能优化的环节，客户端主要体现在减少请求的资源数量，和合理利用缓存上
+
 #### 资源加载
 常规环节的压缩合并，资源按需加载，这些都是在 pepper 里做的处理. 
 按照 Router 的配置，可以按照页面将 JS 拆分（webpack async thunk），只有在访问对应的路径，才会去加载对应的页面资源。另一点，pepepr 将接口和静态资源切换到不同的域名下，提高浏览器并发数量，这个也可以在 pepper 里配置。
@@ -345,6 +352,7 @@ js/orderdetail-92212bf3.js        28.8 kB   4, 14  [emitted]  orderdetail
    [0] multi vendor 124 bytes {13} [built]
     + 503 hidden modules
 ```
+
 #### 缓存优化  
 API请求缓存按需配置。
 
