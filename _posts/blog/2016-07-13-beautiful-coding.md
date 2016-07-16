@@ -42,12 +42,12 @@ const routes = (
 )
 ```
 
-上面的配置中，整个 App 的页面结构一目了然(有没有户型图的即视感？)。注意，路由是可以嵌套的。对于共享导航布局的页面，可以将导航提取到父级页面(Category 和 List 中共享的导航，放置到 Home 中)。
+上面的配置中，整个 App 的页面结构一目了然(有没有户型图的即视感？)。注意，路由是可以嵌套的。对于共享导航布局的页面，可以将导航提取到父级页面(`Category` 和 `List` 中共享的导航，放置到 `Home` 中)。
 ![page switch](/images/2016_07/switch.jpg)
-图中两个页面共享底部导航，根据路由的不同，激活不同的 Icon.
+图中两个页面共享底部导航，根据路由的不同，激活不同的 `Icon`.
 
 ### <span id="component">组件</span>
-每一层建筑，按照大小规格的不同，划分成若干个不同的房间，每个房间按照功能布置成厨房、卧室、卫生间等等。同样的每个页面，按照 UI，也可以分成 Header，Content，Footer等。
+每一层建筑，按照大小规格的不同，划分成若干个不同的房间，每个房间按照功能布置成厨房、卧室、卫生间等等。同样的每个页面，按照 UI，也可以分成 `Header`，`Content`，`Footer` 等。
 
 ```
 render() {
@@ -72,18 +72,18 @@ render() {
 ```
 效果如下图所示
 ![images](/images/2016_07/preview.png)
-注意：代码示例中，并没有直接罗列所有的组件，而是做了一层 div 的封装。这里参考了 [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005#.cwigmx3fe)
+注意：代码示例中，并没有直接罗列所有的组件，而是做了一层 `div` 的封装。这里参考了 [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005#.cwigmx3fe)
 
 > A Container does data fetching and then renders its corresponding sub-component. That's it.
 
-页面是个顶层组件，后续的页面都是由它进行渲染。顶层组件负责子组件的布局，以及后续组件所需数据的获取。上面示例中，将 Home 拆分成三部分，`Home__Header` 是固定顶部导航，`Home__Footer`是固定底部导航，中间是内容部分，数据由当前组件传递给子组件。子组件只做自己份内的事，无需关注其他。
+页面是个顶层组件，后续的页面都是由它进行渲染。顶层组件负责子组件的布局，以及后续组件所需数据的获取。上面示例中，将 `Home` 拆分成三部分，`Home__Header` 是固定顶部导航，`Home__Footer`是固定底部导航，中间是内容部分，数据由当前组件传递给子组件。子组件只做自己份内的事，无需关注其他。
 
-页面被拆分成若干个组件，类似的，每个组件又可以拆分成若干个子组件，按照分治策略的思想，最终回归到 vision-ui 与 DOM 元素的组合。  
+页面被拆分成若干个组件，类似的，每个组件又可以拆分成若干个子组件，按照分治策略的思想，最终回归到 `vision-ui` 与 DOM 元素的组合。  
 
-> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 vision-ui 。它包含了很多常用的组件，如 Button，Label，LazyImage，Loading，Message，Modal，Stepper，Text，Tabs等，也有一些预置的样式定义，便于后续的复写和继承。
+> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 `vision-ui` 。它包含了很多常用的组件，如 `Button`，`Label`，`LazyImage`，`Loading`，`Message`，`Modal`，`Stepper`，`Text`，`Tabs`等，也有一些预置的样式定义，便于后续的复写和继承。
 
-这种观念，在 react 的 Component 实现中，得到了完美体现。createElement 和 createClass 的区别就在于此，后者的无限细分，就是前者的组合调用。createElement 生成的是实际的 DOM 元素。 
-以 Footer 实现为例：  
+这种观念，在 `React` 的 `Component` 实现中，得到了完美体现。`createElement` 和 `createClass` 的区别就在于此，后者的无限细分，就是前者的组合调用。`createElement` 生成的是实际的 DOM 元素。 
+以 `Footer` 实现为例：  
 
 ```
 import { Tabs, Tab, Icon } from 'vision-ui'
@@ -139,7 +139,7 @@ pages/home
 
 房间的温馨离不开人的参与，页面之间以状态进行耦合。这里的状态主要指 UI 的交互，它涉及到页面中组件的变化与组合，以及页面间的切换。
 
-下面以点击某个按钮，显示和隐藏 Modal 为例。Modal 的显示和隐藏通过 state 中的 `show_modal` 进行切换，同时也更新了对应的 Icon。
+下面以点击某个按钮，显示和隐藏 `Modal` 为例。Modal 的显示和隐藏通过 state 中的 `show_modal` 进行切换，同时也更新了对应的 `Icon`。
 
 ```
 togglePickerModal() {
@@ -164,7 +164,7 @@ render() {
     )
 }
 ```
-稍微不同的是，我们把 Modal 的隐藏交由了 Modal 自己去完成。它通过调用父组件的 `togglePickerModal` 来设置 `show_modal` 的值，从而达到隐藏自己的目的。
+稍微不同的是，我们把 `Modal` 的隐藏交由了 `Modal` 自己去完成。它通过调用父组件的 `togglePickerModal` 来设置 `show_modal` 的值，从而达到隐藏自己的目的。
 
 ```
 import Modal from 'vision-ui'
@@ -181,7 +181,7 @@ export default props => (
 
 组件的状态，可以由父组件传递给子组件，同级间的状态交互，可有共同的父组件管理。在组件组成的树形结构中，数据就是这样一层层，自上而下传递的。在 [Flux](http://facebook.github.io/flux/) 之前，状态都是通过 setState 操作和管理，可以想象一下，多级组件之间, 跨层级间的数据传递，是多么的痛苦。
 
-[flux](http://facebook.github.io/flux/) 是 facebook 官方出品的单向数据流解决方案。借助于 F 家 VirtualDOM 高效的 Diff 算法，将数据的修改从 `setState` 中解脱出来，以 Action 的触发取代，统一集中到 Store 处理。[redux](https://github.com/reactjs/redux) 是 flux 思想的社区实现，简洁和高效。
+[flux](http://facebook.github.io/flux/) 是 Facebook 官方出品的单向数据流解决方案。借助于 F 家 VirtualDOM 高效的 Diff 算法，将数据的修改从 `setState` 中解脱出来，以 `Action` 的触发取代，统一集中到 Store 处理。[redux](https://github.com/reactjs/redux) 是 flux 思想的社区实现，简洁和高效。
 
 ![redux data flow](/images/2016_07/redux_flowchart.png)
 
@@ -193,7 +193,7 @@ redux 中的 `connect` 函数采用[IOC](https://medium.com/@franleplant/react-h
 // IOC 原理
 hocFactory:: W: React.Component => E: React.Component
 ```
-下面是 redux 官方的使用示例，store 中的数据，以`connect`的方式传递给了根组件 TodoApp
+下面是 redux 官方的使用示例，store 中的数据，以`connect`的方式传递给了根组件 `TodoApp`
 
 ```
 import { addTodo } from './actionCreators'
@@ -211,9 +211,9 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
 参考这种做法，任何组件都可以把数据 connect 进来。这样一来，我们就可以跨越组件的限制，将想要的属性传递给对应的组件。但此种方式仅推荐在顶层组件中使用，比如 Router 对应的 Page 组件。
-组件本身是职责和功能的一种隔离，是最小数据和功能的集合。树形结构是组件化的最好体现，按照层级的高低，功能和复杂度逐步较低。`connect` 里拥有 store 中所有的数据，是对组件的进一步封装。尽量减少组件树中 `connect` 的使用，做到树形结构的精简和高效。
+组件本身是职责和功能的一种隔离，是最小数据和功能的集合。树形结构是组件化的最好体现，按照层级的高低，功能和复杂度逐步较低。`connect` 里拥有 `store` 中所有的数据，是对组件的进一步封装。尽量减少组件树中 `connect` 的使用，做到树形结构的精简和高效。
 
-那多层组件件的数据传递该如何呢？Container 组件给了我们很好的参考，合理拆分，避免跨越层级件的组件依赖。
+那多层组件件的数据传递该如何呢？`Container` 组件给了我们很好的参考，合理拆分，避免跨越层级件的组件依赖。
 
 ### <span id="theme">样式主题</span>
 
@@ -240,13 +240,12 @@ flex 是前端的布局利器，兼容问题一度让我们望洋兴叹。[PostC
     display: flex
 }
 ```
-
 - 局部样式
 
 局部样式是组件内部的样式定义，我们按照 [BEM](https://en.bem.info/methodology/key-concepts/) 模式对样式进行隔离。这是一个良好编码习惯的开始，在提高 CSS 的性能的同时，在输出格式上也利于阅读和理解。
 ![bem](/images/2016_07/bem.jpg)
 
-－ 主题
+- 主题
 
 对于 SCSS 而言，把颜色、字体、边距风格进行统一，集中在一个文件（variables.scss）。所有的组件样式都引用该文件，使用该文件中定义的变量定义。SCSS 的这种特性让主题定制变得简单明了。
 
