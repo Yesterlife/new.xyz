@@ -187,7 +187,7 @@ export default props => (
 
 > Redux is a predictable state container for JavaScript apps.
 
-`connect` 函数采用[IOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g) 的方式，对参数组件做了一层封装，在封装后的组件中，将相关数据传递给了参数组件。
+redux 中的 `connect` 函数采用[IOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g) 的方式，对参数组件做了一层封装，在封装后的组件中，将相关数据传递给了参数组件。
 
 ```
 // IOC 原理
