@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 演出票之 React 重构
+title: 演出票重构之 UI 篇
 description: 我们是怎样用 React 对演出票进行重构的
 category: blog
 ---
@@ -13,114 +13,41 @@ category: blog
 冬天过去了，春天还会远吗？
 React 的发布，带来了前端的春天，一经推出，便引领了模块化、组件化的浪潮，前端终于走上正轨。
 两个月前，我们对[微信演出票](http://wechat.show.wepiao.com)的微信端，用 React 进行了重构。
-构造 App 的过程，与构造一座建筑并无区别。
 
-### Pepper
-pepper 是团队开发的一款用于基础构建的工具，我们用它来生成，构建，和打包项目文件
+构造 App 的过程，与构造一座建筑并无区别
 
-```
-➜  pepper
-? 选择要执行的任务:  (Use arrow keys)
-❯ 项目打包
-  代码格式校验
-  开发调试
-  初始化新项目 (es5)
-  初始化新项目 (es6 & react & react-router)
-  初始化新项目 (es6 & react & react-router & redux)
-  创建新页面
-  创建新组件
-  升级pepper
-```
-如上所示，它集成了诸多功能，而它的使用也很简单。
+| App                   |  建筑                |
+| ----                  | ---                  |
+| [路由](#router)       | 电梯、楼梯           |
+| [组件](#component)    | 房间                 |
+| [状态切换](#state)    | 居家的我们           |
+| [样式主题](#theme)    | 装修                 |
+
+### <span id="router">路由</span>
+
+[react-router](https://github.com/reactjs/react-router) 是 React 生态的前端路由实现。App 按照路由进行拆分，每个路由指向一个页面。
 
 ```
-➜  pepper init wechat
-➜  tree wechat -L 1
-wechat
-├── README.md
-├── mock.js
-├── node_modules
-├── npm-shrinkwrap.json
-├── package.json
-├── pepper.config.js ＃pepper 配置文件
-├── proxy.html
-├── src
-├── template.html
-└── test.html
-
-2 directories, 8 files
-```
-该配置文件，及其上面的项目都可以通过 pepper 的新建项目命令（pepper init），快速生成。配置预览如下
-
-```
-// pepper.config.js
-module.exports = {
-    // debug host
-    "host": "0.0.0.0",
-    // debug port
-    "port": "9527",
-    // pepper src entry, also inner webpack entry, default to `src/pages/index.js`
-    "base": "src",
-    // target build dir
-    "build": "dist",
-    "static": {
-        "start": "/",
-        "test": "/",
-        "pre": "/",
-        "release": "//your_cdn_domain" // here use CDN domain
-    },
-    "api": {
-        "start": "",
-        "test": "",
-        "pre": "",
-        "release": "//your_api_enterpoint",
-    },
-    // third patry libs to bundle
-    "vendor": ["react", "react-dom", 'react-router'],
-    // dir alias, could use globally, despite of CWD
-    "alias": {
-        "scss": "scss",
-        "wepiao": "components",
-    },
-    // source map options
-    "devtool": "source-map",
-    // switch for CSS Modules
-    "css_modules": false,
-    // switch for eslint
-    "eslint": false,
-    // limit image size for use base64, (smaller use base64, larger use url)
-    "base64_image_limit": 10240 // 10k
-}
-```
-另外通过配置 `package.json` 中的 `scripts`命令 ，可以很方便的在项目任何目录执行调试、打包等命令
-
-```
-  "scripts": {
-    "pepper": "pepper",
-    "cptest": "cp test.html proxy.html dist",
-    "start": "pepper start",
-    "test": "pepper -V && pepper test ",
-    "pre": "pepper -V && pepper pre",
-    "release": "pepper -V && pepper release"
-  },
-```
-以上，pepper 为我们搭好了的项目的根基。
-
-### React
-接下来的一层层，交由 react 构建。
-[react-router](https://github.com/reactjs/react-router) 是 React 生态的前端路由实现，这里把每条 Router 指向的页面，比做建筑的每一层。
-
-```
-const routes = (history) => (
-    <Router history={history}>
-        <Route path="/" component={Home} />
+const routes = (
+    <Router>
+        <Route path="/" component={Home}>
+            <Route path="category" component={Category}/>
+            <Route path="list" component={List}/>
+            <Route path="list/:id" component={Detail}/>
+        </Route>
         ...
         <Route path="/about" component={About} />
         <Route path="*" component={Home} />
     </Router>
 )
 ```
-每一层建筑，按照大小规格的不同，划分成若干个不同的房间，每个房间按照功能布置成厨房、卧室、卫生间等等。同样的每个页面，按照 UI，也可以分成 Header，Content，Footer等。下面是首页的布局
+
+上面的配置中，整个 App 的页面结构一目了然(有没有户型图的即视感？)。注意，路由是可以嵌套的。对于共享导航布局的页面，可以将导航提取到父级页面(Category 和 List 中共享的导航，放置到 Home 中)。
+![page switch](/images/2016_07/switch.jpg)
+图中两个页面共享底部导航，根据路由的不同，激活不同的 Icon.
+
+### <span id="component">组件</span>
+每一层建筑，按照大小规格的不同，划分成若干个不同的房间，每个房间按照功能布置成厨房、卧室、卫生间等等。同样的每个页面，按照 UI，也可以分成 Header，Content，Footer等。
 
 ```
 render() {
@@ -143,13 +70,19 @@ render() {
     )
 }
 ```
-效果如下
+效果如下图所示
 ![images](/images/2016_07/preview.png)
+注意：代码示例中，并没有直接罗列所有的组件，而是做了一层 div 的封装。这里参考了 [Container Component](https://medium.com/@learnreact/container-components-c0e67432e005#.cwigmx3fe)
+
+> A Container does data fetching and then renders its corresponding sub-component. That's it.
+
+页面是个顶层组件，后续的页面都是由它进行渲染。顶层组件负责子组件的布局，以及后续组件所需数据的获取。上面示例中，将 Home 拆分成三部分，`Home__Header` 是固定顶部导航，`Home__Footer`是固定底部导航，中间是内容部分，数据由当前组件传递给子组件。子组件只做自己份内的事，无需关注其他。
+
 页面被拆分成若干个组件，类似的，每个组件又可以拆分成若干个子组件，按照分治策略的思想，最终回归到 vision-ui 与 DOM 元素的组合。  
 
-> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 vision-ui 。它包含了很多常用的组件，如Button，Label，LazyImage，Loading，Message，Modal，Stepper，Text，Tabs等，也有一些预置的样式定义，便于后续的复写和继承。
+> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 vision-ui 。它包含了很多常用的组件，如 Button，Label，LazyImage，Loading，Message，Modal，Stepper，Text，Tabs等，也有一些预置的样式定义，便于后续的复写和继承。
 
-这种观念，在 react 的 component 实现中，得到了完美体现。createElement 和 createClass 的区别就在于此，后者的无限细分，就是前者的组合调用，createElement 生成的是实际的 DOM 元素。 
+这种观念，在 react 的 Component 实现中，得到了完美体现。createElement 和 createClass 的区别就在于此，后者的无限细分，就是前者的组合调用。createElement 生成的是实际的 DOM 元素。 
 以 Footer 实现为例：  
 
 ```
@@ -188,8 +121,7 @@ components
 
 8 directories, 1 file
 ```
-`components` 目录用于存放页面之间共享的组件，如果没有被复用，且放置到当前目录。  
-接下来，是怎么处理数据流的问题。  
+`components` 目录用于存放页面之间共享的组件，如果没有被复用，且放置到当前目录。    
 
 ```
 ➜  src git:(dev) ✗ tree pages/home -L 1
@@ -202,102 +134,60 @@ pages/home
 
 0 directories, 5 files
 ```
-React 中的 JSX 写法，将模版语言和 JS 进行了融合，在构造组件上很是方便。
 
-#### redux
-[redux](https://github.com/reactjs/redux) 是小而美的 [Flux](http://facebook.github.io/flux/) 开源社区实现。将业务代码按照官方教程进行组织，提高可读性，降低复杂度，利于维护和管理。
+### <span id="state">状态</span>
 
-```
-➜  src git:(dev) ✗ tree app -L 1
-app
-├── actions
-├── constants
-├── reducers
-├── selectors
-└── store
+房间的温馨离不开人的参与，页面之间以状态进行耦合。这里的状态主要指 UI 的交互，它涉及到页面中组件的变化与组合，以及页面间的切换。
 
-5 directories, 0 files
-```
-以上目录，按照 redux 的功能组件进行组织，actions、reducers 目录与 pages 下的的页面一一对应，前者对应数据的获取，后者对应数据的存储结构。selectors 是 [reselect](https://github.com/reactjs/reselect) 的实现（稍后介绍）。  
-
-关于 redux 中保存的页面状态，这点需要特别注意，特别针对 SPA （单页应用)。由于页面的切换并不会有页面的刷新，这点有助利用历史页面的数据缓存，但同时也意味脏数据，记得离开页面时及时清理。
-
-#### reselect
-
-> - 对比差异，存储最小的状态变动
-> - 高性能，只在输入参数变动时重新计算
-> - 可组合，与其它选择器组合使用  
-
-[reslect](https://github.com/reactjs/reselect) 作用于 redux 的 mapStateToProps 过程中，对 reducer 中 state 的过滤和缓存。
-![reselect](/images/2016_07/reselect.png)
+下面以点击某个按钮，显示和隐藏 Modal 为例。Modal 的显示和隐藏通过 state 中的 `show_modal` 进行切换，同时也更新了对应的 Icon。
 
 ```
-// selectors/schedule.js
-
-import { createSelector } from 'reselect'
-
-// use detail page's title
-const getTitle = state => state.detail.title
-// use home page's city
-const getCity = state => state.home.city
-
-const getSchedules = state.schedule.list
-
-export default createSelector(
-    getTitle,
-    getCity,
-    getSchedules,
-    (title, city, schedules) => {
-        return {
-            title,
-            city,
-            schedules,
-        }
-    }
-)
-```
-上面的示例中，将 detail 和 home 页面的数据进行了组合，拼接后一同返回到 schedule 页面。
-在 selector 的使用上，利用了 es6 的 `decorator` 语法，将 [react-redux](https://github.com/reactjs/react-redux) 中的 `connect` 抽离成 @connect 语法糖
-
-```
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import * as actions from 'app/actions'
-
-function mapStateToProps(props, state) {
-    if (!props) return state
-    if (typeof props === 'function’) return props
-    if (typeof props === 'string') return { [props]: state[props] }
-    if (Array.isArray(props)) {
-        return props.reduce((prev, curr) => prev[curr] = state[curr], {})
-    }
-    return state
+togglePickerModal() {
+    this.setState({
+        show_modal: !this.state.show_modal
+    })
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(actions, dispatch)
-    }
-}
-
-export default params => {
-   return target => connect(mapStateToProps.bind(null, params), mapDispatchToProps)(target)
-}
-```
-接下来，就可以这么使用了，甚为方便
-
-```
-import connect from 'utils/connect'
-import SchduleSelector from 'app/selectors/schedule'
-
-@connect(ScheduleSelector)
-export default class Schedule extends React.Component {
-    ...
+render() {
+    return (
+        <div className="Picker">
+            <div className="Picker__Header">
+                <Icon className="Picker__Header__Icon"
+                    onClick={this.togglePickerModal.bind(this)}
+                    type={`filter--${!this.state.show_modal ? 'up' : 'down'}`}/>
+            </div>
+            { 
+                this.state.show_modal && 
+                    <PickerModal onClose={this.togglePickerModal.bind(this)}/> 
+            }
+        </div>
+    )
 }
 ```
-以上是组件内容的构建，接下来处理样式的问题
+稍微不同的是，我们把 Modal 的隐藏交由了 Modal 自己去完成。它通过调用父组件的 `togglePickerModal` 来设置 `show_modal` 的值，从而达到隐藏自己的目的。
 
-### Flex & PostCss & BEM
+```
+import Modal from 'vision-ui'
+
+export default props => {
+    return (
+        <Modal onClose={props.onClose} 
+            okText="确定"
+            cancelText="取消">
+            { /* some content */ }
+        </Modal>
+    )
+}
+
+```
+
+组件的状态，可以由父组件传递给子组件，同级间的状态交互，可有共同的父组件管理。想象一下 DOM 树的结构，组件树也是一样的，数据和状态就是这样一层层传递下来。在 [Flux](http://facebook.github.io/flux/) 之前，状态都是通过 setState 操作和管理，可以想象一下，多级组件之间的状态传递，有多么的痛苦。
+
+
+### <span id="theme">样式主题</span>
+
+这里主要介绍 vision-ui 中的样式与主题的设置。vison-ui 中
+
 flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效解决样式的兼容问题 
 
 ```
@@ -319,62 +209,3 @@ flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效�
 ![bem](/images/2016_07/bem.jpg)
 充分利用 SCSS 中的变量定义和 Mixins 的特性，可以很快捷的切换不同皮肤。这点，在 vision-ui 的主题定制上得到了良好体现。
 ![theme](/images/2016_07/theme.jpg)
-
-### 性能优化
-性能优化的环节，客户端主要体现在减少请求的资源数量，和合理利用缓存上
-
-#### 资源加载
-常规环节的压缩合并，资源按需加载，这些都是在 pepper 里做的处理. 
-按照 Router 的配置，可以按照页面将 JS 拆分（webpack async thunk），只有在访问对应的路径，才会去加载对应的页面资源。另一点，pepepr 将接口和静态资源切换到不同的域名下，提高浏览器并发数量，这个也可以在 pepper 里配置。
-
-```
-➜  wechat git:(dev) pepper release
-Hash: 55515d1782ce3c2a646d
-Version: webpack 1.13.1
-Time: 29808ms
-                     Asset           Size  Chunks             Chunk Names
-       js/seat-402ce71e.js        62.9 kB   8, 14  [emitted]  seat
-    js/commons-e42816d9.js         242 kB   0, 14  [emitted]  shared
-     js/search-331c31c5.js        15.8 kB   2, 14  [emitted]  search
-  js/orderlist-5e357d66.js          30 kB   3, 14  [emitted]  orderlist
-js/orderdetail-92212bf3.js        28.8 kB   4, 14  [emitted]  orderdetail
-   js/category-7b4f8c07.js        12.4 kB   5, 14  [emitted]  category
-     js/detail-0d089ae7.js        33.4 kB   6, 14  [emitted]  detail
-   js/seatarea-e61b16e2.js        54.1 kB   7, 14  [emitted]  seatarea
-       js/home-806f6d3b.js         107 kB   1, 14  [emitted]  home
-   js/schedule-94bff107.js        16.1 kB   9, 14  [emitted]  schedule
-    js/payment-ee2ebec7.js        49.7 kB  10, 14  [emitted]  payment
-    js/address-da1deb3d.js        12.4 kB  11, 14  [emitted]  address
-     js/result-3b611bce.js        13.8 kB  12, 14  [emitted]  result
-     js/vendor-10a316b2.js         215 kB  13, 14  [emitted]  vendor
-               favicon.ico  NaN undefined          [emitted]
-                index.html        3.05 kB          [emitted]
-   [0] multi vendor 124 bytes {13} [built]
-    + 503 hidden modules
-```
-
-#### 缓存优化  
-API请求缓存按需配置。
-
-```
-// params = { item_id }
-export function fetchConcertDetail(params, showLoading = true) {
-    let url = `${API}/shows`
-
-    return (dispatch, getState) => {
-      return new GET(url, { params })
-        .cache(false)
-        .loading(showLoading) // 由于缓存的问题，我们把 loading API 了
-        .send()
-        .then(resp => {
-            resp && dispatch(receiveConcertDetail(resp))
-        })
-        .catch(error => {
-            Message.show(error.message)
-            dispatch(receiveConcertDetail([], params))
-        })
-    }
-}
-```
-关于 CDN 上资源的缓存，这个可以按需配置，这里不再赘述。
-
