@@ -183,6 +183,42 @@ export default props => {
 
 组件的状态，可以由父组件传递给子组件，同级间的状态交互，可有共同的父组件管理。想象一下 DOM 树的结构，组件树也是一样的，数据和状态就是这样一层层传递下来。在 [Flux](http://facebook.github.io/flux/) 之前，状态都是通过 setState 操作和管理，可以想象一下，多级组件之间的状态传递，有多么的痛苦。
 
+> Redux is a predictable state container for JavaScript apps.
+
+[redux](https://github.com/reactjs/redux)，通过一种新的模式，让属性传递变得简洁和优雅。
+
+```
+import { addTodo } from './actionCreators'
+import { bindActionCreators, connect } from 'redux'
+
+function mapStateToProps(state) {
+      return { todos: state.todos }
+}
+
+function mapDispatchToProps(dispatch) {
+      return bindActionCreators({ addTodo }, dispatch)
+}
+
+// here use HOC wraps props to TodoApp
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+```
+
+#### [HOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g)
+
+> A Higher Order Component is just a React Component that wraps another one.
+
+```
+hocFactory:: W: React.Component => E: React.Component
+```
+利用 ES7 中的 `decorator` 特性，将 `connect` 用 IOC 进行封装，结合 [reselect(https://github.com/reactjs/reselect) 对组件需要的属性进行下筛选
+
+```
+@connect(AppSelector)
+export default class TodoApp extends React.Component {
+    ...
+}
+```
+这样一来，我们就可以跨越组件的限制，将想要的属性传递给对应的组件。
 
 ### <span id="theme">样式主题</span>
 
