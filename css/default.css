@@ -64,9 +64,7 @@ a.external:hover {background-position:right -15px;}
 .entry-date {text-align:center;color:#999;margin-bottom:60px;font-size:14px;}
 
 code {
-    padding: 0;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
+    padding: 0.2em;
     margin: 0;
     font-size: 85%;
     background-color: rgba(0,0,0,0.04);
