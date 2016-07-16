@@ -169,23 +169,31 @@ render() {
 ```
 import Modal from 'vision-ui'
 
-export default props => {
-    return (
-        <Modal onClose={props.onClose} 
-            okText="确定"
-            cancelText="取消">
-            { /* some content */ }
-        </Modal>
-    )
-}
+export default props => (
+    <Modal onClose={props.onClose} 
+        okText="确定"
+        cancelText="取消">
+        { /* some content */ }
+    </Modal>
+)
 
 ```
 
-组件的状态，可以由父组件传递给子组件，同级间的状态交互，可有共同的父组件管理。想象一下 DOM 树的结构，组件树也是一样的，数据和状态就是这样一层层传递下来。在 [Flux](http://facebook.github.io/flux/) 之前，状态都是通过 setState 操作和管理，可以想象一下，多级组件之间的状态传递，有多么的痛苦。
+组件的状态，可以由父组件传递给子组件，同级间的状态交互，可有共同的父组件管理。在组件组成的树形结构中，数据就是这样一层层，自上而下传递的。在 [Flux](http://facebook.github.io/flux/) 之前，状态都是通过 setState 操作和管理，可以想象一下，多级组件之间, 跨层级间的数据传递，是多么的痛苦。
+
+[flux](http://facebook.github.io/flux/) 是 facebook 官方出品的单向数据流解决方案。借助于 F 家 VirtualDOM 高效的 Diff 算法，将数据的修改从 `setState` 中解脱出来，以 Action 的触发取代，统一集中到 Store 处理。[redux](https://github.com/reactjs/redux) 是 flux 思想的社区实现，简洁和高效。
+
+![redux data flow](/images/2016_07/redux_flowchart.png)
 
 > Redux is a predictable state container for JavaScript apps.
 
-[redux](https://github.com/reactjs/redux)，通过一种新的模式，让属性传递变得简洁和优雅。
+`connect` 函数采用[IOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g) 的方式，对参数组件做了一层封装，在封装后的组件中，将相关数据传递给了参数组件。
+
+```
+// IOC 原理
+hocFactory:: W: React.Component => E: React.Component
+```
+下面是 redux 官方的使用示例，store 中的数据，以`connect`的方式传递给了根组件 TodoApp
 
 ```
 import { addTodo } from './actionCreators'
@@ -202,29 +210,20 @@ function mapDispatchToProps(dispatch) {
 // here use HOC wraps props to TodoApp
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 ```
+参考这种做法，任何组件都可以把数据 connect 进来。这样一来，我们就可以跨越组件的限制，将想要的属性传递给对应的组件。但此种方式仅推荐在顶层组件中使用，比如 Router 对应的 Page 组件。
+组件本身是职责和功能的一种隔离，是最小数据和功能的集合。树形结构是组件化的最好体现，按照层级的高低，功能和复杂度逐步较低。`connect` 里拥有 store 中所有的数据，是对组件的进一步封装。尽量减少组件树中 `connect` 的使用，做到树形结构的精简和高效。
 
-#### [HOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g)
-
-> A Higher Order Component is just a React Component that wraps another one.
-
-```
-hocFactory:: W: React.Component => E: React.Component
-```
-利用 ES7 中的 `decorator` 特性，将 `connect` 用 IOC 进行封装，结合 [reselect(https://github.com/reactjs/reselect) 对组件需要的属性进行下筛选
-
-```
-@connect(AppSelector)
-export default class TodoApp extends React.Component {
-    ...
-}
-```
-这样一来，我们就可以跨越组件的限制，将想要的属性传递给对应的组件。
+那多层组件件的数据传递该如何呢？Container 组件给了我们很好的参考，合理拆分，避免跨越层级件的组件依赖。
 
 ### <span id="theme">样式主题</span>
 
-这里主要介绍 vision-ui 中的样式与主题的设置。vison-ui 中
+与组件类似，样式也是和组件相关联的。不同点在于，我们把样式分成了全局样式和局部样式
 
-flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效解决样式的兼容问题 
+- 全局样式
+
+全局样式包含 App 的样式重置，以及一些常用的布局（flex, float, none）动画（fade, slide)，以及变量定义(采用SCSS）
+
+flex 是前端的布局利器，兼容问题一度让我们望洋兴叹。[PostCSS](http://postcss.org/)的使用，解决了我们的后顾之忧。
 
 ```
 .flex {
@@ -241,7 +240,46 @@ flex 是前端的布局利器，结合 [PostCSS](http://postcss.org/)，有效�
     display: flex
 }
 ```
-对于 [BEM](https://en.bem.info/methodology/key-concepts/)，是一个良好编码习惯的开始。这些特性在提高 CSS 的性能的同时，在输出格式上也利于阅读和理解。
+
+- 局部样式
+
+局部样式是组件内部的样式定义，我们按照 [BEM](https://en.bem.info/methodology/key-concepts/) 模式对样式进行隔离。这是一个良好编码习惯的开始，在提高 CSS 的性能的同时，在输出格式上也利于阅读和理解。
 ![bem](/images/2016_07/bem.jpg)
-充分利用 SCSS 中的变量定义和 Mixins 的特性，可以很快捷的切换不同皮肤。这点，在 vision-ui 的主题定制上得到了良好体现。
+
+－ 主题
+
+对于 SCSS 而言，把颜色、字体、边距风格进行统一，集中在一个文件（variables.scss）。所有的组件样式都引用该文件，使用该文件中定义的变量定义。SCSS 的这种特性让主题定制变得简单明了。
+
+```
+/* varilables.scss */
+
+@import 'theme',
+    'vision-ui/components/variables';
+
+/* 其他样式变量定义 */
+
+/* theme.scss, 用于覆盖 variables 中的样式定义*/
+$main-color: #2835e9;
+
+/* index.scss 主样式, 覆盖引用的 vision-ui 的样式 */
+
+@import 'variables',
+    'vision-ui/components/normalize',
+    'vision-ui/components/components';
+
+/* some_component.scss */
+
+@import 'variables';
+
+/* 组件内部的样式定义，可以使用 variables 中定义的样式变量 */
+```
+按照上面的做法，我们通过 `theme.scss` 将 vision-ui 从默认的 wechat 绿变成了 QQ 蓝，从而将微信端的重构便捷的迁移到 QQ 中来。
 ![theme](/images/2016_07/theme.jpg)
+
+### 总结
+
+以上是我们在整个重构中的 UI 策略，它极大的缩减了我们在 UI 调整上的时间（大部分组件都是 vison-ui 的再封装)。另一方面，在多人协作上，统一的规范，在减少了代码的冗余的同时，也提高了代码的可阅读性，得以让我们更高效的继续推进。
+
+凤凰因涅槃而重生, 学无止境。
+
+[PS: 我们在招人](http://www.lagou.com/gongsi/48060.html)
