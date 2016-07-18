@@ -304,5 +304,5 @@ $main-color: #2835e9;
 在路上
 
 <a href="http://www.lagou.com/jobs/169113.html" style="display:block">
-![we want you](/images/2016_07/we-want-you.jpg)
+    <img src="/images/2016_07/we-want-you.jpg"/>
 </a>
