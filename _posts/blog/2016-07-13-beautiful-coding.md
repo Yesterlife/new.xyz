@@ -244,7 +244,8 @@ flex 是前端的布局利器，兼容问题一度让我们望洋兴叹。[PostC
 - 局部样式
 
 局部样式是组件内部的样式定义，我们按照 [BEM](https://en.bem.info/methodology/key-concepts/) 模式对样式进行隔离。这是一个良好编码习惯的开始，在提高 CSS 的性能的同时，在输出格式上也利于阅读和理解。
-![bem](/images/2016_07/bem.jpg)
+
+![bem](/images/2016_07/bem.jpg) </br>
 
 - 主题
 
