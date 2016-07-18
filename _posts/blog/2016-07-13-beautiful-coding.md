@@ -263,7 +263,7 @@ $main-color: #2835e9;
 
 下面的部分，是实现的原理。
 `vision-ui` 中用到的色值、字体大小、边框，都集中放到了 `variables.scss` 中，以便于主题的自定义。众多的 `UI` 框架里也都是这么做的，这点是及其重要的。
-通过在 `variables` 之前引用 `theme`，按照 `SCSS` 中 `!default` 关键字的原理，后声明的变量定义会覆盖前面的，这点和 `CSS` 类似。 
+通过在 `variables` 之前引用 `theme`，按照 `SCSS` 中 `!default` 关键字的原理，后声明的变量定义会覆盖前面的（这点和 `CSS` 类似）。 
 
 ```
 /* varilables.scss */
@@ -272,6 +272,10 @@ $main-color: #2835e9;
     'theme';
 
 /* 其他样式变量定义 */
+
+$grey: #efefef;
+$font-header: 1.2rem;
+
 ```
 同样的，使用 `vision-ui` 中预定义的变量也很简单，在使用之前，引入上面的 `variables.scss` 即可。
 这里面包含所有 `vision-ui` 中所有的变量定义（复写后的），当然，也包括自己定义的。
