@@ -11,6 +11,7 @@ category: blog
 另一点，对于一个FER，内心其实也是崩溃的，模块加载这条血泪之路，[HUX的这篇可谓经典](http://huangxuan.me/2015/07/09/js-module-7day/)。同样的，[CSS也不堪重负](http://huangxuan.me/2015/12/28/css-sucks-2015/)，友谊的小船说翻就翻 😂😂😂
 
 冬天过去了，春天还会远吗？
+
 React 的发布，带来了前端的春天，一经推出，便引领了模块化、组件化的浪潮，前端终于走上正轨。
 两个月前，我们对[微信演出票](http://wechat.show.wepiao.com)的微信端，用 React 进行了重构。
 
@@ -20,8 +21,8 @@ React 的发布，带来了前端的春天，一经推出，便引领了模块�
 | ----                  | ---                  |
 | [路由](#router)       | 电梯、楼梯           |
 | [组件](#component)    | 房间                 |
-| [状态切换](#state)    | 居家的我们           |
-| [样式主题](#theme)    | 装修                 |
+| [状态](#state)        | 居家的我们           |
+| [样式](#theme)        | 装修                 |
 
 ### <span id="router">路由</span>
 
@@ -80,7 +81,7 @@ render() {
 
 页面被拆分成若干个组件，类似的，每个组件又可以拆分成若干个子组件，按照分治策略的思想，最终回归到 `vision-ui` 与 DOM 元素的组合。  
 
-> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 `vision-ui` 。它包含了很多常用的组件，如 `Button`，`Label`，`LazyImage`，`Loading`，`Message`，`Modal`，`Stepper`，`Text`，`Tabs`等，也有一些预置的样式定义，便于后续的复写和继承。
+> `vision-ui`：得益于 UI 设计的统一，前端按照设计规范，将公共组件进行了抽离，就诞生了 `vision-ui` 。它包含了很多常用的组件，如 `Button`, `Label`, `LazyImage`, `Loading`, `Message`, `Modal`, `Stepper`, `Text`, `Tabs`等，也有一些预置的样式定义，便于后续的复写和继承。
 
 这种观念，在 `React` 的 `Component` 实现中，得到了完美体现。`createElement` 和 `createClass` 的区别就在于此，后者的无限细分，就是前者的组合调用。`createElement` 生成的是实际的 DOM 元素。 
 以 `Footer` 实现为例：  
@@ -187,10 +188,10 @@ export default props => (
 
 > Redux is a predictable state container for JavaScript apps.
 
-redux 中的 `connect` 函数采用[IOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g) 的方式，对参数组件做了一层封装，在封装后的组件中，将相关数据传递给了参数组件。
+redux 中的 `connect` 函数采用[HOC](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.pxjs82j6g) 的方式，对参数组件做了一层封装，在封装后的组件中，将相关数据传递给了参数组件。
 
 ```
-// IOC 原理
+// HOC 原理
 hocFactory:: W: React.Component => E: React.Component
 ```
 下面是 redux 官方的使用示例，store 中的数据，以`connect`的方式传递给了根组件 `TodoApp`
@@ -215,7 +216,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
 
 那多层组件件的数据传递该如何呢？`Container` 组件给了我们很好的参考，合理拆分，避免跨越层级件的组件依赖。
 
-### <span id="theme">样式主题</span>
+### <span id="theme">样式</span>
 
 与组件类似，样式也是和组件相关联的。不同点在于，我们把样式分成了全局样式和局部样式
 
