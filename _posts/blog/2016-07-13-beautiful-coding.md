@@ -248,32 +248,52 @@ flex 是前端的布局利器，兼容问题一度让我们望洋兴叹。[PostC
 - 主题
 
 对于 SCSS 而言，把颜色、字体、边距风格进行统一，集中在一个文件（variables.scss）。所有的组件样式都引用该文件，使用该文件中定义的变量定义。SCSS 的这种特性让主题定制变得简单明了。
+`vision-ui` 的默认主题是 `wechat` 绿，通过 `theme.scss` 中的一行样式复写，主题就变成了 `QQ` 蓝。
+
+```
+/* theme.scss, 用于覆盖 variables 中的样式定义*/
+
+$main-color: #2835e9;
+
+```
+![theme](/images/2016_07/theme.jpg)
+
+下面的部分，是实现的原理。
+`vision-ui` 中用到的色值、字体大小、边框，都集中放到了 `variables.scss` 中，以便于主题的自定义。众多的 `UI` 框架里也都是这么做的，这点是及其重要的。
+通过在 `variables` 之前引用 `theme`，按照 `SCSS` 中 `!default` 关键字的原理，后声明的变量定义会覆盖前面的，这点和 `CSS` 类似。 
 
 ```
 /* varilables.scss */
 
-@import 'theme',
-    'vision-ui/components/variables';
+@import 'vision-ui/components/variables',
+    'theme';
 
 /* 其他样式变量定义 */
+```
+同样的，使用 `vision-ui` 中预定义的变量也很简单，在使用之前，引入上面的 `variables.scss` 即可。
+这里面包含所有 `vision-ui` 中所有的变量定义（复写后的），当然，也包括自己定义的。
 
-/* theme.scss, 用于覆盖 variables 中的样式定义*/
-$main-color: #2835e9;
-
-/* index.scss 主样式, 覆盖引用的 vision-ui 的样式 */
-
-@import 'variables',
-    'vision-ui/components/normalize',
-    'vision-ui/components/components';
-
+```
 /* some_component.scss */
 
 @import 'variables';
 
-/* 组件内部的样式定义，可以使用 variables 中定义的样式变量 */
+.Component {
+
+    &__Header {
+        color: $main-color;
+        font-size: $small;
+    }
+
+    &__Content {
+        padding: 5px 10px;
+        border: 1px solid $grey;
+    }
+
+}
+
 ```
-按照上面的做法，我们通过 `theme.scss` 将 vision-ui 从默认的 wechat 绿变成了 QQ 蓝，从而将微信端的重构便捷的迁移到 QQ 中来。
-![theme](/images/2016_07/theme.jpg)
+以上便是我们对 `SCSS` 的使用手法，在此安利 `BEM`。 
 
 ### 总结
 
@@ -281,4 +301,6 @@ $main-color: #2835e9;
 
 走出自己的舒适区，多学习，多实践，学习之路永无止境。
 
-[你在路上吗？](http://www.lagou.com/gongsi/48060.html)
+在路上
+
+![we want you](/images/2016_07/we-want-you.jpg)
