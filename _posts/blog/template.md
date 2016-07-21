@@ -5,4 +5,4 @@ description: 存在感对于每个人的生活有多么的重要，可能平时�
 category: blog
 ---
 
-[Duan Hong]:    http://beiyuu.com  "Duan Hong"
+[Duan Hong]:    http://dhong.co  "Duan Hong"
