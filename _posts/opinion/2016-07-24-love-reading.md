@@ -4,7 +4,7 @@ title: 七月签
 category: opinion
 description: 在读村上
 ---
-![/images/2016_07/reading.jpg]
+![](/images/2016_07/reading.jpg)
 
 过去的6月和大半个7月都是在忙碌中度过，工作也好，琐事也罢，将日程排满，无暇其他，累了就睡，醒了继续，或许沉醉，或许麻木
 
