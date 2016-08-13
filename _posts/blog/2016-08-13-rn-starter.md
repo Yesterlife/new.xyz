@@ -6,14 +6,14 @@ category: blog
 ---
 ![github](/images/2016_08/octocat.jpg)
 
-最近的两周，启动了尘封许久的 React-Native 之旅。这之前，混迹于 React 阵营一年有余，时刻关注 React-Native 的动向，无论怎样
+最近的两周，启动了尘封许久的 React-Native。这之前，混迹于 React 阵营一年有余，时刻关注 React-Native 的动向，无论怎样
 
 > Learn Once, Write Anywhere
 
 的哲学，深深触动着我，去一探究竟。
 
 ---
-开始之前，先看个 Demo（ UI 参考 [微信演出票](http://wechat.show.wepiao.com)）
+先看个 Demo（ UI 参考 [微信演出票](http://wechat.show.wepiao.com)）
 ![demo](/images/2016_08/demo.gif)
 在 Demo 的实现过程中，一直想遵循 web 开发中的体验，很自然的将问题分成两部分
 
