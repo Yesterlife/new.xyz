@@ -89,9 +89,9 @@ Actions.details({ concert /* 参数传递在这里*/ })
 ```
 除此之外，对于历史记录的管理，有套和 Web History 类似的 API。
 
->  BUG 小提示: 
-1. 利用` Actions` [跳 Tabs 中定义的 Scene 时，无法接收到传递的参数](https://github.com/aksonov/react-native-router-flux/issues/563)，这个真是坑死我了。。。
-2. React-Native 中 [Fetch not Allowed via HTTP at default on IOS](http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http)，也是入门的大坑之一
+>  BUG 小提示:  
+> 1. 利用` Actions` [跳 Tabs 中定义的 Scene 时，无法接收到传递的参数](https://github.com/aksonov/react-native-router-flux/issues/563)，这个真是坑死我了。。。  
+> 2. React-Native 中 [Fetch not Allowed via HTTP at default on IOS](http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http)，也是入门的大坑之一
 
 补充一点，关于 Hot Reload，React-Native 已经先天具备，但和 Web 比起来，呵呵呵。。。
 
