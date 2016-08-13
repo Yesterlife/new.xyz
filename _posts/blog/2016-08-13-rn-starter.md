@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RN 的踩坑之路开始了
+title: RN 的踩坑之路
 description: 没错，确实是踩坑之路
 category: blog
 ---
