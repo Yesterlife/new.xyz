@@ -11,6 +11,7 @@ category: blog
 > Learn Once, Write Anywhere
 
 的哲学，深深触动着我，去一探究竟。
+
 ---
 开始之前，先看个 Demo（ UI 参考 [微信演出票](http://wechat.show.wepiao.com)）
 ![demo](/images/2016_08/demo.gif)
