@@ -11,15 +11,14 @@ category: blog
 > Learn Once, Write Anywhere
 
 的哲学，深深触动着我，去一探究竟。
-___
-
+---
 开始之前，先看个 Demo（ UI 参考 [微信演出票](http://wechat.show.wepiao.com)）
 ![demo](/images/2016_08/demo.gif)
-在 Demo 的实现过程中，一直想遵循 web 开发中的体验，很自然的将问题分成两部分：**业务逻辑 和 UI**
+在 Demo 的实现过程中，一直想遵循 web 开发中的体验，很自然的将问题分成两部分
 
 ### 业务逻辑
 
-得益于 React 的理念（专注于 UI 渲染），业务逻辑部分很大程度上取自于 Web 端的微信演出票
+得益于 React 的理念（专注于 UI 渲染），业务逻辑部分很大程度上取自于 Web 端
 ![directory diversion](/images/2016_08/directory.jpg)
 app 目录是采用 [redux](http://redux.js.org) 和 [reselect](https://github.com/reactjs/reselect) 的业务逻辑实现，这块和 UI 无关，些许改动，就可以整个迁移过来。
 
@@ -34,6 +33,7 @@ app
 ├── selectors
 └── store
 ```
+
 ### UI
 
 在[演出票重构之 UI 篇](http://dhong.co/beautiful-coding) 中，非常喜欢 [react-router](https://github.com/reactjs/react-router) 的使用方式，那 RN 中呢？
@@ -76,9 +76,9 @@ export default class App extends Component {
 }
 
 ```
-Router 的配置中， 首页的底部导航也得到很好的展现。关于 Icon ，不得不提 [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)，除了常见的 web 字体库，这货也支持引入第三方的字体库，看到对 [Icomoon](https://icomoon.io) 的支持，鄙人再次被感动的痛苦流涕😂😂 。
+Router 的配置中， 首页的底部导航也得到很好的展现。关于 Icon ，不得不提 [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)，除了常见的 web 字体库，这货也支持引入第三方的字体库，看到对 [Icomoon](https://icomoon.io) 的支持，鄙人再次被感动的痛苦流涕😂
 ![RN-show 首页](/images/2016_08/home.jpg)
-左边是 web 版的，右边是 RN 的 IOS 版的。在分类页的实现中，利用了 [react-native-scrollable-tab-view](https://github.com/brentvatne/react-native-scrollable-tab-view)  Tab 实现。
+左边是 web 版的，右边是 RN 的 IOS 版的。在分类页的实现中，采用了 [react-native-scrollable-tab-view](https://github.com/brentvatne/react-native-scrollable-tab-view)
 ![RN-show 分类页](/images/2016_08/category.jpg)
 利用 `react-native-router-flux` 的 `Actions` 做页面间的切换，很是方便
 
@@ -121,7 +121,13 @@ Actions.details({ concert /* 参数传递在这里*/ })
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3"
   }
+
 ```
+Native 也好，Web 也罢，App的实现过程已转化为组件的自由组合和少许的定制，研发的门槛愈来愈底。那，DEV 的我们路在何方呢？
+
+这个问题容我好好考虑下...
+
+---
 
 **有感：很多问题真不是自己代码的问题，没事多 Google，对了，引用的第三方类库下的 Issues 里也要多搜搜看**
 
