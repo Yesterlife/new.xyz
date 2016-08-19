@@ -57,7 +57,7 @@ category: blog
 
 * 使用指南 
 
-  借助于 [webpack 强大的文件索引能力](http://webpack.github.io/docs/resolving.html), `sass-loader`将 `node-sass'的 `custom importer` 特性，将查询代理到 webpack 的索引引擎，从而使得 `node_modules` 中的 SASS 引用成为了可能. 现在，只需在引用的模块前缀 `~` 字符，它用来告诉 webpack 这是一个相对路径的引用，示例如下:
+  借助于 [webpack 强大的文件索引能力](http://webpack.github.io/docs/resolving.html), `sass-loader`将 `node-sass`的 `custom importer` 特性，将查询代理到 webpack 的索引引擎，从而使得 `node_modules` 中的 SASS 引用成为了可能. 现在，只需在引用的模块前缀 `~` 字符，它用来告诉 webpack 这是一个相对路径的引用，示例如下:
   
   ```css
   @import "~bootstrap/css/bootstrap";
