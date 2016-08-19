@@ -63,7 +63,7 @@ category: blog
   @import "~bootstrap/css/bootstrap";
   ```
   
-  > 对于 CSS- 和 SASS- 来说，`@import 'file' 和 `@import './file` 结果是一样的。前缀 `~` 字符用于告诉 webpack 这是模块路径，而非当前的相对路径
+  > 对于 CSS- 和 SASS- 来说，`@import 'file'` 和 `@import './file'` 结果是一样的。前缀 `~` 字符用于告诉 webpack 这是模块路径，而非当前的相对路径
 
   结合 **webpack alias**，同样的，静态资源的引用可可以脱离相对路径
  
