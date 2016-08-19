@@ -1,19 +1,21 @@
 ---
 layout: post
 title: kick ass relative path using webapck
-description: use custom module_name in js and sass
+description: 如何在 JS 和 SCSS 中使用自定义模块名
 category: blog
 ---
 
-Just the post title suggest, the following will teach you how to kick ass the relative path in your project( build with webpack anyway).
+相对路径的问题，可谓让人伤透了脑筋，绑定的目录结构可谓牵一发动全身。
 
-The skills let you get rid of `../../../` of your asset path, now let do it.
+> `../../path_to_your_file` 依赖当前资源的位置 
+
+下面的做法主要围绕 webpack 的 alias 配置, 可以在项目中引入自定义的模块名（路径别名），来跨越目录结构的限制
 
 ### kick ass in JS
 
-* Prerequirement
+* 配置预设
    
-  Replace modules by other modules or paths. Following [webpack alias configuration](http://webpack.github.io/docs/configuration.html#resolve-alias)
+  设置自定义的模块名称，可以设置为路径或者其他的模块. 具体参考 [webpack alias configuration](http://webpack.github.io/docs/configuration.html#resolve-alias)
 
   ```
   resolve: {
@@ -27,7 +29,7 @@ The skills let you get rid of `../../../` of your asset path, now let do it.
       }
   },
   ```
-* Usage
+* 使用指南
 
   ```
   import CusomerModules from ‘custom_module_name’
@@ -35,9 +37,9 @@ The skills let you get rid of `../../../` of your asset path, now let do it.
 
 ### kick ass in SCSS
 
-* Prerequirement
+* 配置预设
 
-  config [sass-loader](https://github.com/jtangelder/sass-loader) 
+  这里使用 [sass-loader](https://github.com/jtangelder/sass-loader) 
 
   ```
   module.exports = {
@@ -53,28 +55,25 @@ The skills let you get rid of `../../../` of your asset path, now let do it.
  }
   ```
 
-* Usage 
+* 使用指南 
 
-  webpack provides an [advanced mechanism to resolve files](http://webpack.github.io/docs/resolving.html). The sass-loader uses node-sass' custom importer feature to pass all queries to the webpack resolving engine. Thus you can import your Sass modules from `node_modules`. Just prepend them with a `~` to tell webpack that this is not a relative import:
+  借助于 [webpack 强大的文件索引能力](http://webpack.github.io/docs/resolving.html), `sass-loader`将 `node-sass'的 `custom importer` 特性，将查询代理到 webpack 的索引引擎，从而使得 `node_modules` 中的 SASS 引用成为了可能. 现在，只需在引用的模块前缀 `~` 字符，它用来告诉 webpack 这是一个相对路径的引用，示例如下:
   
   ```css
   @import "~bootstrap/css/bootstrap";
   ```
   
-  Alternatively, for bootstrap-sass:
-  ```css
-  @import "~bootstrap-sass/assets/stylesheets/bootstrap";
-  ```
-  
-  It's important to only prepend it with `~`, because `~/` resolves to the home directory. webpack needs to distinguish between `bootstrap` and `~bootstrap` because CSS- and Sass-files have no special syntax for importing relative files. Writing `@import "file"` is the same as `@import "./file";`
+  > 对于 CSS- 和 SASS- 来说，`@import 'file' 和 `@import './file` 结果是一样的。前缀 `~` 字符用于告诉 webpack 这是模块路径，而非当前的相对路径
 
-  combine **previous alias feature**, we can link our assets as following
-  
+  结合 **webpack alias**，同样的，静态资源的引用可可以脱离相对路径
+ 
   ```
   background-image: url(~custom_assets_dir/path/to/your/images/file.jpg)
   ```
 
 
-> That's it. Enjoy ~ 
+就酱紫 ~ 
+
+> Thks GOD, It's Friday ! 
 
 

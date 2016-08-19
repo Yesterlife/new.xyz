@@ -1,44 +1,47 @@
 ---
 layout: post
-title: upgrade Babel5 to Babel6
-description: some notes about upgrading Babel5 to Babel6
+title: Babel5 => Babel6
+description: 关于 Babel5 升级 Babel6 的一些
 category: blog
 ---
 TL;DR
 
-> Notes about upgrading Babel5 to Babel6
+> Babel5 => Babel6
 
-Babel5 config file `.babelrc`
+Babel5 配置文件 `.babelrc`
 
 ```
+// babel stage
 stage: 0,
+// some ENV relative configuration
 env: {
+  // dev only  
   development: {
-  plugins: ['react-transform'],
-      extra: {
-          'react-transform': [{
-              target: 'react-transform-hmr',
-              imports: ['react'],
-              locals: ['module']
-          }]
+      // HMR related config
+      plugins: ['react-transform'],
+          extra: {
+              'react-transform': [{
+                  target: 'react-transform-hmr',
+                  imports: ['react'],
+                  locals: ['module']
+              }]
+          }
       }
-  }
+   }
 }
 ```
-Babel6 config file `.babelrc`
+Babel6 配置文件 `.babelrc`
 
 ```
-// Don't try to find .babelrc because we want to force this configuration.
-babelrc: false,
 presets: [
-// let, const, destructuring, classes, modules
-'es2015',
-// exponentiation
-'es2016',
-// JSX, Flow
-'react',
-// more draft es features
-'stage-0',
+  // let, const, destructuring, classes, modules
+  'es2015',
+  // exponentiation
+  'es2016',
+  // JSX, Flow
+  'react',
+  // more draft es features
+  'stage-0',
 ],
 env: {
 development: {
@@ -54,40 +57,44 @@ development: {
 }
 },
 plugins: [
-// function x(a, b, c,) { }
-'syntax-trailing-function-commas',
-// await fetch()
-'syntax-async-functions',
-// function* () { yield 42; yield 43; }
-'transform-regenerator',
-// Polyfills the runtime needed for async/await and generators
-['transform-runtime'), {
-  helpers: false,
-  polyfill: false,
-  regenerator: true
-}],
-'transform-decorators-legacy',
-'add-module-exports',
+  // function x(a, b, c,) { }
+  'syntax-trailing-function-commas',
+  // await fetch()
+  'syntax-async-functions',
+  // function* () { yield 42; yield 43; }
+  'transform-regenerator',
+  // Polyfills the runtime needed for async/await and generators
+  ['transform-runtime'), {
+    helpers: false,
+    polyfill: false,
+    regenerator: true
+  }],
+  'transform-decorators-legacy',
+  'add-module-exports',
 ]
 ```
 
-#### Differences
-* performance impovements   
+#### 一些差异
+* 性能提升   
 
-  Babel 5 changed the transformation and traversal pipeline dramatically to make way for some major performance improvements that have been implemented in Babel 6    
+  Babel 6 解决了 Babel 5 中为性能优化考虑在转换和编译时的一些妥协
 
-* plugin presets ( `stage-[0/1/2]`, `react`, `es2015`, `es2016` ])   
+  > Babel 5 changed the transformation and traversal pipeline dramatically to make way for some major performance improvements that have been implemented in Babel 6
 
-  Since specifying and maintaining dozens of transformers in a config file would be a lot of work, Babel 6 is introducing the concept of Plugin Presets which group together similar plugins for easy consumption.  
+* 预设插件集    
 
-* indepent transformer plugins (etc `babel-plugin-transform-decorators-legacy `  for `@decorator` )  
+  由于 Babel6 将 ES 特性的拆分到独立的插件中，为了便于指定和维护对应的 ES stage, Babel 将一些常用的插件组合到一起，于是就有了这些预设。常用的预设：`stage-[0/1/2]` `react` `es2015` `es2016` 
 
-  Since Babel is focusing on being a platform for JavaScript tooling and not an ES2015 transpiler, we’ve decided to make all of the plugins opt-in. This means when you install Babel it will no longer transpile your ES2015 code by default.  
+* 独立的转换插件 (etc `babel-plugin-transform-decorators-legacy `  for `@decorator` )  
+
+  每个特性对应一个插件，这种细粒度的拆分，便于更细粒度的定制（不需要的不引用就是了）。
 
 * [Babel@6 doesn't **export default module.exports** any more](https://github.com/59naga/babel-plugin-add-module-exports)
 
-#### Somethings about [HMR](http://webpack.github.io/docs/hot-module-replacement.html)
+#### 热更新[HMR](http://webpack.github.io/docs/hot-module-replacement.html)
 
 * [webpack-hot-middleware](https://github.com/webpack/webpack-dev-middleware)
 * [webpack-dev-middleware](https://github.com/glenjamin/webpack-hot-middleware)
 * [react-transform-boilerplate](https://github.com/gaearon/react-transform-boilerplate)
+
+上面 ENV 中的配置都是为了支持开发时的组件热更新
