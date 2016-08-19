@@ -9,6 +9,7 @@ TL;DR
 > Notes about upgrading babel5 to babel6
 
 babel5 config file `.babelrc`
+
 ```
 {
      stage: 0,
@@ -27,6 +28,7 @@ babel5 config file `.babelrc`
 }
 ```
 babel6 config file `.babelrc`
+
 ```
   // Don't try to find .babelrc because we want to force this configuration.
   babelrc: false,
