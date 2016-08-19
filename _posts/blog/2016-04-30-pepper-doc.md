@@ -5,11 +5,9 @@ category: blog
 description: 都说太复杂了，难道真是这个样子吗
 ---
 
-[![NPM Version](http://img.shields.io/npm/v/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
-[![NPM Downloads](https://img.shields.io/npm/dm/we-pepper.svg?style=flat)](https://www.npmjs.org/package/we-pepper)
-
 *  环境依赖 `nodejs` , `npm`
 *  Pepper 安装   
+
 ```
 npm install we-pepper -g # install pepper globally
 ```
