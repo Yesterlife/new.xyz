@@ -1,76 +1,74 @@
 ---
 layout: post
-title: upgrade babel5 to babel6
-description: some notes about upgrade babel5 to babel6
+title: upgrade Babel5 to Babel6
+description: some notes about upgrading Babel5 to Babel6
 category: blog
 ---
 TL;DR
 
-> Notes about upgrading babel5 to babel6
+> Notes about upgrading Babel5 to Babel6
 
-babel5 config file `.babelrc`
+Babel5 config file `.babelrc`
 
 ```
-{
-     stage: 0,
-     env: {
-          development: {
-          plugins: ['react-transform'],
-              extra: {
-                  'react-transform': [{
-                      target: 'react-transform-hmr',
-                      imports: ['react'],
-                      locals: ['module']
-                  }]
-              }
-          }
+stage: 0,
+env: {
+  development: {
+  plugins: ['react-transform'],
+      extra: {
+          'react-transform': [{
+              target: 'react-transform-hmr',
+              imports: ['react'],
+              locals: ['module']
+          }]
       }
+  }
 }
 ```
-babel6 config file `.babelrc`
+Babel6 config file `.babelrc`
 
 ```
-  // Don't try to find .babelrc because we want to force this configuration.
-  babelrc: false,
-  presets: [
-    // let, const, destructuring, classes, modules
-    'es2015',
-    // exponentiation
-    'es2016',
-    // JSX, Flow
-    'react',
-    // more draft es features
-    'stage-0',
-  ],
-  env: {
-    development: {
-      plugins: [
-        ['react-transform', {
-          transforms: [{
-            transform: ‘react-transform-hmr',
-            imports: ['react'],
-            locals: ['module']
-          }]
-        }]
-      ],
-    }
-  },
+// Don't try to find .babelrc because we want to force this configuration.
+babelrc: false,
+presets: [
+// let, const, destructuring, classes, modules
+'es2015',
+// exponentiation
+'es2016',
+// JSX, Flow
+'react',
+// more draft es features
+'stage-0',
+],
+env: {
+development: {
   plugins: [
-    // function x(a, b, c,) { }
-    'syntax-trailing-function-commas',
-    // await fetch()
-    'syntax-async-functions',
-    // function* () { yield 42; yield 43; }
-    'transform-regenerator',
-    // Polyfills the runtime needed for async/await and generators
-    ['transform-runtime'), {
-      helpers: false,
-      polyfill: false,
-      regenerator: true
-    }],
-    'transform-decorators-legacy',
-    'add-module-exports',
-  ]
+    ['react-transform', {
+      transforms: [{
+        transform: ‘react-transform-hmr',
+        imports: ['react'],
+        locals: ['module']
+      }]
+    }]
+  ],
+}
+},
+plugins: [
+// function x(a, b, c,) { }
+'syntax-trailing-function-commas',
+// await fetch()
+'syntax-async-functions',
+// function* () { yield 42; yield 43; }
+'transform-regenerator',
+// Polyfills the runtime needed for async/await and generators
+['transform-runtime'), {
+  helpers: false,
+  polyfill: false,
+  regenerator: true
+}],
+'transform-decorators-legacy',
+'add-module-exports',
+]
 ```
 
 #### Differences
