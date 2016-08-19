@@ -5,7 +5,11 @@ description: use custom module_name in js and sass
 category: blog
 ---
 
-### JS
+Just the post title suggest, the following will teach you how to kick ass the relative path in your project( build with webpack anyway).
+
+The skills let you get rid of `../../../` of your asset path, now let do it.
+
+### kick ass in JS
 
 * Prerequirement
    
@@ -29,7 +33,7 @@ category: blog
   import CusomerModules from ‘custom_module_name’
   ```
 
-### SCSS
+### kick ass in SCSS
 
 * Prerequirement
 
@@ -71,6 +75,6 @@ category: blog
   ```
 
 
-That's it. Cool !
+> That's it. Enjoy ~ 
 
 
