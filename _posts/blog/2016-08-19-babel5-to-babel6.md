@@ -76,14 +76,17 @@ babel6 config file `.babelrc`
 #### Differences
 * performance impovements 
 
+
  Babel 5 changed the transformation and traversal pipeline dramatically to make way for some major performance improvements that have been implemented in Babel 6    
 
 * plugin presets ( `stage-[0/1/2]`, `react`, `es2015`, `es2016` ]) 
+
 
  Since specifying and maintaining dozens of transformers in a config file would be a lot of work, Babel 6 is introducing the concept of Plugin Presets which group together similar plugins for easy consumption.  
 
 
 * indepent transformer plugins (etc `babel-plugin-transform-decorators-legacy `  for `@decorator` )
+
 
  Since Babel is focusing on being a platform for JavaScript tooling and not an ES2015 transpiler, we’ve decided to make all of the plugins opt-in. This means when you install Babel it will no longer transpile your ES2015 code by default.  
 
