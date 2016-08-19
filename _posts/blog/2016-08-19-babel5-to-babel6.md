@@ -91,7 +91,7 @@ plugins: [
 
 * [Babel@6 doesn't **export default module.exports** any more](https://github.com/59naga/babel-plugin-add-module-exports)
 
-#### 热更新[HMR](http://webpack.github.io/docs/hot-module-replacement.html)
+#### [热更新](http://webpack.github.io/docs/hot-module-replacement.html)
 
 * [webpack-hot-middleware](https://github.com/webpack/webpack-dev-middleware)
 * [webpack-dev-middleware](https://github.com/glenjamin/webpack-hot-middleware)
