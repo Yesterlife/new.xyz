@@ -5,9 +5,11 @@ layout: home
 <div class="index-content blog">
     <div class="section">
 
-        <blockquote>
-            <p>Hey，长岛，这里是关于你的记忆与回溯</p>
-        </blockquote>
+        <div class="entry">
+            <blockquote>
+                <p>Hey，长岛，这里是关于你的记忆与回溯</p>
+            </blockquote>
+        </div>
 
         <ul class="artical-list">
         {% for post in site.categories.happy %}
