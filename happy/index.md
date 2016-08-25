@@ -5,7 +5,7 @@ layout: home
 <div class="index-content blog">
     <div class="section">
 
-        <div class="entry" style="margin-bottom:40px;margin-left:30px">
+        <div class="entry" style="margin-bottom:50px;margin-left:30px;margin-top:30px">
             <blockquote>
                 <h4>Hey，长岛，这里是关于你的记忆与回溯</h4>
             </blockquote>
