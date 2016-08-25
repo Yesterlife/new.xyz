@@ -27,7 +27,7 @@ layout: home
     display: none;
 }
 
-.home-menu-icon, .home-follow {
-    background: rgba(0,0,0,.3);
+.home-menu-icon, .home-follow, .home-contact{
+    background: rgba(0,0,0,.2);
 }
 </style>
