@@ -41,13 +41,9 @@ layout: default
         {% if site.disqus_username %}
         <div class="comment">
             <p class="show_comments"> <span> Wanna say something ?</span> </p>
-            <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+            <div class="disqus_thread"></div>
         </div>
         {% endif %}
-        <!-- 多说评论框 start -->
-        <!-- 多说评论框 end -->
-        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-        <!-- 多说公共JS代码 end -->
     </div>
 
     <div class="sidenav">
@@ -119,26 +115,17 @@ layout: default
 
         function show_disqus() {
         {% if site.disqus_username %}
-            //var disqus_config = function () {
-            //    this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
-            //    this.page.identifier = "{{ page.id }} - {{ page.title }}"; //  page's unique identifier variable
-            //};
-            //(function() { // DON'T EDIT BELOW THIS LINE
-            //var d = document, s = d.createElement('script');
+            var disqus_config = function () {
+                this.page.url = "{{ site.url }}{{ page.url }}"; //  page's canonical URL variable
+                this.page.identifier = "{{ page.id }} - {{ page.title }}"; //  page's unique identifier variable
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
 
-            //s.src = '//{{ site.disqus_username }}.disqus.com/embed.js';
+            s.src = '//{{ site.disqus_username }}.disqus.com/embed.js';
 
-            //s.setAttribute('data-timestamp', +new Date());
-            //(d.head || d.body).appendChild(s);
-            //})();
-            window.duoshuoQuery = {short_name:"dhong"};
-            (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0] 
-                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
             })();
         {% endif %}
         }
