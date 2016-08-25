@@ -5,9 +5,9 @@ layout: home
 <div class="index-content blog">
     <div class="section">
 
-        <div class="entry" style="margin-bottom:50px;margin-top:30px">
-            <img src="/images/2016_08/home.jpg"/>
-            <blockquote style="margin-left:30px;">
+        <div class="entry" style="margin-bottom:50px;">
+            <img src="/images/2016_08/home.jpg" style="margin:0 auto;"/>
+            <blockquote style="margin-left:30px;margin-top:30px;">
                 <h4>Hey，长岛，这里是关于你的记忆与回溯</h4>
             </blockquote>
         </div>
@@ -25,5 +25,9 @@ layout: home
 <style>
 .github-corner {
     display: none;
+}
+
+.home-menu-icon, .home-follow {
+    background: rgba(0,0,0,.3);
 }
 </style>
