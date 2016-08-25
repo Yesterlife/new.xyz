@@ -4,13 +4,7 @@ layout: home
 
 <div class="index-content blog">
     <div class="section">
-        <ul class="artical-cate">
-            <li class="on">
-                <a href="/happy"><span>长岛三杯</span></a>
-                <span>这里是关于你的记忆与回溯</span>
-            </li>
-        </ul>
-
+        <h3>Hey, 长岛, 这里是关于你的记忆与回溯</h3>
 
         <ul class="artical-list">
         {% for post in site.categories.happy %}
