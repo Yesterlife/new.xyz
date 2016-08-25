@@ -3,7 +3,7 @@ layout: home
 ---
 
 <div class="index-content blog">
-    <div class="section">
+    <div class="section" style="padding-top:0">
 
         <div class="entry" style="margin-bottom:50px;">
             <img src="/images/2016_08/home.jpg" style="margin:0 auto;"/>
