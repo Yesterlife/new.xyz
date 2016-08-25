@@ -37,13 +37,4 @@ friends: [{
 },{
     name: "Alvie",
     link: "http://alvie.net"
-},{
-    name: "Leo Shang",
-    link: "http://shangliuyan.github.io"
-},{
-    name: "Young Shook",
-    link: "http://youngshook.com/"
-},{
-    name: "Ziyao",
-    link: "http://ziyao.co"
 }]
