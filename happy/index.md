@@ -5,9 +5,9 @@ layout: home
 <div class="index-content blog">
     <div class="section">
 
-        <div class="entry">
+        <div class="entry" style="margin-bottom:40px;margin-left:30px">
             <blockquote>
-                <p>Hey，长岛，这里是关于你的记忆与回溯</p>
+                <h4>Hey，长岛，这里是关于你的记忆与回溯</h4>
             </blockquote>
         </div>
 
@@ -21,3 +21,8 @@ layout: home
         </ul>
     </div>
 </div>
+<style>
+.github-corner {
+    display: none;
+}
+</style>
