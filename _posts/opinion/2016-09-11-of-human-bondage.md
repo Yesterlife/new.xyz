@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: 《人性的枷锁》随笔
