@@ -29,7 +29,7 @@ description: 世界很大
 ![像这样](/images/2016_10/life.jpeg)
 <span class="title">活着</span>
 
-> 世界很大，想去看看?
+世界很大，想去看看?
 > 
 > 蜀之鄙有二僧，其一贫，其一富。
 >
@@ -44,7 +44,7 @@ description: 世界很大
 > 越明年，贫者自南海还。
 > 
 >
-> 想去，就去吧
+想去，就去吧
 
 <style>
 p .title {
