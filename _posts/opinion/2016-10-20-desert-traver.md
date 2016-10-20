@@ -15,7 +15,7 @@ description: 世界很大
 <span class="title">天空之镜</span>
 
 ![青海日出](/images/2016_10/qinghai-lake-sunrise.jpeg)
-<span class="title"青海日出</span>
+<span class="title">青海日出</span>
 
 ![雅丹砂岩](/images/2016_10/yadan-rock.jpeg)
 <span class="title">雅丹砂岩</span>
@@ -27,20 +27,28 @@ description: 世界很大
 <span class="title">世界</span>
 
 ![像这样](/images/2016_10/life.jpeg)
-<span class="title">生活要有意义</span>
+<span class="title">活着</span>
 
+> 世界很大，想去看看?
 > 
 > 蜀之鄙有二僧，其一贫，其一富。
+>
 > 贫者语于富者曰：「吾欲之南海，何如？」
+>
 > 富者曰：「子何恃而往？」
+>
 > 曰：「吾一瓶一钵足矣。」
+>
 > 富者曰：「吾数年来欲买舟而下，犹未能也。子何持而往！」
+>
 > 越明年，贫者自南海还。
 > 
-> 活着，就要好好活着
+>
+> 想去，就去吧
 
 <style>
 p .title {
 	text-align:center;
+    display: block;
 }
 </style>
