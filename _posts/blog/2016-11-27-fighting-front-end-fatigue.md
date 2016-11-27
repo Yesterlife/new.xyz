@@ -116,11 +116,13 @@ category: blog
 
 **都曾被忽悠**
 
-我所认知的几个很牛的前端开发者说，如果招聘者不熟悉应聘要求中的全部技能，就贸然贴出，是对求职者的一种欺骗，他们也不去申请该职位。其中一个是这么说的：
+我所认知的几个很牛的前端开发者说，如果招聘者不熟悉应聘要求中的全部技能，就贸然贴出，是对求职者的一种误导，他们也不去再去申请该职位了。其中一个是这么说的：
 
-> 看到招聘要求，90% 的开发者都觉得自己懂得还是太少了。实际上，我也有此感受，所以现在我决定留下来，再赚点钱，毕竟我还有很多要学的。
+> 90% of the JDs I see make me think “Argh, I’m so behind!” In fact, it bothers me so much, that I’m thinking about staying in my current role, and just trying to push for more money simply because I feel like I’ve “gotten away with it” here.
+>
+> 看到招聘要求，90% 的开发者都觉得自己懂得还是太少了。实际上，我也有此感受，现在我决定留下来，再赚点钱，毕竟我还有很多要学的。
 
-而实际上，那些招聘描述简直是场闹剧。招聘描述和真实需求之间到底有多大差异呢？一位叫 Brad 的网友制作了下面这幅图： 
+而实际上，那些招聘描述就像是在挂羊皮卖狗肉。招聘描述和真实需求之间到底有多大差异呢？一位叫 Brad 的网友制作了下面这幅图： 
 
 ![job edited](/images/2016_11/jobs-edited-500-opt.png)
 
