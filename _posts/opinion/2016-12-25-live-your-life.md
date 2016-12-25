@@ -27,7 +27,7 @@ description: 把生活过成你想要的样子
 
 那，冲个澡吧，嗯  
 
-「 冲澡中...... 」
+「 30 minutes later...... 」
 
 ![money](/images/2016_12/money.jpeg)
 
