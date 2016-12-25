@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2017 ，你想要的生活
+title: Live Your Life @ 2017
 category: opinion
 description: 把生活过成你想要的样子
 ---
@@ -8,6 +8,7 @@ description: 把生活过成你想要的样子
 ![think what](/images/2016_12/think-what.jpeg)
 
 两天前，提到自己已淡去了对田园式生活的向往，与此关联的杂念也消失不见。究其原因，自己也莫名所以，后来想了又想，和读的两本书有关。
+
 <br/>
 
 * 《人性的枷锁》 
@@ -67,5 +68,5 @@ description: 把生活过成你想要的样子
 
 ![nike plus](/images/2016_12/nike-plus.jpeg)
 
-> Live Your Life 「把生活过成自己想要的样子 」
+> Live Your Life 「 把生活过成自己想要的样子 」
 
