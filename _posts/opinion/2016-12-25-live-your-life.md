@@ -1,6 +1,4 @@
----
-layout: post
-title: Live Your Life @ 2017
+--- layout: post title: Live Your Life @ 2017
 category: opinion
 description: 把生活过成你想要的样子
 ---
@@ -68,5 +66,5 @@ description: 把生活过成你想要的样子
 
 ![nike plus](/images/2016_12/nike-plus.jpeg)
 
-> Live Your Life 「 把自己想要的生活 」
+> Enjoy Your Life ~
 
