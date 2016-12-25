@@ -68,5 +68,5 @@ description: 把生活过成你想要的样子
 
 ![nike plus](/images/2016_12/nike-plus.jpeg)
 
-> Live Your Life 「 把生活过成自己想要的样子 」
+> Live Your Life 「 把自己想要的生活 」
 
