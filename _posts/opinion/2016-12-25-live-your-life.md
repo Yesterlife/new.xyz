@@ -1,5 +1,6 @@
 ---
-layout: post title: Live Your Life @ 2017
+layout: post
+title: Live Your Life @ 2017
 category: opinion
 description: 把生活过成你想要的样子
 ---
