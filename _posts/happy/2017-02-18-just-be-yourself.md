@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 泪流满面，步步回头，也要继续往前走
-category: opinion
+category: happy
 description: 亲爱的，幸福就在前面，继续往前
 ---
 
