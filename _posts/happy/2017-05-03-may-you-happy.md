@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 愿意幸福
+title: 愿你幸福
 category: happy
 description: 心里的一些话
 ---
