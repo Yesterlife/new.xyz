@@ -18,7 +18,7 @@ category: blog
 
 双向绑定的黑魔法，成了 [Angular](https://angularjs.org "angular.js") KO 对手的杀手锏，吸引了众多的开发者的涌入。以至于到现在，看到 [Angular 与 React 混战](https://zhuanlan.zhihu.com/p/20549104?columnSlug=FrontendMagazine "angular vs react") 的那刻，自己早已转投至 [react](https://facebook.github.io/react "react") 靡下，又是思绪万千。历史的车轮不断向前，优秀的思想，总是会被不断地沉淀和净化。做为一名程序员，就要要紧跟时代的脚步，不断学习。未来的潮流，又将被谁主导？我们拭目以待！
 
-回到[Bootstrap](http://getbootstrap.com "bootstrap")，从 v2 开始，对其 12 列的栅栏系统，印象深刻。参考其官网丰富详细的使用文档，前端新手的我，依葫芦画瓢，最终也完成了一个个页面，一一看去，还特别地自我感觉良好（笑）。
+回到 [Bootstrap](http://getbootstrap.com "bootstrap")，从 v2 开始，对其 12 列的栅栏系统，印象深刻。参考其官网丰富详细的使用文档，前端新手的我，依葫芦画瓢，最终也完成了一个个页面，一一看去，还特别地自我感觉良好（笑）。
 
 ![bootstrap offical sit](http://ww4.sinaimg.cn/large/006tNc79ly1ffs1jwthaaj31kw12z0vc.jpg "Bootstrap")
 
@@ -29,36 +29,30 @@ category: blog
 后来的某一天，脱离了后台网站的开发，工作重心转移到了移动端页面，从此拉开切图仔职业生涯的帷幕。
 
 > Bootstrap 太大了，不能用 !!!
->
 >  Angular 太大了，不能用 !!!
->
 > 什么？不会切页面 !!!
->
 >  什么？不懂 CSS Model !!!
->
 >  什么？不知道如何优化页面性能 !!!
 
 使惯了各种库和框架的我，在性能要求苛刻的移动端面前，被迫卸下了所有的装备，一下子不知所措。扪心自问，没了框架、类库，我还会点什么？
 
-对于知识，要保持一颗敬畏之心，随着知识的积累，你会发现：
+对于知识，要保持一颗敬畏之心，随着知识的积累，会慢慢发现：
 
 > 懂的越多，不懂得也越多。
 
 ### Grunt & Gulp & Webpack
 
-[Angualr](https://angularjs.org "angularjs") 与 [Bootstrap](http://getbootstrap.com "Bootstrap") 的学习，让自己跨进了前端的门槛。而失去它们之后的工作，又让自己大开眼界，犹如跳出井口的井底之蛙：自己的前端之路才刚刚开始。
+[Angualr](https://angularjs.org "angularjs") 与 [Bootstrap](http://getbootstrap.com "Bootstrap") 的学习，让自己跨进了前端的门槛。而失去它们之后的工作，又让自己大开眼界，犹如跳出井口的井底之蛙：前端之路才刚刚开始。
 
 JS 模块化，代码压缩、合并，雪碧图，缓存优化和自动化构建是网站性能优化的常用手段，这些方面的空白，又让我心潮澎湃，我知道这扇门之后，必将是一片更广阔的世界。
 
 ![static resources dependencies graph](http://ww2.sinaimg.cn/large/006tNc79ly1ffs1l0rq0wj318c0icwf7.jpg "JS Modules")
 
-JS 的模块化是前端的核心基础，大型项目里尤其如此。举个例子: `index.js` 依赖 `index.css`、`index-template.html`、`a.js`、`b.js`。其中 `b.js` 依赖 `b.css`和 `b-template.html`，而 `b.css` 又引入了 `add.png`和`b-template.html`，后者间接依赖 `banner.png`。是不是很头大 ？ 
-
-仅仅是 JS 模块的依赖分析，就已经让开发者心力交瘁了，针对每种文件类型，还有一堆的插件等待配置，而各种配置项又暗藏玄机。这就是 [Grunt](http://www.gruntjs.net "gruntjs offical site") 时代自动化构建的现状。 究其原因，CSS、HTML 和 JS 的预处理任务之间，缺少协同合作。当时条件下， JS 里还并不能直接引入 HTML 和 CSS 依赖（在某些插件的配置下应该也能做到）。虽然遇到的大多数问题，都能找到一个对应的 `grunt-xxxx` 解决（无非再加一项插架的配置），可有没有什么办法能处理的更优雅一些呢 ？
+JS 的模块化是前端的核心基础，大型项目里尤其如此。仅仅是 JS 模块的依赖分析，就已经让开发者心力交瘁了，针对每种文件类型，还有一堆的插件等待配置，而各种配置项又暗藏玄机。这就是 [Grunt](http://www.gruntjs.net "gruntjs offical site") 时代自动化构建的现状。 究其原因，CSS、HTML 和 JS 的预处理任务之间，缺少协同合作。当时条件下， JS 里还并不能直接引入 HTML 和 CSS 依赖（在某些插件的配置下应该也能做到）。虽然遇到的大多数问题，都能找到一个对应的 `grunt-xxxx` 解决（无非再加一项插架的配置），可有没有什么办法能处理的更优雅一些呢 ？
 
 ![glup vs grunt](http://ww3.sinaimg.cn/large/006tNc79ly1ffs1lmx6xij30qd0dh74q.jpg "gulp vs grunt")
 
-[Gulp 之于 Grunt](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4 "gulp vs grunt")，在 Task 协作方面略胜一筹，文件流的理念，回到了流程处理的本质，减少了中间临时文件的开销，可，还是没能支持不同类型的任务间的协作。
+[Gulp 之于 Grunt](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4 "gulp vs grunt")，在 Task 协作方面略胜一筹，文件流的理念，回到了流程处理的本质，减少了中间临时文件的开销，可，还是没能支持不同类型任务间的协作。
 
 [Webpack](https://webpackjs.org "webpack offical site") 最早出现于 [Pete Hunt](https://twitter.com/floydophone "pete hunt") 关于[How instangram works](https://youtube.com "youtube") 的分享中，当中提到了很多关于 [SPA](https://zh.wikipedia.org/wiki/%E5%8D%95%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8 "单页面应用") 的一些资源整合和加载优化的方案，在 [instangram.com](https://instangram.com "instangram") 的性能优化中收效显著。而这些方案，都能够在一个叫 [Webpack](https://webapck.js.org "webpack") 的插件中得到支持。千呼万唤始出来，此后 [Webpack](https://webapck.js.org "webpack") 脱颖而出。 
 
