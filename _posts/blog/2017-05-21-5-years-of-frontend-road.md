@@ -78,7 +78,7 @@ JS 的模块化是前端的核心基础，大型项目里尤其如此。举个�
 
 ![react vs angular](http://ww2.sinaimg.cn/large/006tNc79ly1ffs1i66i6fj30m80k1acm.jpg "angular vs react")
 
-[ Reconciliation （virtual DOM） ](https://facebook.github.io/react/docs/reconciliation.html "Reconciliation")（v16 之后的版本中，被 [Fiber](https://github.com/acdlite/react-fiber-architecture "react fiber architecture") 取代） 是 [React](https://facebook.github.io/react "react") 的核心思想，在优化性能的同时，也提供了它迁移到其它平台的能力。
+[ Reconciliation （virtual DOM）](https://facebook.github.io/react/docs/reconciliation.html "Reconciliation")（v16 之后的版本中，被 [Fiber](https://github.com/acdlite/react-fiber-architecture "react fiber architecture") 取代）是 [React](https://facebook.github.io/react "react") 的核心思想，在优化性能的同时，也提供了它迁移到其它平台的能力。
 
 | virtual DOM 实现                           | 平台            |
 | ---------------------------------------- | ------------- |
@@ -90,7 +90,7 @@ JS 的模块化是前端的核心基础，大型项目里尤其如此。举个�
 
 > Learn Once, Write Everywhere
 
-在这一思想的引领下，我们只需关注组件本身，在其生命周期中，处理着相关的一切，不用关心它究竟剑指何处。[React](https://facebook.github.io/react "react") 着重于 virtual DOM 的更新和策略，**React-XXX** 则负责具体 Virtual DOM 到 Real DOM 的具体转换。
+在这一思想的引领下，我们只需关注组件本身，在组件的生命周期中，处理相关的一切，而不用关心它究竟剑指何方。[React](https://facebook.github.io/react "react") 是接口，react-xxx 就是接口的具体实现。
 
 注：还记得 react-dom 什么时候从 react 中拆分出去的吗？如今，prop-types 也被拆分开来，对此，你又有什么想法？
 
@@ -130,8 +130,10 @@ JS 的模块化是前端的核心基础，大型项目里尤其如此。举个�
 | div  | View   |
 | img  | Image  |
 
-Native 之于 Web ，没有所谓的谁优谁劣，更多的是从体验和其它方面的折衷选择。如今，微信小程序、[Expo](https://docs.expo.io/) 将 Web 一链既达的体验也引入到 Native 中，成为了高级版的浏览器。Android 开发，要用 Java；iOS 开发需要用 Swift 或者 Object-c；但跨平台的 Web 开发只需要 Html & JS & CSS；这些大家都很清楚，可很少人会问为什么？现在，终于，可以使用同一种语言（ JS）开发 IOS 和 Android 了（同时具备了一链即达的特性），绕了好大一圈，好似回到了 Web 时代。试问，为什么没有从浏览器着手升级体验呢？
+Native 之于 Web ，没有所谓的谁优谁劣，更多的是从体验和其它方面的折衷选择。如今，微信小程序、[Expo](https://docs.expo.io/) 将 Web 一链既达的体验也引入到 Native 中，成为了高级版的浏览器。Android 开发，要用 Java；iOS 开发需要用 Swift 或者 Object-C；但跨平台的 Web 开发只需要 Html & JS & CSS；这些大家都很清楚，可很少人会问为什么？现在，终于，可以使用同一种语言（ JS）开发 IOS 和 Android 了（同时具备了一链即达的特性），绕了好大一圈，好似回到了 Web 时代。试问，为什么没有从浏览器着手升级体验呢？
 
 回首走过的 5 个年头，这是一个好的时代，见证了诸多框架的兴衰成败。
 
 而今，即将迈入第 6 个年头，这又是一个坏的时代，AI、VR 的时代还有多远？[攻壳机动队](http://baike.baidu.com/link?url=d6BcbdW2cFY_tpqnhnDgB8vaMnjPLSQI17NSaaWCCL5DOxndW3I7W2_zBb8DbN7GaUS_Y7CMO_NDcYM1-ma6j96P38p0QZJyYMA5HzifLLMDjYTnIl1fckqi2uYXYuMU) 何时成为现实呢？
+
+我要学 VR 了，你呢？
