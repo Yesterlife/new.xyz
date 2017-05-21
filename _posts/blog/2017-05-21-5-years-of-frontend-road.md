@@ -68,7 +68,7 @@ JS 的模块化是前端的核心基础，大型项目里尤其如此。举个�
 
 写到这里，突然领悟到其中蕴含的众多软件设计理念，单一职责、命令模式、抽象工厂等等，被巧妙地组合利用后，方显现软件工程学的真谛。
 
-如果说是[Pete Hunt](https://twitter.com/floydophone "pete hunt") 的分享推动了[Webpack](https://webapck.js.org "webpack") 的流行，就[React](https://facebook.github.io/react "react") 的火热之势而言，称他为 「[React](https://facebook.github.io/react "react") 之父」也不为过。
+如果说是[Pete Hunt](https://twitter.com/floydophone "pete hunt") 的分享推动了[Webpack](https://webapck.js.org "webpack") 的流行，就[React](https://facebook.github.io/react "react") 的火热之势而言，称他为 「[React](https://facebook.github.io/react "react") 之父」也并不为过。
 
 ### React
 
