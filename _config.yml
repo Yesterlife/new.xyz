@@ -7,9 +7,9 @@ paginate: 8
 permalink: /:title
 
 title: dhong.co
-url: http://dhong.co
+url: https://dhong.co
 feed: /atom.xml
-author_info: <a href="http://dhong.co/">Duan Hong</a>
+author_info: <a href="https://dhong.co/">Duan Hong</a>
 
 # tags settings
 featured-tags: true # wheather or not using feature-tags
@@ -27,7 +27,7 @@ friends: [{
     link: 'http://www.ruanyifeng.com/blog/'
 },{
     name: 'Hux',
-    link: 'http://huangxuan.me'
+    link: 'https://huangxuan.me'
 },{
     name: '尹锋以为',
     link: 'http://ingf.github.io'
