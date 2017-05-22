@@ -85,7 +85,7 @@ self.addEventListener("install", e => {
   e.waitUntil(
     caches.open(PRECACHE).then(cache => {
       return cache
-        .add("offline.html")
+        .add("404.html")
         .then(self.skipWaiting())
         .catch(err => console.log(err));
     })
