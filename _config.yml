@@ -21,6 +21,9 @@ ga_track_id: 'UA-57346517-1' # format UA-xxxxxx-xx
 # Disqus settings
 disqus_username: dhong-co
 
+# enable PWA
+site.service-worker: true
+
 # friends settings
 friends: [{
     name: '阮一峰',

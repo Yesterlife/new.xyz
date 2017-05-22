@@ -5,9 +5,9 @@ layout: home
 <div class="index-content project">
     <div class="section">
         <ul class="artical-cate">
-            <li><a href="https://dhong.co/"><span>Blog</span></a></li>
-            <li><a href="https://dhong.co/opinion"><span>Opinion</span></a></li>
-            <li class="on"><a href="https://dhong.co/whoami"><span>Me</span></a></li>
+            <li><a href="/"><span>Blog</span></a></li>
+            <li><a href="/opinion"><span>Opinion</span></a></li>
+            <li class="on"><a href="/whoami"><span>Me</span></a></li>
         </ul>
 
         <div class="cate-bar"><span id="cateBar"></span></div>
