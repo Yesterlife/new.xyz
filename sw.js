@@ -10,6 +10,7 @@ const PRECACHE = "precache-v1";
 const RUNTIME = "runtime";
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
+  "dhong.co",
   "sinaimg.cn",
   "cdnjd.cloudflare.com"
 ];
@@ -60,7 +61,7 @@ const endWithExtension = req =>
 // Tracking https://twitter.com/Huxpro/status/798816417097224193
 const shouldRedirect = req =>
   isNavigationReq(req) &&
-  // new URL(req.url).pathname.substr(-1) !== "/" &&
+  new URL(req.url).pathname.substr(-1) !== "/" &&
   !endWithExtension(req);
 
 // The Util Function to get redirect URL
@@ -68,7 +69,7 @@ const shouldRedirect = req =>
 // P.P.S. Always trust url.pathname instead of the whole url string.
 const getRedirectUrl = req => {
   url = new URL(req.url);
-  // url.pathname += "/";
+  url.pathname += "/";
   return url.href;
 };
 
@@ -117,10 +118,10 @@ self.addEventListener("fetch", event => {
   // Skip some of cross-origin requests, like those for Google Analytics.
   if (HOSTNAME_WHITELIST.indexOf(new URL(event.request.url).hostname) > -1) {
     // Redirect in SW manually fixed github pages 404s on repo?blah
-    // if (shouldRedirect(event.request)) {
-    //   event.respondWith(Response.redirect(getRedirectUrl(event.request)));
-    //   return;
-    // }
+    if (shouldRedirect(event.request)) {
+      event.respondWith(Response.redirect(getRedirectUrl(event.request)));
+      return;
+    }
 
     // Stale-while-revalidate
     // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
