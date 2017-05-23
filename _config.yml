@@ -21,7 +21,7 @@ featured-condition-size: 1 # A tag will be used if the size of it is more than t
 ga_track_id: 'UA-57346517-1' # format UA-xxxxxx-xx
 
 # Disqus settings
-disqus_username: dhong-co
+disqus_username: d-hong
 
 # enable PWA
 service_worker: true
