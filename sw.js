@@ -60,7 +60,7 @@ const endWithExtension = req =>
 // Tracking https://twitter.com/Huxpro/status/798816417097224193
 const shouldRedirect = req =>
   isNavigationReq(req) &&
-  new URL(req.url).pathname.substr(-1) !== "/" &&
+  // new URL(req.url).pathname.substr(-1) !== "/" &&
   !endWithExtension(req);
 
 // The Util Function to get redirect URL
@@ -68,7 +68,7 @@ const shouldRedirect = req =>
 // P.P.S. Always trust url.pathname instead of the whole url string.
 const getRedirectUrl = req => {
   url = new URL(req.url);
-  url.pathname += "/";
+  // url.pathname += "/";
   return url.href;
 };
 
