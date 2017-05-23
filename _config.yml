@@ -1,10 +1,12 @@
 auto: true
 
 markdown: kramdown
-# pygments: true
+kramdown:
+  input: GFM # use Github Flavored Markdown !important 
 highlighter: rouge
-paginate: 8
-permalink: /:title
+anchorjs: true
+permalink: pretty
+paginate: 10
 
 title: dhong.co
 url: https://dhong.co
