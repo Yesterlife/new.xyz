@@ -117,10 +117,10 @@ self.addEventListener("fetch", event => {
   // Skip some of cross-origin requests, like those for Google Analytics.
   if (HOSTNAME_WHITELIST.indexOf(new URL(event.request.url).hostname) > -1) {
     // Redirect in SW manually fixed github pages 404s on repo?blah
-    if (shouldRedirect(event.request)) {
-      event.respondWith(Response.redirect(getRedirectUrl(event.request)));
-      return;
-    }
+    // if (shouldRedirect(event.request)) {
+    //   event.respondWith(Response.redirect(getRedirectUrl(event.request)));
+    //   return;
+    // }
 
     // Stale-while-revalidate
     // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
