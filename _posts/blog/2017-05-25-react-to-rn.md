@@ -1,14 +1,16 @@
 ---
 layout: post
 title: RN 之旅
-description: 「 Learn once, write everywhere 」开启 RN 之旅
+description: learn once, write everywhere
 category: blog
 ---
-入职微影的近两年里，一直在 react 的阵营中耕耘：团队内部开发了 pepper (同[create-react-app](https://github.com/facebookincubator/create-react-app)的自动化工具）、公共组件 vision-ui ，并先后协同其他团队成员，完成 [M 站](https://m.wepiao.com)、[微信端演出票](https://wechat.show.wepiao.com)、[微信端电影票](https://wx.wepiao.com) 等诸多项目的重构工作，也取得了不错的成绩。两年中，内部的项目几乎全部切换到 react 上来，期间 react 社区也发生了诸多的变化，相关生态 [react-native](https://facebook.github.io/react-native) 、[react-vr](https://facebook.github.io/react-vr) 也逐渐趋于稳定和日益壮大。因而在 react 方向的横向扩展，就成了团队接下来研究方向。 
+入职微影的近两年里，一直在 react 的阵营中耕耘：团队内部开发了 pepper (类似 [create-react-app](https://github.com/facebookincubator/create-react-app )的自动化工具）、公共组件 vision-ui ，并先后协同其他团队成员，完成 [M 站](https://m.wepiao.com)、[微信端演出票](https://wechat.show.wepiao.com)、[微信端电影票](https://wx.wepiao.com) 等诸多项目的重构工作，也取得了不错的成绩。
+
+如今，公司内部的前端项目几乎全部切换至 react 上来，期间 react 社区也发生了诸多的变化，相关生态 [react-native](https://facebook.github.io/react-native) 、[react-vr](https://facebook.github.io/react-vr) 也逐渐趋于稳定和日益壮大。因而在 react 方向的横向扩展，就成了团队接下来研究方向。 
 
 终于，在 16 年的下半年，迎来了拥抱 react-native 的机会。
 
-*注：下文中简称 react-native 为 RN*
+> 注：下文中简称 react-native 为 **RN**
 
 ### 背景介绍
 
@@ -27,7 +29,7 @@ category: blog
 * 提升体验
 * 全新改版（图表内容较多）
 
-怎么实现上述目标成了首先要解决的问题。
+怎么实现上述目标成了首先要解决的问题?
 
 ### 改版方案
 
@@ -47,7 +49,7 @@ category: blog
 
   **就是它了！**
 
-方案确定后，重构的任务自然而然的归结为以下几个方面
+方案确定后，重构的任务自然而然的归结为以下几个方面  
 
 * 迁移原有 Native 的功能
 * 图表渲染
@@ -56,7 +58,7 @@ category: blog
 
 #### 迁移原有 Native 的功能
 
-原票房分析 的 Native 功能主要为：
+原票房分析 的 Native 功能主要为： 
 
 * 截屏、录屏分享
 * 推送
@@ -145,7 +147,7 @@ console.disableYellowBox = true;
 
 红屏（redbox）的错误就不能忽视了。需要注意的是，不管红屏还是黄屏都不会在正式发布的 app 里出现，当然，红屏的话应用就直接闪退了。
 
-> RedBoxes and YellowBoxes are automatically disabled in release (production) builds. — react-native official site
+> RedBoxes and YellowBoxes are automatically disabled in release (production) builds.   — react-native official site
 
 补充一下：开发的大部分场景下，都不需要 Xcode 或者 Android Studio，尽管使用自己喜爱的 IDE 就好了。
 
@@ -329,9 +331,7 @@ InteractionManager.runAfterInteractions(() => {
 
 Redux 方面，web 到 RN 都是通用的。RN 版中，尝试了 [redux-saga](https://github.com/redux-saga/redux-saga)，基于 Generator 实现的异步 action 方案，比 [redux-thunk](https://github.com/gaearon/redux-thunk) 更具灵活性。在 saga 里一个 action 的处理流程被拆分4 部分：
 
-* take
-
-  主动监听 action 的触发，拿到 action 的调用参数，进入下一环节
+* **take** 主动监听 action 的触发
 
   ```javascript
   // action defination
@@ -353,20 +353,14 @@ Redux 方面，web 到 RN 都是通用的。RN 版中，尝试了 [redux-saga](h
   }
   ```
 
-  ​
-
-* select
-
-  如果需要在 store 已有的状态信息，此环节必不可少
+* **select** 获取当前的状态
 
   ```jsx
   // fetch previous movies state from store
   const originalsMovies = select(store => store.movies)
   ```
 
-* call
-
-  执行 API 操作，或者其他耗时工作
+* **call** 执行操作
 
   ```javascript
   try{
@@ -377,9 +371,7 @@ Redux 方面，web 到 RN 都是通用的。RN 版中，尝试了 [redux-saga](h
   }
   ```
 
-* put
-
-  这个过程相当于 dispatch ，是 action 处理的最后一个过程
+* **put** 相当于 dispatch ，是 action 处理的最后一个过程
 
   ```javascript
   // recice movies action logic
