@@ -16,7 +16,7 @@ category: blog
 
 >  [娱票儿票房分析](https://appsto.re/cn/4poF-.i)是我司出品的一款电影数据类应用，为电影爱好者和从业者提供专业、精准、实时的行业数据查询工具，内容包括实时票房、预售票房、上座率、全国排片、城市排片、影院排片、观音人次、影院排期、电影票房排行榜等。 — Apple Store 介绍
 
-![票房分析](http://ww1.sinaimg.cn/large/006tNc79ly1ffwgkrjczrj30ot0f30tp.jpg)
+![票房分析](https://ww1.sinaimg.cn/large/006tNc79ly1ffwgkrjczrj30ot0f30tp.jpg)
 
 原票房分析 app 属于混合模式移动应用（Hybrid App）, 即在 [Web App](https://piaofang.wepiao.com) 上包一层 Native 的壳子，从而兼备 Native  和 Web 的一些优势：
 
@@ -83,7 +83,7 @@ RN 版的其他实现，大部分比较基础和简单。也有一些[基于 Nat
 
 在项目结构上，延续了 react 项目的经验:
 
-![project design](http://ww1.sinaimg.cn/large/006tNc79ly1ffwol47h84j31740regmr.jpg)
+![project design](https://ww1.sinaimg.cn/large/006tNc79ly1ffwol47h84j31740regmr.jpg)
 
 项目的依赖上，与 react 的差异主要在 UI 上，`*-react-native-*` 都是针对 RN 的，而 [redux](http://redux.js.org/) 全家桶两个项目间共享。所以，如果在移植一套 web 方案的话，只要在提供一套 web 的 UI 方案即可（ [react-native-web](https://github.com/necolas/react-native-web) 更进一步，兼容 web 的做法为移植提供了更多的便利，观望中...）。
 
@@ -130,7 +130,7 @@ RN 版的其他实现，大部分比较基础和简单。也有一些[基于 Nat
 
 以 IOS 调试为例，在当前 app 中，使用快捷键 `⌘` + **D** 即可调出调试选项（摇一摇就不太好使了吧～）
 
-![debugger react-native app](http://facebook.github.io/react-native/releases/0.44/img/DeveloperMenu.png)
+![debugger react-native app](https://facebook.github.io/react-native/releases/0.44/img/DeveloperMenu.png)
 
 为便于开发调试，推荐开启以下选项
 
@@ -217,7 +217,7 @@ export default class Fee extends Compoennt {
 
 需要注意的是，由于 `Switch` 的实现基于原生组件，对应平台的 UI 样式会有些差异： 
 
-![switch difference](http://ww3.sinaimg.cn/large/006tNbRwly1ffxidmidlyj30r207egli.jpg)
+![switch difference](https://ww3.sinaimg.cn/large/006tNbRwly1ffxidmidlyj30r207egli.jpg)
 
 针对平台性的差异，[RN 官方推荐了两种做法](http://facebook.github.io/react-native/releases/0.18/docs/platform-specific-code.html#content)
 
@@ -415,7 +415,7 @@ function* requestMovies({ params }) {
 
 ### 总结
 
-![ready to release](http://ww4.sinaimg.cn/large/006tNbRwly1ffxongaymyj311s0o040c.jpg)
+![ready to release](https://ww4.sinaimg.cn/large/006tNbRwly1ffxongaymyj311s0o040c.jpg)
 
 >  Learn Once, Write Everywhere
 
