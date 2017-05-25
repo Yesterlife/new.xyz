@@ -6,9 +6,9 @@ category: blog
 ---
 入职微影的近两年里，一直在 react 的阵营中耕耘：团队内部开发了 pepper (类似 [create-react-app](https://github.com/facebookincubator/create-react-app) 的自动化工具）、公共组件 vision-ui ，并先后协同其他团队成员，完成 [M 站](https://m.wepiao.com)、[微信端演出票](https://wechat.show.wepiao.com)、[微信端电影票](https://wx.wepiao.com) 等诸多项目的重构工作，也取得了不错的成绩。
 
-如今，公司内部的前端项目几乎全部切换至 react 上来，期间 react 社区也发生了巨大的变化，相关生态 [react-native](https://facebook.github.io/react-native) 、[react-vr](https://facebook.github.io/react-vr) 也逐渐趋于稳定和日益壮大。因而在 react 方向的横向扩展，就成了团队接下来研究方向。 
+如今 [react](https://facebook.github.com/react) 日益壮大， [react-native](https://facebook.github.io/react-native) 逐渐成熟、[react-vr](https://facebook.github.io/react-vr) 也踏上历程， 因而在 react 方向的横向扩展，也就成了团队接下来的研究方向。 
 
-终于，在 16 年的下半年，迎来了拥抱 react-native 的机会。
+终于，16 年的下半年，迎来了拥抱 [react-native](https://facebook.github.io/react-native)  的机会。
 
 > 注：下文中简称 react-native 为 **RN**
 
@@ -37,17 +37,17 @@ category: blog
 
 * Hybrid  调整成 pepper 支持的项目
 
-  根据之前的重构经验，轻车熟路，用时也比较少。原 web 部分是基于 react 实现多页面应用，用 pepper 重构成基于 react 的单页面应用（SPA），就这点来说，性能方面提升空间十分有限。对于体验，仍然摆脱不了 Hybird 的硬伤。就团队成长来说，几乎也学不到什么新的技能。**不可行！**
+  根据之前的重构经验，轻车熟路，用时也较少。原 web 部分也是基于 react 实现多页面应用，再用 pepper 重构成基于 react 的单页面应用（SPA）的话，性能方面提升空间十分有限。对于体验，仍然摆脱不了 Hybird 的硬伤。团队成长方面，几乎也学不到什么新的技能。**不太可行！**
 
-* Native 完全推到重来
+* Native 完全推倒重来
 
-  此方案倒是可以解决性能和体验的问题，但和我们**前端**团队就没啥关系了。**就此打住**！
+  此方案倒是可以解决性能和体验的问题，但这块儿并不是我们团队所擅长的，且时间上也比较吃紧。**就此打住吧**
 
 * RN
 
-  结合诸多线上实例和社区反馈，再结合自身状况：「Learn Once，Write Everywhere 」的理念，实践在此处再合适不过。对于用 JS 渲染成的原生App 而言，体验自不必说。性能方面，从社区反馈以及自身体验（下了几个 App 尝试了下）几乎觉察不出区别（iOS 很棒，嗯，Android 欠佳）。图表问题，旧版 web 使用 [ECharts](http://echarts.baidu.com/) 方案，还好社区内有一个 WebView 桥接的 [react-native-echarts](https://github.com/somonus/react-native-echarts) 实现可言替换。
+  结合诸多线上实例和社区反馈，再结合自身状况（react 背景）：「Learn Once，Write Everywhere 」的理念，实践在此处再合适不过。对于用 JS 渲染成的原生 App 而言，体验上自不必说。性能方面，无论社区反馈，还是自身体验（下了几个 App 尝试），几乎觉察不出区别（iOS 很棒，但 Android 欠佳）。图表问题，旧版 web 使用 [ECharts](http://echarts.baidu.com/) 方案，还好社区内有一个 WebView 桥接的 [react-native-echarts](https://github.com/somonus/react-native-echarts) 实现可以替换。
 
-  **就是它了！**
+  **靠谱！**
 
 方案确定后，重构的任务自然而然的归结为以下几个方面  
 
@@ -85,7 +85,7 @@ RN 版的其他实现，大部分比较基础和简单。也有一些[基于 Nat
 
 ![project design](https://ww1.sinaimg.cn/large/006tNc79ly1ffwol47h84j31740regmr.jpg)
 
-项目的依赖上，与 react 的差异主要在 UI 上，`*-react-native-*` 都是针对 RN 的，而 [redux](http://redux.js.org/) 全家桶两个项目间共享。所以，如果在移植一套 web 方案的话，只要在提供一套 web 的 UI 方案即可（ [react-native-web](https://github.com/necolas/react-native-web) 更进一步，兼容 web 的做法为移植提供了更多的便利，观望中...）。
+第三方依赖方面，与 react 的差异主要在 UI 上，`*-react-native-*` 都是针对 RN 的，而 [redux](http://redux.js.org/) 全家桶两个项目间共享。如若再移植一套 web 方案，只需提供一套 web 端的 UI 方案（ [react-native-web](https://github.com/necolas/react-native-web) 更进一步，兼容 web 的做法为移植提供了更多的便利，观望中...）。
 
 | 名称                                   | 说明                     |
 | ------------------------------------ | ---------------------- |
@@ -113,9 +113,9 @@ RN 版的其他实现，大部分比较基础和简单。也有一些[基于 Nat
 | redux-saga                           | 异步 action，基于 Generator |
 | reselect                             | mapStateToProps 的优化再封装 |
 
-**插件安装**：在安装 RN 插件时，有些要执行下 `react-native link xxx-xxx`，有些则不用。它们的区别主要在于是否有依赖封装的 Native Modules 模块，`react-native link` 所做的就是把依赖的 Native Modules 模块配置到 ios 和 android 项目中。这个操作会对 Native 的代码做些修改，具体的改动部分可以参考相关插件的手动配置说明（建议熟悉一下，卸载的时候方便些 [捂脸] ）。
+**插件安装**：在安装 RN 插件时，有些要安装完毕后，还要执行下 `react-native link xxx-xxx`。它们的区别主要在于是否有依赖封装的 Native Modules 模块，`react-native link` 所做的就是把依赖的 Native Modules 模块配置到 ios 和 android 项目中。这个操作会对 Native 的代码做些修改，具体的改动部分可以参考相关插件的手动配置说明（但建议大家也熟悉一下，卸载的时候会方便些 [捂脸] ）。
 
-万事俱备，接下来进入实战环节，Let's do it
+万事俱备，让我们进入实战环节，Let's do it
 
 ### 实战演练
 
