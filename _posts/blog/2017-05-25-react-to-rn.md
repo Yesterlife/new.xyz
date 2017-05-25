@@ -6,7 +6,7 @@ category: blog
 ---
 入职微影的近两年里，一直在 react 的阵营中耕耘：团队内部开发了 pepper (类似 [create-react-app](https://github.com/facebookincubator/create-react-app )的自动化工具）、公共组件 vision-ui ，并先后协同其他团队成员，完成 [M 站](https://m.wepiao.com)、[微信端演出票](https://wechat.show.wepiao.com)、[微信端电影票](https://wx.wepiao.com) 等诸多项目的重构工作，也取得了不错的成绩。
 
-如今，公司内部的前端项目几乎全部切换至 react 上来，期间 react 社区也发生了诸多的变化，相关生态 [react-native](https://facebook.github.io/react-native) 、[react-vr](https://facebook.github.io/react-vr) 也逐渐趋于稳定和日益壮大。因而在 react 方向的横向扩展，就成了团队接下来研究方向。 
+如今，公司内部的前端项目几乎全部切换至 react 上来，期间 react 社区也发生了巨大的变化，相关生态 [react-native](https://facebook.github.io/react-native) 、[react-vr](https://facebook.github.io/react-vr) 也逐渐趋于稳定和日益壮大。因而在 react 方向的横向扩展，就成了团队接下来研究方向。 
 
 终于，在 16 年的下半年，迎来了拥抱 react-native 的机会。
 
