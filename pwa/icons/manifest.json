@@ -1,0 +1,20 @@
+{
+  "name": "Duan Hong",
+  "short_name": "DHong Blog",
+  "description": "Life is a struggle",
+  "icons": [{
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/256.png",
+    "sizes": "256x256",
+    "type": "image/png"
+  }],
+  "background_color": "transparent",
+  "theme_color": "transparent",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+
