@@ -4,7 +4,7 @@ title: 跑马旅行之日本千岁
 category: opinion
 description: 一场异国跑马之旅
 ---
-时光总是在不经意间逝去，一如昨日的日本之行。留住这段美好的记忆 — 题记
+时光总是在不经意间逝去，一如昨日的日本之行。 — 题记
 
 每次出去旅行，都打着跑马拉松的名义，这次也不例外：日本千岁马拉松之旅
 
@@ -20,11 +20,11 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgcz9ewrjpj30zk0nomz2.jpg)
 
-好的旅行，从飞机餐开始。日航的便当真的超赞，哈根达斯✌️！
+美好的旅行，从飞机餐开始。日航的便当真的超赞，哈根达斯✌️！
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fgczg329wkj30zk0noq4u.jpg)
 
-经过近 4 个小时的煎熬，终于抵达中转站：日本东京成田机场，舷窗外的海岸线，格外壮观。
+经过近 4 个小时的煎熬，终于抵达中转站：日本东京成田机场。舷窗外的海岸线，延伸到好远。
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fgczjkm04qj30zk0nojs5.jpg)
 
@@ -112,7 +112,9 @@ description: 一场异国跑马之旅
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgdikqyevhj30yi0yi3zw.jpg)
 
-此次 **撞墙** 发生在 33 公里处，腿软的不行，走了大约 1 公里。走的过程虽然没那么累，但是由于温度偏低，身体热量流失比较严重，稍微的风催，就觉得异常寒冷。联想到**宁跑不走**的忠告，渐渐明白其中含义，跑友谨记。在 35 公里处，伴随着一首《演员》，倍感亲切，一位同胞慢慢跑过。于是要紧牙关，慢慢跟上，后面的一路边跑边聊，就这么度过了最痛苦的阶段，甚是感激。
+此次 **撞墙** 发生在 33 公里处，腿软的不行，走了大约 1 公里。走的过程虽然没那么累，但是由于温度偏低，身体热量流失比较严重，稍微的风催，就觉得异常寒冷。想到 **宁跑不走** 的忠告，渐渐明白其中含义，跑友谨记。
+
+在 35 公里处，一首《演员》由远及近，慢慢飘起，一位同胞慢慢跑过。于是要紧牙关，慢慢跟上，后面的一路边跑边聊，就这么度过了最痛苦的阶段，甚是感激。
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fgdixk8girj31900u0n35.jpg)
 
@@ -120,11 +122,11 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdize61k8j30m80esjt0.jpg)
 
-同一个梦想：**跑出中国，跑遍全世界**
+同一个梦想：**跑出中国，跑遍世界**
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fgdj4zklymj31kw16o4dd.jpg)
 
-本次马拉松唯一的遗憾，在晚上的庆功宴上得到满足。带上奖牌的那刻，倍感满足，第 6 场全马画上了句号。一位在场的跑者，以 88 场的纪录惊艳全场，怀着 11 月底 100 场的目标，向着下一站出发，加油。
+本次马拉松唯一的遗憾，在晚上的庆功宴上得到弥补。带上奖牌的那刻，倍感满足，第 6 场全马画上了句号。一位在场的跑者，以 88 场的纪录惊艳全场，怀着 11 月底 100 场的目标，向着下一站出发。
 
 ## 6 月 5 日
 
@@ -136,7 +138,7 @@ description: 一场异国跑马之旅
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fgdjkil15gj30zk0noad5.jpg)
 
-这座古建筑里，到处洋溢着音乐之声，各种各种的音乐盒充斥其间，也是本地行程的主要目的。
+这座古建筑里，到处洋溢着音乐之声，各种各样的音乐盒充斥其间，也是本次行程的主要目的地。
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1fgdjnouztaj30zk0zkn3q.jpg)
 
@@ -144,15 +146,15 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdjrdiu7pj31900u07do.jpg)
 
-结账那刻，为啥都这么严肃呢？估计下个月要吃土了😂
+结账那刻，为啥都这么严肃呢？估计下个月要吃土了吧😂
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fgdjsq7dspj31dc0wwags.jpg)
 
-逛了一天，花了不少银子，美食也不容错过。
+逛了一天，花了不少银子，美食不容错过。
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdjxayqa5j30zk0zk7cd.jpg)
 
-你在这里看风景，看风景的人在这里看你。
+你在街上看风景，看风景的人在街上看你。
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdk2jy8c8j31dc0wwq5u.jpg)
 
@@ -160,11 +162,11 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdk2nu826j31dc0wwq9e.jpg)
 
-给小伙伴在店里买了点纪念品，看到老板，就是想拍。比较传统的记账收银方式，更加适合这个小店。
+给小伙伴在店里买了点纪念品，看到老板，就是想拍。传统的记账收银方式，非常适合这个小店。
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdk8flmohj30zk0zkq79.jpg)
 
-回程的路上，在海边撒欢
+回程路上，海边撒欢
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgdkb5nodrj31900u0438.jpg)
 
@@ -172,19 +174,19 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdkku3tywj31dc0wwteu.jpg)
 
-晚上登上山顶看夜景，一睹「爱乐之城」芳容。
+登上山顶看夜景，一睹「爱乐之城」芳容。
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgdkftryz7j31dc0ww414.jpg)
 
-看完夜景后也没得到休息，**药妆店**里最后一战，刷新了我的认知。12 点钟才回到酒店，最后的晚餐，😂。
+看完夜景后也没得到休息，**药妆店**里一战，刷新了我的认知。12 点钟才回到酒店，最后的晚餐。
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgdkq8f91mj30m80m80w3.jpg)
 
-聚在一起吃泡面，有点大学宿舍的感觉（晚上 12 点钟。。。）
+聚在一起吃泡面，找回了大学宿舍的感觉（晚上 12 点钟。。。）
 
 ## 6 月 6 日
 
-最后一天了，去东京转机，一大早就出发。
+最后一天，在东京转机，一大早就出发。
 
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgcyywh73qj31kw16ox3k.jpg)
 
@@ -202,6 +204,9 @@ description: 一场异国跑马之旅
 
 ![](https://ws4.sinaimg.cn/large/006tNc79ly1fgdl4kuu1vj31kw11xb0s.jpg)
 
+云层以上，夜色妩媚
+![](https://ws2.sinaimg.cn/large/006tNc79ly1fgdlofzl90j31kw11xwja.jpg)
+
 9  点 15 分，飞抵北京，回家了，可为什么感觉不怎么好呢。。。
 
 最后一睹小伙伴战绩
@@ -209,3 +214,16 @@ description: 一场异国跑马之旅
 ![](https://ws3.sinaimg.cn/large/006tNc79ly1fgdl71ryrcj31kw16oqpc.jpg)
 
 下一次，我们从哪出发？
+
+---
+### 鸣谢
+
+| 演员   | 特征            |
+| ---- | ------------- |
+| 花儿姐  | 实力抢镜派，最佳演员    |
+| 要小豌的 | 实力演戏派，购买力+++  |
+| 菜菜   | 摄影师 & 会计 & 向导 |
+| 杉杉   | 实力代购          |
+| 思考琪  | 买买买的潜力股       |
+| 我    | 摄影师 & 跟班      |
+| 郭哥   | 司机 & 导游       |
