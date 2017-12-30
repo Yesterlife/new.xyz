@@ -161,7 +161,7 @@ description: 谨以此为记念那即将逝去的 18 岁
 
 ---
 
-PS：越来越喜欢越野跑了
+PS：越野有毒，你们懂得
 <video autoplay="" controls="controls" width="100%" src="//f.us.sinaimg.cn/00011ky7lx07gZIAoSX601040200rlYI0k01.mp4?label=mp4_hd&amp;template=28_fast&amp;Expires=1514659921&amp;ssig=bL7x%2BoxwCQ&amp;KID=unistore,video">
     您的浏览器不支持HTML5
 </video>
