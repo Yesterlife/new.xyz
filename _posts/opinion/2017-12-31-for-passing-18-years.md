@@ -52,6 +52,8 @@ description: 谨以此为记念那即将逝去的 18 岁
 
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fmza4f84gzj31kw1kwkci.jpg)
 
+歪一下，活动下颈椎「二战时期查理检查站」
+
 落地柏林后的形程，格外顺利。Google Map 上的路线规划甚是精准到位。从机场坐火车去酒店的路上，只在了如何检票上卡住了一小会儿，还错把一位韩国人误认成了国人。酒店，是在 Booking 上提前定的，近地铁，很方便。柏林之行的顺利，为后续形程增添了好几倍的信心。
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fmzacp7vewj31900u0afi.jpg)
