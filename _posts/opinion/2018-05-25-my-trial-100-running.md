@@ -1,3 +1,9 @@
+---
+layout: post
+title: 小黑的幽州 100
+category: opinion
+description: 很虐也很美
+---
 ![](https://ws3.sinaimg.cn/large/006tNc79gy1frnvq6ag9ij31kw23vx5b.jpg)
 
 从幽州 100 的赛场回来，已有一周有余，但留下的印念仍挥之不去：脸上一层黑，脚上水泡印，藿香正气水，晚上透心寒，牛肉暖心粥，清晨美色醉，还有那群最可爱的人。
