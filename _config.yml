@@ -10,3 +10,5 @@ title: dhong.co
 url: http://dhong.co
 feed: /atom.xml
 author_info: <a href="http://dhong.co/">Duan Hong</a>
+
+theme: jekyll-theme-minimal
